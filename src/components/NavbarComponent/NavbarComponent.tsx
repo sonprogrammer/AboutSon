@@ -3,7 +3,7 @@
 const NavbarComponent = () => {
   return (
     <div>
-        <img src='./name.png' alt="logo" className="bg-red-300"/>
+        <img src='/name2.svg' alt="logo" className=" h-20"/>
     </div>
   )
 }
