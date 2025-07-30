@@ -1,0 +1,1 @@
+export const Button = `bg-gray-900 text-white p-3 rounded-full hover:bg-gray-500 cursor-pointer`

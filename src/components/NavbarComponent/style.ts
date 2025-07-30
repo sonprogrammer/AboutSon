@@ -1,9 +1,8 @@
-import styled from "styled-components";
-import tw from "twin.macro";
 
 
-export const StyledContainer = styled.div`
-    ${tw`
+export const StyledContainer = 
+'bg-gray-900 p-3 flex justify-center'
 
-    `}
-`
+
+export const StyledLogo = 
+`h-20 cursor-pointer`
