@@ -1,0 +1,1 @@
+export const StyledBox = 'bg-gray-100 p-5 rounded-3xl'

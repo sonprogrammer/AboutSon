@@ -3,7 +3,7 @@ import { Button } from '../../CommonStyle'
 const AboutSection = () => {
   return (
     <div className='flex gap-10 relative bg-gray-100 p-10 rounded-3xl'>
-      <div className='w-[300px] ml-20 '>
+      <div className='w-[300px]  '>
         <img src="/photo.png" alt="내사진" className='rounded-xl' />
       </div>
       <div className='flex flex-col justify-center flex-1'>
