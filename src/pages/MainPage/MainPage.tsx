@@ -1,9 +1,9 @@
-import { AboutSection, CareerSection, SkillSection } from "../../sections"
+import { AboutSection, CareerSection, ProjectSection, SkillSection } from "../../sections"
 
 
 const MainPage = () => {
   return (
-    <div className="p-10 h-full mt-15">
+    <div className="p-10 h-full mt-15 w-full">
       <div className="">
         <AboutSection />
       </div>
@@ -12,6 +12,9 @@ const MainPage = () => {
       </div>
       <div>
         <CareerSection />
+      </div>
+      <div>
+        <ProjectSection />
       </div>
     </div>
   )

@@ -30,3 +30,60 @@
 }
 
 
+@layer components {
+  .inner-gradient-card {
+    @apply relative rounded-xl bg-white p-10 overflow-hidden shadow-lg;
+  }
+  .inner-gradient-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    padding: 6px;
+    background: conic-gradient(
+      from 0deg at 50% 50%,
+      #ff3b30,
+      #ff9500,
+      #ffcc00,
+      #32d74b,
+      #5ac8fa,
+      #5856d6,
+      #ff2d55,
+      #ff3b30
+    );
+    filter: blur(20px);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+  }
+}
+
+.gradient-frame {
+  position: relative;
+  border-radius: 16px;
+  padding: 6px; /* 프레임 두께 */
+  background: conic-gradient(
+    from 0deg at 50% 50%,
+    #ff3b30,
+    #ff9500,
+    #ffcc00,
+    #32d74b,
+    #5ac8fa,
+    #5856d6,
+    #ff2d55,
+    #ff3b30
+  );
+  filter: blur(25px);
+  /* 외곽으로 번지지 않게 약간 축소시키려면 부모를 감싸는 또 다른 래퍼 써도 됨 */
+}
+
+.card-content {
+  position: relative;
+  border-radius: 12px;
+  background: #fff;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  /* gradient-frame의 blur가 너무 번지는 게 싫으면 z-index로 위에 올려서 깔끔하게 */
+  z-index: 1;
+}
