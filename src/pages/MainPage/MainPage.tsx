@@ -10,10 +10,10 @@ const MainPage = () => {
       <div className="mt-30">
         <SkillSection />
       </div>
-      <div>
+      <div className="mt-15">
         <CareerSection />
       </div>
-      <div>
+      <div className="mt-30">
         <ProjectSection />
       </div>
     </div>
