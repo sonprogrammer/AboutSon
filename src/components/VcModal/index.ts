@@ -1,0 +1,1 @@
+export { default as VcModal} from './VcModal'

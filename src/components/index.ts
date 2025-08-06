@@ -1,1 +1,7 @@
 export * from './NavbarComponent'
+export * from './ProjectModal'
+export * from './MingleModal'
+export * from './CanModal'
+export * from './BtnyModal'
+export * from './VcModal'
+export * from './ContactBtn'

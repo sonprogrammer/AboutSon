@@ -1,0 +1,1 @@
+export { default as CanModal} from './CanModal'

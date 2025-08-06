@@ -1,43 +1,45 @@
-import { motion } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { useState } from "react";
+import { BtnyModal, CanModal, MingleModal, ProjectModal, VcModal } from "../../components";
+
 
 
 const ProjectSection = () => {
   const [openModal, setOpenModal] = useState<boolean>(false)
+  const [selectedProject, setSelectedProject] = useState<string | null>(null)
 
   const projects = [
     {
       img: "mingle.svg",
       title: "Mingle",
       desc: "플레이리스트 공유 SNS 서비스",
-      link: "#"
     },
     {
       img: "CAN.svg",
-      title: "CAN",
+      title: "CAN (Check Again Note)",
       desc: "나만의 웹 오답노트 서비스",
-      shorts: 'Check Again Note',
-      link: "#"
     },
     {
       img: "bnty.svg",
-      title: "BNTY",
+      title: "BNTY (Be Next To You)",
       desc: "트레이너와 회원간 소통 서비스",
-      shorts: 'Be Next To You',
-      link: "#"
     },
     {
       img: "vc.svg",
-      title: "VC ",
+      title: "VC (Virtual Coin)",
       desc: "모의코인 투자 서비스",
-      shorts: 'Virtual Coin',
-      link: "#"
     },
   ]
 
-  const handleClick = () => {
+  const handleClick = (title: string) => {
     setOpenModal(true)
+    setSelectedProject(title)
+  }
+
+  const handleCloseModal = () => {
+    setOpenModal(false)
+    setSelectedProject(null)
   }
   
   
@@ -65,18 +67,30 @@ const ProjectSection = () => {
           </div>
 
           <h3>{a.title}</h3>
-          <p>{a.shorts}</p>
           <p>{a.desc}</p>
           <motion.button
             whileHover={{ scale: 1.05 }}
             className="mt-2 inline-flex items-center gap-1 text-indigo-600 font-medium hover:underline cursor-pointer"
-            onClick={handleClick}
+            onClick={() => handleClick(a.title)}
           >
             View Project
             <ArrowForwardIosIcon style={{ fontSize: "16px" }} />
           </motion.button>
         </motion.div>
       ))}
+
+      {/* //* 모달 */}
+      <AnimatePresence>
+      {openModal && 
+        <ProjectModal project={selectedProject} handleCloseModal={handleCloseModal}>
+          {selectedProject === 'Mingle' && <MingleModal />}
+          {selectedProject === 'CAN (Check Again Note)' && <CanModal />}
+          {selectedProject === 'BNTY (Be Next To You)' && <BtnyModal />}
+          {selectedProject === 'VC (Virtual Coin)' && <VcModal />}
+        </ProjectModal>
+      }
+      </AnimatePresence>
+      
     </div>
   )
 }

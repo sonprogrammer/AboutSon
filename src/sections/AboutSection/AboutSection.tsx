@@ -1,9 +1,27 @@
-import { Button } from '../../CommonStyle'
+import { motion } from "framer-motion"
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { Button, styled, type ButtonProps } from "@mui/material";
+import { purple } from "@mui/material/colors";
 
 const AboutSection = () => {
+
+  const ViewBtn = styled(Button)<ButtonProps>(({ theme }) => ({
+    color: theme.palette.getContrastText(purple[500]),
+    borderRadius: '100px',
+    padding: '10px 20px',
+    backgroundColor: purple[500],
+    '&:hover': {
+      backgroundColor: purple[700]
+    }
+  }))
+
+  const MotionViewBtn = motion(ViewBtn)
+  
+  
   return (
-    <div className='flex gap-10 relative bg-gray-100 p-10 rounded-3xl'>
-      <div className='w-[300px]  '>
+    <div>
+    <div className='flex flex-col gap-10 relative bg-gray-100 p-10 rounded-3xl md:flex-row'>
+      <div className='w-[300px] flex justify-center md:justify-start lg:justify-center'>
         <img src="/photo.png" alt="내사진" className='rounded-xl' />
       </div>
       <div className='flex flex-col justify-center flex-1'>
@@ -14,12 +32,24 @@ const AboutSection = () => {
           - **긍정적인 마인드 셋**으로 문제를 해결하고, **도전을 즐기는** 개발자 입니다.</p>
       </div>
 
-      <div className='absolute bottom-10 right-50'>
-        <button className={Button}>
-          more about
-        </button>
-      </div>
+
     </div>
+      <div className="mt-10 flex justify-center">
+        <MotionViewBtn
+          variant='contained'
+          endIcon={<ArrowForwardIosIcon />}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ amount: 0.5 }}
+          transition={{ duration: 0.8, ease: 'easeInOut' }}
+          whileHover={{}}
+
+        >
+          more About
+        </MotionViewBtn>
+      </div>
+
+      </div>
   )
 }
 
