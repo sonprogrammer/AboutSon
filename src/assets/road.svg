@@ -1,0 +1,35 @@
+<svg width="700" height="500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="20" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#eef2ff" />
+    </marker>
+    <linearGradient id="gradient" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#d8b4fe"/>
+      <stop offset="100%" stop-color="#e0e7ff"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 꼬불꼬불 길 -->
+  <path d="M50 250 C 150 50, 250 450, 350 250
+           S 550 50, 650 250" 
+        fill="none" 
+        stroke="url(#gradient)" 
+        stroke-width="6" 
+        marker-end="url(#arrow)" />
+
+  <!-- 각 단계 표시 -->
+  <circle cx="50" cy="250" r="12" fill="#BDBDBD" />
+  <text x="50" y="280" font-size="12" text-anchor="middle">대학입학</text>
+
+  <circle cx="200" cy="250" r="12" fill="#BDBDBD" />
+  <text x="200" y="220" font-size="12" text-anchor="middle">뉴질랜드</text>
+
+  <circle cx="300" cy="305" r="12" fill="#BDBDBD" />
+  <text x="300" y="275" font-size="12" text-anchor="middle">GTQ1급</text>
+
+  <circle cx="400" cy="165" r="12" fill="#BDBDBD" />
+  <text x="400" y="135" font-size="12" text-anchor="middle">토익</text>
+
+  <circle cx="550" cy="120" r="12" fill="#BDBDBD" />
+  <text x="550" y="150" font-size="12" text-anchor="middle">정보처리기사</text>
+</svg>

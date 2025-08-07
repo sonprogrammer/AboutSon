@@ -1,4 +1,4 @@
-import { AboutSection, CareerSection, ProjectSection, SkillSection } from "../../sections"
+import { AboutSection, CareerSection, FeatureSection, ProjectSection, SkillSection } from "../../sections"
 
 
 const MainPage = () => {
@@ -15,6 +15,9 @@ const MainPage = () => {
       </div>
       <div className="mt-30">
         <ProjectSection />
+      </div>
+      <div className="mt-30">
+        <FeatureSection />
       </div>
     </div>
   )

@@ -15,7 +15,7 @@ const CareerSection = () => {
     color: theme.palette.getContrastText(purple[500]),
     borderRadius: '100px',
     padding: '10px 20px',
-    backgroundColor: purple[500],
+    backgroundColor: purple[300],
     '&:hover': {
       backgroundColor: purple[700]
     }
