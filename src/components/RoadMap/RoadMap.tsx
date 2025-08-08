@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { PointMarker } from "../PointMarker";
+
 
 
 const points = [
@@ -9,12 +11,25 @@ const points = [
     { cx: 550, cy: 120, label: '정보처리기사' },
   ];
 const RoadMap = () => {
+  const [selected, setSelected] = useState<{
+    label: string;
+    cx: number;
+    cy: number;
+  } | null>(null)
 
-    const handleClick = (label: string) => {
-      };
-      
+
+
+  const handlePointClick = (point: { label: string; cx: number; cy: number }, e: React.MouseEvent) => {
+    setSelected(point)
+    e.stopPropagation()
+  }
+
+  const onClose = () => {
+    setSelected(null)
+  }
+
   return (
-    <svg viewBox="0 0 700 500" className="w-full h-auto">
+    <svg viewBox="0 0 700 600" className="w-full h-auto" onClick={onClose}>
       <defs>
         <marker
           id="arrow"
@@ -33,7 +48,7 @@ const RoadMap = () => {
         </linearGradient>
       </defs>
 
-      {/* 길 */}
+
       <path
         d="M50 250 C 150 50, 250 450, 350 250 S 550 50, 650 250"
         fill="none"
@@ -42,18 +57,61 @@ const RoadMap = () => {
         markerEnd="url(#arrow)"
       />
 
-      {/* 지점들 */}
+
       {points.map((point, i) => (
         <PointMarker
           key={i}
           cx={point.cx}
           cy={point.cy}
           label={point.label}
-          onClick={() => handleClick(point.label)}
+          onClick={(e) => handlePointClick(point,e)}
         />
       ))}
+
+      {selected && (
+        <foreignObject 
+          x={selected.label === "정보처리기사" ? selected.cx - 150 : selected.cx - 30}
+          y={selected.cy +50} width="300" height="200"
+          onClick={(e) => e.stopPropagation()}
+          >
+        <div
+          xmlns="http://www.w3.org/1999/xhtml"
+          className=" bg-white shadow-lg rounded p-4"
+          style={{ pointerEvents: 'auto' }} // SVG내부 div 클릭 가능하게
+        >
+          <h3 className="text-lg font-bold mb-2">{selected.label} 정보</h3>
+          <p>여기에 {selected.label}에 대한 상세 설명을 넣으세요.</p>
+          <button
+            onClick={onClose}
+            className="mt-4 px-3 py-1 bg-purple-500 text-white rounded hover:bg-purple-600"
+          >
+            닫기
+          </button>
+        </div>
+      </foreignObject>
+      )}
+      
+
+      
     </svg>
   )
 }
 
 export default RoadMap
+
+{/* <foreignObject x="100" y="50" width="200" height="150"> */}
+//   <div
+//     xmlns="http://www.w3.org/1999/xhtml"
+//     className="bg-white shadow-lg rounded p-4"
+//     style={{ pointerEvents: 'auto' }}
+//   >
+//     <h3 className="text-lg font-bold mb-2">{selectedCard} 정보</h3>
+//     <p>여기에 {selectedCard}에 대한 상세 설명을 넣으세요.</p>
+//     <button
+//       onClick={() => setSelectedCard(null)}
+//       className="mt-4 px-3 py-1 bg-purple-500 text-white rounded hover:bg-purple-600"
+//     >
+//       닫기
+//     </button>
+//   </div>
+// </foreignObject>

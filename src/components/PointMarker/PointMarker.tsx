@@ -18,7 +18,7 @@ const PointMarker = ({cx, cy, label, onClick}:PointMarkerProps) => {
       cx={cx}
       cy={cy}
       r="12"
-      className="fill-[#BDBDBD] hover:fill-purple-400 transition-all  duration-300"
+      className="fill-[#BDBDBD] hover:fill-purple-400 hover:stroke-indigo-300 transition-all  duration-300"
     />
     <text
       x={cx}
