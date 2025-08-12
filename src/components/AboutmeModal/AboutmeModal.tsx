@@ -1,23 +1,21 @@
 import { motion, type Variants } from "framer-motion"
-import type { ProjectTypes } from "../../types/projectType"
 
-interface ProjectModalProps{
-    project: ProjectTypes
-    handleCloseModal: () => void
+interface AboutmeModalProps{
+    handleClose: () => void
 }
 
-const ProjectModal = ({project, handleCloseModal}: ProjectModalProps) => {
+const AboutmeModal = ({handleClose}: AboutmeModalProps) => {
     const modalVariants: Variants = {
         hidden: { opacity: 0, scale: 0.7, y: 50 },
         visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.3, ease: "easeIn" } },
         exit: { opacity: 0, scale: 0.7, y: 50, transition: { duration: 0.3, ease: "easeOut" } }
       }
     
-    return (
-        <div className="fixed inset-0 z-100 w-full flex justify-center items-center bg-black/20 backdrop-filter backdrop-blur-md"
-            onClick={handleCloseModal}
-        >
-            <motion.div 
+  return (
+    <div className="fixed inset-0 z-100 flex justify-center items-center w-full bg-black/20 backdrop-filter backdrop-blur-md"
+        onClick={handleClose}
+    >
+      <motion.div 
                 variants={modalVariants}
                 initial='hidden'
                 animate='visible'
@@ -26,14 +24,14 @@ const ProjectModal = ({project, handleCloseModal}: ProjectModalProps) => {
                  onClick={(e) => e.stopPropagation()}
                  >
                 <button
-                  onClick={handleCloseModal}
+                  onClick={handleClose}
                   className="absolute right-5 top-5 p-4 border rounded-full w-[24px] h-[24px] cursor-pointer flex justify-center items-center bg-black text-white"
                 >X</button>
-                <h1 className="text-4xl font-bold text-center">{project.title}</h1>
+                <h1 className="text-4xl font-bold text-center">hi</h1>
 
             </motion.div>
-        </div>
-    )
+    </div>
+  )
 }
 
-export default ProjectModal
+export default AboutmeModal

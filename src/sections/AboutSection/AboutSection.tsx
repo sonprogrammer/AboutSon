@@ -1,9 +1,12 @@
-import { motion } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Button, styled, type ButtonProps } from "@mui/material";
 import { purple } from "@mui/material/colors";
+import { useState } from "react";
+import { AboutmeModal } from "../../components";
 
 const AboutSection = () => {
+  const [modalOpen, setModalOpen] = useState<boolean>(false)
 
   const ViewBtn = styled(Button)<ButtonProps>(({ theme }) => ({
     color: theme.palette.getContrastText(purple[500]),
@@ -17,6 +20,14 @@ const AboutSection = () => {
 
   const MotionViewBtn = motion(ViewBtn)
   
+  const handleMoreClick = () => {
+    setModalOpen(true)
+  }
+
+  const handleClose = () => {
+    setModalOpen(false)
+  }
+  
   
   return (
     <div>
@@ -25,7 +36,7 @@ const AboutSection = () => {
         <img src="/photo.png" alt="내사진" className='rounded-xl' />
       </div>
       <div className='flex flex-col justify-center flex-1'>
-        <h1 className='font-bold text-2xl'>About me</h1>
+        <h1 className='font-bold text-2xl'>Who I AM</h1>
         <p>- 보다 나은 UI/UX를 위해 **지속적으로 고민하는** 개발자입니다.
           - 예를 들어 [BNTY](https://www.notion.so/BNTY-176233c66b0a800f9e56c2f31e2fae3f?pvs=21)  프로젝트를 진행할때 트레이너와 회원간 연결을 할때 UX측면을 고려하여 기존에 사용하지 않았었던 QR코드를 사용하여 기능 구현하였습니다. 이를 통해 실용적인 디자인과 사용자의 편리함을 동시에 고려한 경험을 쌓았습니다.
           - **꾸준한 자기계발**을 통해 지속적으로 발전하는 개발자입니다.
@@ -43,11 +54,15 @@ const AboutSection = () => {
           viewport={{ amount: 0.5 }}
           transition={{ duration: 0.8, ease: 'easeInOut' }}
           whileHover={{}}
-
+          onClick={handleMoreClick}
         >
           more About
         </MotionViewBtn>
       </div>
+
+      <AnimatePresence>
+        {modalOpen && <AboutmeModal handleClose={handleClose}/>}
+      </AnimatePresence>
 
       </div>
   )

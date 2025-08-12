@@ -1,50 +1,42 @@
 import { AnimatePresence, motion } from "framer-motion"
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { useState } from "react";
-import { BtnyModal, CanModal, MingleModal, ProjectModal, VcModal } from "../../components";
+import { ProjectModal } from "../../components";
+import { projectDatas } from "../../data/projectData";
+import type { ProjectTypes } from "../../types/projectType";
 
 
+interface ProjectSectionProps{
+  selectedProject: ProjectTypes | null
+  setSelectedProject: (project: ProjectTypes | null) => void
+}
 
-const ProjectSection = () => {
-  const [openModal, setOpenModal] = useState<boolean>(false)
-  const [selectedProject, setSelectedProject] = useState<string | null>(null)
 
-  const projects = [
-    {
-      img: "mingle.svg",
-      title: "Mingle",
-      desc: "플레이리스트 공유 SNS 서비스",
-    },
-    {
-      img: "CAN.svg",
-      title: "CAN (Check Again Note)",
-      desc: "나만의 웹 오답노트 서비스",
-    },
-    {
-      img: "bnty.svg",
-      title: "BNTY (Be Next To You)",
-      desc: "트레이너와 회원간 소통 서비스",
-    },
-    {
-      img: "vc.svg",
-      title: "VC (Virtual Coin)",
-      desc: "모의코인 투자 서비스",
-    },
-  ]
+const ProjectSection = ({ selectedProject, setSelectedProject }: ProjectSectionProps) => {
 
-  const handleClick = (title: string) => {
-    setOpenModal(true)
-    setSelectedProject(title)
+  const projects = projectDatas
+
+  const handleClick = (project: ProjectTypes) => {
+    setSelectedProject(project)
   }
 
   const handleCloseModal = () => {
-    setOpenModal(false)
     setSelectedProject(null)
   }
+  console.log('sele', selectedProject)
   
   
   return (
-    <div className='grid grid-cols-2 gap-10 px-6'>
+    <div className='flex flex-col gap-10 px-6'>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 2, ease: 'easeOut' }}
+      >
+        <h1 className="text-[100px] font-semibold">
+          Projects
+        </h1>
+      </motion.div>
+      <div className='grid grid-cols-2 gap-10 px-6'>
       {projects.map((a, i) => (
         <motion.div
           initial={{opacity: 0, y: 50}}
@@ -71,23 +63,19 @@ const ProjectSection = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             className="mt-2 inline-flex items-center gap-1 text-indigo-600 font-medium hover:underline cursor-pointer"
-            onClick={() => handleClick(a.title)}
+            onClick={() => handleClick(a)}
           >
             View Project
             <ArrowForwardIosIcon style={{ fontSize: "16px" }} />
           </motion.button>
         </motion.div>
       ))}
+      </div>
 
       {/* //* 모달 */}
       <AnimatePresence>
-      {openModal && 
-        <ProjectModal project={selectedProject} handleCloseModal={handleCloseModal}>
-          {selectedProject === 'Mingle' && <MingleModal />}
-          {selectedProject === 'CAN (Check Again Note)' && <CanModal />}
-          {selectedProject === 'BNTY (Be Next To You)' && <BtnyModal />}
-          {selectedProject === 'VC (Virtual Coin)' && <VcModal />}
-        </ProjectModal>
+      { selectedProject &&
+        <ProjectModal project={selectedProject} handleCloseModal={handleCloseModal} />
       }
       </AnimatePresence>
       

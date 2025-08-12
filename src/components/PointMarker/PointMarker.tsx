@@ -4,7 +4,7 @@ interface PointMarkerProps {
     cx: number;
     cy: number;
     label: string;
-    onClick?: () => void;
+    onClick?: (e: React.MouseEvent<SVGCircleElement, MouseEvent>) => void;
   }
   
 

@@ -29,7 +29,7 @@ const RoadMap = () => {
   }
 
   return (
-    <svg viewBox="0 0 700 600" className="w-full h-auto" onClick={onClose}>
+    <svg viewBox="0 -70 700 600" className="w-full " onClick={onClose}>
       <defs>
         <marker
           id="arrow"
@@ -71,13 +71,13 @@ const RoadMap = () => {
       {selected && (
         <foreignObject 
           x={selected.label === "정보처리기사" ? selected.cx - 150 : selected.cx - 30}
-          y={selected.cy +50} width="300" height="200"
+          y={selected.cy +50} width="250" height="200"
           onClick={(e) => e.stopPropagation()}
           >
         <div
           xmlns="http://www.w3.org/1999/xhtml"
           className=" bg-white shadow-lg rounded p-4"
-          style={{ pointerEvents: 'auto' }} // SVG내부 div 클릭 가능하게
+          style={{ pointerEvents: 'auto' }}
         >
           <h3 className="text-lg font-bold mb-2">{selected.label} 정보</h3>
           <p>여기에 {selected.label}에 대한 상세 설명을 넣으세요.</p>
@@ -98,20 +98,3 @@ const RoadMap = () => {
 }
 
 export default RoadMap
-
-{/* <foreignObject x="100" y="50" width="200" height="150"> */}
-//   <div
-//     xmlns="http://www.w3.org/1999/xhtml"
-//     className="bg-white shadow-lg rounded p-4"
-//     style={{ pointerEvents: 'auto' }}
-//   >
-//     <h3 className="text-lg font-bold mb-2">{selectedCard} 정보</h3>
-//     <p>여기에 {selectedCard}에 대한 상세 설명을 넣으세요.</p>
-//     <button
-//       onClick={() => setSelectedCard(null)}
-//       className="mt-4 px-3 py-1 bg-purple-500 text-white rounded hover:bg-purple-600"
-//     >
-//       닫기
-//     </button>
-//   </div>
-// </foreignObject>

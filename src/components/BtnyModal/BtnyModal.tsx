@@ -3,7 +3,7 @@ import React from 'react'
 const BtnyModal = () => {
   return (
     <div>
-      bnty
+      project modal
     </div>
   )
 }

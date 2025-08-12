@@ -5,7 +5,13 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Button, styled, type ButtonProps } from "@mui/material";
 import { purple } from "@mui/material/colors";
 
-const CareerSection = () => {
+
+interface CareerSectionProps{
+  toProject: () => void
+}
+
+
+const CareerSection = ({toProject}: CareerSectionProps) => {
 
   const ref = useRef(null)
 
@@ -30,7 +36,7 @@ const CareerSection = () => {
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 2, ease: 'easeOut' }}
       >
-        <h1 className="text-[100px]">
+        <h1 className="text-[100px] font-semibold">
           Career
         </h1>
       </motion.div>
@@ -89,7 +95,7 @@ const CareerSection = () => {
           viewport={{ amount: 0.5 }}
           transition={{ duration: 0.8, ease: 'easeInOut' }}
           whileHover={{}}
-
+          onClick={toProject}
         >
           View Project
         </MotionViewBtn>

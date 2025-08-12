@@ -1,24 +1,10 @@
-import { useState } from "react"
-import { FeatureCard, RoadMap } from "../../components"
+
+import { RoadMap } from "../../components"
 import { motion } from 'framer-motion'
 
 
 const FeatureSection = () => {
 
-
-  const [selected, setSelected] = useState<{
-    label: string;
-    cx: number;
-    cy: number;
-  } | null>(null)
-
-
-
-  const handlePointClick = (point: { label: string; cx: number; cy: number }) => {
-    setSelected(point)
-  }
-
-  console.log('sl', selected)
 
   return (
 
@@ -28,9 +14,9 @@ const FeatureSection = () => {
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
-        className="text-[70px] absolute left-3"
+        className="text-[100px] absolute left-3 top-20"
       >
-        <h1>
+        <h1 className="font-semibold">
           Features
         </h1>
       </motion.div>
