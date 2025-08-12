@@ -4,8 +4,10 @@ export interface ProjectTypes{
     desc: string;
     intro: string;
     git: string;
-    role: string[];
-    troubleS: string;
-    impression: string;
-    skills: string;
+    team: boolean;
+    role: Record<string, string[]>;
+    func: Record<string, string[]>;
+    troubleS: Record<string, string[]>;
+    reflection: string;
+    skills: string[];
 }

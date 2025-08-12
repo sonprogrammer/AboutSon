@@ -22,7 +22,6 @@ const ProjectSection = ({ selectedProject, setSelectedProject }: ProjectSectionP
   const handleCloseModal = () => {
     setSelectedProject(null)
   }
-  console.log('sele', selectedProject)
   
   
   return (
