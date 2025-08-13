@@ -1,3 +1,10 @@
+type Trouble =
+  | { title: string; reason: string; problem: string; solve: string } //mingle
+  | { title: string[] } //can
+  | string 
+  | {title:string; secondTitle: string}
+
+
 export interface ProjectTypes{
     title: string;
     img: string;
@@ -6,8 +13,8 @@ export interface ProjectTypes{
     git: string;
     team: boolean;
     role: Record<string, string[]>;
-    func: Record<string, string[]>;
-    troubleS: Record<string, string[]>;
+    func: Record<string, string[]>[];
+    troubleS: Trouble[];
     reflection: string;
     skills: string[];
 }

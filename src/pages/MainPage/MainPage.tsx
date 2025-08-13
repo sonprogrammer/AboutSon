@@ -1,12 +1,12 @@
 import { useRef, useState } from "react"
 import { AboutSection, AppealSection, CareerSection, FeatureSection, ProjectSection, SkillSection } from "../../sections"
-import type { ProjectTypes } from "../../types/projectType";
-import { projectDatas } from "../../data/projectData";
+import { projectData } from "../../data/project";
+
 
 
 const MainPage = () => {
   const projectRef = useRef(null)
-  const [selectedProject, setSelectedProject] = useState<ProjectTypes | null>(null);
+  const [selectedProject, setSelectedProject] = useState<string | null>(null);
 
   
 
@@ -21,8 +21,8 @@ const MainPage = () => {
   const handleOpenFirstModal = () => {
     handleScrollToProjects()
 
-    if(projectDatas.length > 0){
-      setSelectedProject(projectDatas[0])
+    if(projectData.length > 0){
+      setSelectedProject('Mingle')
     }
   }
   

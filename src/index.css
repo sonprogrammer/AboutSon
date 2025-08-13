@@ -46,3 +46,24 @@
   background-color: transparent;
 }
 
+
+/** 글씨 외각 색상 */
+.text-stroke-Mingle {
+  -webkit-text-stroke: 2px #7C3AED;
+  color: #c0c0c0;               
+  /* color: #6B7280;                */
+}
+
+.text-stroke-can {
+  -webkit-text-stroke: 2px #3B82F6;
+  color: #FACC15;
+}
+
+.text-stroke-bnty {
+  -webkit-text-stroke: 2px #B91C1C;
+  color: #4B5563;
+}
+.text-stroke-vc {
+  -webkit-text-stroke: 2px #A8A29E;
+  color: #EF4444;
+}
