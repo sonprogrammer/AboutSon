@@ -1,5 +1,5 @@
 import { useRef, useState } from "react"
-import { AboutSection, AppealSection, CareerSection, FeatureSection, ProjectSection, SkillSection } from "../../sections"
+import { AboutSection, LastSection, CareerSection, FeatureSection, ProjectSection, SkillSection, AppealSection } from "../../sections"
 import { projectData } from "../../data/project";
 
 
@@ -47,8 +47,11 @@ const MainPage = () => {
           <FeatureSection />
         </div>
       </div>
-      <div className="">
+      <div>
         <AppealSection />
+      </div>
+      <div className="">
+        <LastSection />
       </div>
     </div>
   )

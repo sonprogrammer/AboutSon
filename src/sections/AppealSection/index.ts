@@ -1,1 +1,1 @@
-export { default as AppealSection }from './AppealSection'
+export {default as AppealSection} from './AppealSection'

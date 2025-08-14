@@ -9,5 +9,12 @@ export default {
       extend: {},
     },
     plugins: [],
+    safelist: [
+      'underline',
+      'decoration-yellow-500',
+      'decoration-2',
+      'decoration-red-700',
+      'text-red-700'
+    ],
   }
   

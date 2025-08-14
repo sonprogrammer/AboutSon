@@ -1,27 +1,13 @@
-import styles from './AppealSection.module.css'
+
 
 const AppealSection = () => {
   return (
-    <div className='h-screen flex flex-col items-center justify-center bg-gradient-to-b from-black via-gray-800'>
-      <h1 className="text-white text-4xl font-bold mb-3">
-        There is no failure,
-      </h1>
-      <h1 className="text-white text-4xl font-bold mb-7">
-        only stepping stones
-      </h1>
+    <div>
+      뉴질랜드 워킹홀리데이를 통해 문제 해결 능력과 도전 정신을 키우고, 다양한 시선을 이해하며 UI/UX와 프론트엔드 개발에 대한 관심을 확립
 
-      <div className="relative">
-        <h1 className={`${styles.reflection} reflection text-white text-4xl font-bold opacity-30`}>
-          There is no failure,
-        </h1>
-        <h1 className={`${styles.reflection} reflection text-white text-4xl font-bold opacity-30`}>
-          only stepping stones
-        </h1>
-      </div>
+포트폴리오/자기소개서용 어필 섹션:
 
-{/* TODO 여기다가 읽어주셔서 감사하다고 쓸까? */}
-
-
+뉴질랜드에서 혼자 문제를 해결하며 도전 정신과 자기계발 습관을 키웠습니다. 다양한 국적의 사람들과 협업하며 ‘다른 시선을 이해하는 법’을 배웠고, 이 경험이 UI/UX와 프론트엔드 개발에 대한 관심으로 이어졌습니다. 이를 바탕으로 꾸준함과 긍정적인 태도로 목표를 달성하는 것을 강점으로 삼고 있습니다.
     </div>
   )
 }

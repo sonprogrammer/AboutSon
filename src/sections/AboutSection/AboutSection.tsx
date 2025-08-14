@@ -36,7 +36,7 @@ const AboutSection = () => {
         <img src="/photo.png" alt="내사진" className='rounded-xl' />
       </div>
       <div className='flex flex-col justify-center flex-1'>
-        <h1 className='font-bold text-4xl'>Who I AM</h1>
+        <h1 className='font-bold text-4xl'>Who I am</h1>
         <AboutmeContents />
       </div>
 

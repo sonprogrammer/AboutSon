@@ -13,6 +13,9 @@ const MingleModal = () => {
   return (
     <div className='flex flex-col gap-5'>
       <h1 className='text-center font-medium'>(팀 프로젝트)</h1>
+      <div className="구분선 border border-gray-200"></div>
+
+      
       <div
         className="맨위 소개 "
         style={{
@@ -29,7 +32,7 @@ const MingleModal = () => {
         <div>깃허브 주소</div>
         <div>
           <a href='https://github.com/sonprogrammer/mingle' target="_blank" rel="noreferrer"
-            className="hover:text-purple-500 hover:underline hover:font-bold"
+            className="hover:text-purple-500 hover:underline underline-offset-3 hover:font-bold decoration-gray-400 decoration-2"
           >
             https://github.com/sonprogrammer/mingle
           </a>
@@ -65,7 +68,7 @@ const MingleModal = () => {
       </motion.div>
 
       <motion.div
-        className="기능 "
+        className="기능 border-2 border-purple-400 rounded-2xl p-5"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
@@ -144,7 +147,7 @@ const MingleModal = () => {
       </motion.div>
 
       <div className='기술 스택 w-full flex justify-center'>
-        <div className={`${StyledBox} w-[70%]`}>
+        <div className={`${StyledBox} w-full`}>
           <Swiper
             spaceBetween={60}
             slidesPerView={"auto"}
