@@ -25,4 +25,4 @@ dist-ssr
 
 # 데이터 내용 들어가는거 해놓기
 data
-AboutmeModal
+src/components/AboutModal/
