@@ -1,0 +1,1 @@
+export const mingleSkills =['react.svg', 'typescript.svg', 'axios.svg', 'styled.svg', 'tailwind.svg', 'figma.svg']
