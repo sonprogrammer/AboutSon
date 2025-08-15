@@ -4,3 +4,4 @@ export const Box =
 'border border-gray-200 rounded-sm p-5 flex-1 flex flex-col h-full '
 
 
+export const ContentsStyle = 'underline underline-offset-3 text-gray-600 font-semibold'
