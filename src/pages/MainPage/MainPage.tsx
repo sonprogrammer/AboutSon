@@ -5,7 +5,7 @@ import { projectData } from "../../data/project";
 
 
 const MainPage = () => {
-  const projectRef = useRef(null)
+  const projectRef = useRef<HTMLDivElement>(null)
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
 
   

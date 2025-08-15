@@ -77,7 +77,6 @@ const RoadMap = () => {
           onClick={(e) => e.stopPropagation()}
           >
         <div
-          xmlns="http://www.w3.org/1999/xhtml"
           className=" bg-stone-200 shadow-lg rounded-xl p-3 relative"
           style={{ pointerEvents: 'auto' }}
         >
