@@ -35,7 +35,7 @@ const AppealSection = () => {
       variants={sectionVariants}
     >
       <motion.p variants={itemVariants} className="text-xl font-semibold text-gray-800">
-        🌏 뉴질랜드 경험
+        🌏 해외 경험
       </motion.p>
 
       <motion.p variants={itemVariants} className="text-xl font-semibold text-gray-800">
