@@ -13,7 +13,7 @@ export const vcTroubles: JSX.Element[] = [
     2. <span className="font-bold">해결</span> : 프론트엔드와 백엔드 도메인이 달라 쿠키 전송이 차단되었음. 이를 해결하기 위해 {' '}
     <span className="underline text-red-700 decoration-red-500 underline-offset-2 font-semibold">cookie 설정의 domain 값을 서버 도메인으로 명확히 지정</span>하고,
     <span className="underline text-red-700 decoration-red-500 underline-offset-2 font-semibold">sameSite를 'none', secure를 true</span>로 설정하여 교차 도메인에서도 쿠키가 안전하게 전달되도록 조정함.
-    또한 <span className="underline text-red-700 decoration-red-500 underline-offset-2 font-semibold">axios의 withCredentials 설정</span>을 통해 브라우저가 쿠키를 포함하도록 하고,
+    또한 <span className="underline text-red-700 decoration-red-500 underline-offset-2 font-semibold">axios의 withCredentials 설정</span>을 통해 브라우저가 쿠키를 포함하도록 하고,{' '}
     <span className="underline text-red-700 decoration-red-500 underline-offset-2 font-semibold">axios 인터셉터</span>를 활용해 액세스 토큰을 자동 갱신하는 로직을 구현함
   </>,
 ];

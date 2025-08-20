@@ -65,7 +65,7 @@ const AboutmeModal = ({ handleClose }: AboutmeModalProps) => {
             <motion.p variants={paragraphVariants} className="text-gray-700 leading-relaxed whitespace-pre-line">
               뉴질랜드 워킹홀리데이 당시 모든 게 낯설고 불편했지만 그 안에서 배운 건 <span className={`${ContentsStyle}`}>나와 다른 시선을 이해하는 법</span>이었습니다.
               다양한 국적의 사람들과 함께 일하면서 {' '}
-              <span className={`${ContentsStyle}`}>무언가를 전달하는 방식은 사람마다 다르게 받아들여질 수 있다</span>는 점을 체감했고, 이 경험이 UI/UX에 대한 관심으로 이어졌습니다. 이후 소프트웨어공학을
+              <span className={`${ContentsStyle}`}>무언가를 전달하는 방식은 사람마다 다르게 받아들여질 수 있다</span>는 점을 체감했고, 이러한 경험이 UI/UX에 대한 관심으로 이어졌습니다. 이후 소프트웨어공학을
               전공하며 설계, 알고리즘, 네트워크 등 컴퓨터공학의 기초를 쌓았고, 본격적으로 프론트엔드에 집중하면서 제 관심사와 적성이 자연스럽게 맞닿아 있음을
               느꼈습니다.
             </motion.p>
@@ -116,7 +116,7 @@ const AboutmeModal = ({ handleClose }: AboutmeModalProps) => {
             <h3 className="font-semibold mb-1 text-gray-700">[기술보다 앞서야 하는 건 소통과 구조 이해]</h3>
             <div className="border border-gray-200"></div>
             <motion.p variants={paragraphVariants} className="text-gray-700 leading-relaxed whitespace-pre-line">
-              개발자에게 필요한 역량은 단순한 기술 스택의 나열이 아니라 협업 상황에서 문제를 파악하고 구조적으로 해결할 수 있는 역량이라고 생각합니다.
+              개발자에게 필요한 역량은 단순한 기술 스택의 나열이 아니라 협업 상황에서 문제를 파악하고 구조적으로 해결할 수 있는 역량이라고 생각합니다.{' '}
               <span className={`${ContentsStyle} text-purple-600`}>Mingle</span> 프로젝트는 음악 취향을 공유할 수 있는 SNS 플랫폼으로 저는 프론트엔드 전반을 담당했습니다.
               이 프로젝트는 기능이 많았고 마이페이지·곡 좋아요·팔로우·플레이리스트 등 다양한 기능이 엮여 있어 개별 기능 단위 설계뿐만 아니라 기능 간 데이터의 흐름을
               파악하고 이를 중심으로 구조를 잡는 것이 프로젝트 안정성과 확장성 측면에서 더 중요했습니다.

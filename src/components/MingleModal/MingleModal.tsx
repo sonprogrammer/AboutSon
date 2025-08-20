@@ -32,7 +32,7 @@ const MingleModal = () => {
         <div>깃허브 주소</div>
         <div>
           <a href='https://github.com/sonprogrammer/mingle' target="_blank" rel="noreferrer"
-            className="hover:text-purple-500 hover:underline underline-offset-3 hover:font-bold decoration-gray-400 decoration-2"
+            className="hover:text-purple-500 hover:underline underline-offset-3  decoration-gray-400 decoration-2"
           >
             https://github.com/sonprogrammer/mingle
           </a>
@@ -74,7 +74,7 @@ const MingleModal = () => {
         transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: true }}
       >
-        <h1 className="font-bold text-xl mb-2 text-center">📱 기능</h1>
+        <h1 className="font-bold text-xl mb-2 text-center">📱 담당 역할</h1>
         <ul className="flex justify-around">
           {functions.map((f, i) => (
             <motion.li

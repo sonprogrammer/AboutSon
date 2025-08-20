@@ -50,7 +50,6 @@ const AboutSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ amount: 0.5 }}
           transition={{ duration: 0.8, ease: 'easeInOut' }}
-          whileHover={{}}
           onClick={handleMoreClick}
         >
           more About
