@@ -89,7 +89,7 @@ const AboutmeModal = ({ handleClose }: AboutmeModalProps) => {
             <div className="border border-gray-200"></div>
             <motion.p variants={paragraphVariants} className="text-gray-700 leading-relaxed whitespace-pre-line">
               엘리스 웹개발자 과정에서 협업 프로젝트로 진행한 <span className={`${ContentsStyle} text-purple-600`}>밍글(Mingle)</span>은 플레이리스트 기반의 음악 SNS 서비스로 팀원들과 함께 사용자 흐름을 설계하고
-              마이페이지·추천·좋아요 기능 등을 구현했습니다. 기능 하나를 설계할 때도 <span className={`${ContentsStyle}`}>유저가 이걸 왜 필요로 할까?</span>부터 고민했고 이 과정을 통해 단순히 코드를
+              마이페이지·추천·좋아요 기능 등을 구현했습니다. 기능 하나를 설계할 때도 <span className={`${ContentsStyle}`}>유저가 이걸 왜 필요로 할까?</span>{' '}부터 고민했고 이 과정을 통해 단순히 코드를
               짜는 개발자가 아닌 문제를 정의하고 해결책을 기능으로 풀어낼 수 있는 개발자로 한 걸음 나아갈 수 있었습니다. 제가 개발한 요소들이 유저의 흐름을
               방해하지 않고 자연스럽게 이어지도록 설계되었을 때 기술 그 자체보다도 사람에게 어떤 경험을 전달했는지가 더 중요하다는 걸 다시금 깨달았습니다.
             </motion.p>
