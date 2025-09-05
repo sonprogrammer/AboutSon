@@ -71,9 +71,9 @@ const AboutmeModal = ({ handleClose }: AboutmeModalProps) => {
             </motion.p>
             <motion.p variants={paragraphVariants} className="text-gray-700 leading-relaxed whitespace-pre-line">
               프론트엔드는 기능과 시각, 흐름과 구조, 기술과 감각이 유기적으로 연결되는 분야라고 생각합니다. 단순히 보기 좋은 UI가 아닌, 사용자가 자연스럽게
-              행동하게 만드는 경험을 설계하는 것이 핵심이며, 저는 이 <span className={`${ContentsStyle}`}>경험</span>을 설계하고 구현하는 과정에 가장 큰 매력을 느낍니다. 프로젝트 중 구현한 화면이 의도한
-              대로 작동하고, 팀원들로부터 “직관적이다”, “편하다”는 피드백을 받았을 때 성취감을 느꼈고, 그 감정을 더 오래 이어가고 싶어 프론트엔드 개발자의 길을
-              선택하게 되었습니다.
+              행동하게 만드는 경험을 설계하는 것이 핵심이며, 저는 이 <span className={`${ContentsStyle}`}>경험</span>을 설계하고 구현하는 과정에 가장 큰 매력을 느낍니다.
+              <br />
+              앞으로는 사용자에게 더 나은 경험을 제공하는 서비스를 만들고 일상에 <span className={`${ContentsStyle}`}>긍정적인 변화</span>를 주는 개발자가 되고 싶습니다.
             </motion.p>
           </motion.section>
 
