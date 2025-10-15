@@ -86,8 +86,16 @@ const BtnyModal = () => {
           📱역할 및 기능
         </motion.h1>
         <h1 className="text-center font-semibold text-gray-500 mb-5">
-          개인 프로젝트로 백엔드와 프론트엔드 모두 설계·구현
+          개인 프로젝트로 백엔드와 프론트엔드 모두 설계·구현<br />
         </h1>
+        <p className="shadow-md mb-3 p-3 rounded-md bg-stone-50 font-semibold">
+          서버 측 REST API와 CRUD 기능을 직접 설계·구현하고 프론트엔드에서 이를 연동하여 
+          앨범 게시물, 날짜별 기록, 채팅, 노트 관리 기능을 완성.<br />
+          채팅의 실시간 처리를 위해 웹소켓을 도입하였고 추후에 사용자 경험을 위해 읽음/안읽음 처리를
+          통해 소통을 명확화.<br/>
+           QR코드 연결 성능 최적화, PWA
+          도입, UI/UX 개선을 통해 모바일과 웹 사용자 경험을 향상시킴
+          </p>
         <ul className="grid grid-cols-3 gap-5">
           {functions.map((f, i) => (
             <motion.li

@@ -67,6 +67,7 @@ const CanModal = () => {
             📱역할 및 기능
         </motion.h1>
         <h1 className="text-center font-semibold text-gray-500">개인 프로젝트로 백엔드와 프론트엔드 모두 설계·구현</h1>
+
         <ul className="flex justify-around mt-3">
           {functions.map((f, i) => (
             <motion.li

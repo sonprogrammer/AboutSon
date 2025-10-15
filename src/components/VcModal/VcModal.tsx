@@ -72,6 +72,13 @@ const VcModal = () => {
         <h1 className="text-center font-semibold text-gray-500 mb-5">
           개인 프로젝트로 백엔드와 프론트엔드 모두 설계·구현
         </h1>
+        <p className="shadow-md mb-3 p-3 rounded-md bg-stone-50 font-semibold">
+          업비트 웹소켓을 활용해 실시간 코인 시세등의 데이터를 수신하고, REST API기반 CRUD기능을 설계·구현하여
+          자산·거래 관리 기능을 개발<br/>
+          또한 REST API와 웹소켓을 연동하여 실시간 데이터 표시 및 사용자 인터렉션을 처리고 사용자가 지정한 가격에 맞
+          춰 자동으로 주문이 체결되도록 로직을 구현 <br/>
+          PWA 및 반응형 UI적용하여 모바일 및 PC 사용자 경험을 향상 시킴
+        </p>
         <ul className="grid grid-cols-3 gap-5">
           {functions.map((f, i) => (
             <motion.li
