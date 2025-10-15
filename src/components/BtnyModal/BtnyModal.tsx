@@ -39,9 +39,25 @@ const BtnyModal = () => {
             https://github.com/sonprogrammer/BNTYpt
           </a>
         </div>
+        <div>프로젝트 주소 </div>
+        <div>
+          <a href='https://bnty.netlify.app/' target="_blank" rel="noreferrer"
+            className="hover:text-red-600  underline-offset-3 decoration-stone-600 decoration-2"
+          >
+            https://bnty.netlify.app/
+          </a>
+        </div>
+        
       </div>
 
       <div className="구분선 border border-gray-200"></div>
+
+      <div className="rounded-2xl shadow-md p-3 px-7">
+        <h1 className="text-center font-bold text-xl mb-3">업데이트</h1>
+        <p className="font-semibold text-center">기존 존재하던 오류등을 개선하고, QR코드 연결 성능 향상, 채팅·노트·앨범 기능 개선, PWA 도입 및 UI/UX 전반
+          개선을 통해 사용자 경험을 향상시킴
+        </p>
+      </div>
 
       <div className="만든이유 짧게 bg-gray-50 rounded-2xl shadow-md p-3 px-7">
         <h1 className="text-center font-bold text-xl mb-3">❓프로젝트 목적&개요</h1>
@@ -104,6 +120,25 @@ const BtnyModal = () => {
                   </motion.li>
                 ))}
               </ul>
+              <div className="bg-red-50 w-full">   
+              {f.update ? <p className="mt-2 font-bold text-blue-950">업데이트</p> : <></>}
+              <ul>
+                {f.update?.map((content, t) => (
+                  <motion.li
+                    key={content}
+                    initial={{opacity: 0, x:-20}}
+                    whileInView={{opacity:1, x: 0}}
+                    transition={{
+                      duration: 0.4,
+                      delay: t * 0.2 + t * 0.1
+                    }}
+                    viewport={{once: true}}
+                  >
+                    {content}
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
             </motion.li>
           ))}
         </ul>
