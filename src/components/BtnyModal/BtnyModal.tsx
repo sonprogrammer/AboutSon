@@ -162,8 +162,14 @@ const BtnyModal = () => {
         <h1 className="font-bold text-xl mb-2 text-center">🔫 트러블슈팅</h1>
 
         <div className="mb-3 flex flex-col gap-3 bg-gradient-to-r from-red-200 to-stone-200 px-10 py-7 rounded-xl ">
-          <p className="font-semibold">초기에는 여러 기능을 추가하려 했지만, 페이지가 중복되고 사이트의 핵심 목적이 흐려지는 문제 발생 </p>
-          <p className="font-semibold">결국 불필요한 기능을 제거하고, 프로젝트의 주제와 핵심 기능을 다시 정리하여 집중</p>
+          <p className="font-semibold">초기에는 여러 기능을 추가하려 했지만, 페이지가 중복되고 사이트의 핵심 목적이 흐려지는 문제 발생</p>
+          <p className="font-medium text-gray-400"><span>해결</span> : 불필요한 기능을 제거하고, 프로젝트의 주제와 핵심 기능을 다시 정리하여 집중</p>
+          
+          <p className="font-semibold"><span className="text-red-500">문제</span> : 채팅 입력창 구현 중 사용자가 Enter키를 눌러 메시지를 전송 할때 같은 메시지가 두번 전송되는 현상 발생</p>
+          <p className="font-semibold"><span className="text-orange-500">원인</span> : 한글은 조합형 입력을 사용하기 때문에 하나의 글자가 완성되기까지 여러 이벤트가 발생. Enter를 누르면 onKeyDown, onSubmit 이벤트가 모두
+             트리거되어 중복 전송
+          </p>
+          <p className="font-semibold"><span className="text-blue-500">해결</span> : 조합이 끝난 뒤에만 메시지를 전송하도록 로직을 수정</p>
 
         </div>
       </motion.div>
