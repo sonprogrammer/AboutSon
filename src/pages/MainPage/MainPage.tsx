@@ -1,5 +1,5 @@
 import { useRef, useState } from "react"
-import { AboutSection, CareerSection, ProjectSection, SkillSection, SummarySection } from "../../sections"
+import { AboutSection, CareerSection, MobileSection, ProjectSection, SkillSection, SummarySection } from "../../sections"
 import { projectData } from "../../data/project";
 
 
@@ -29,23 +29,26 @@ const MainPage = () => {
   
   
   return (
-    <div className="h-full w-full">
-      <div className="px-3 md:px-10">
+    <div className="h-screen w-full">
+      <div className="md:px-10">
 
-        <div className="md:px-10">
+        <div className="md:px-10 px-3">
           <AboutSection />
         </div>
-        <div className="mt-30">
+        <div className="mt-30 px-3">
           <SkillSection />
         </div>
-        <div className="mt-15">
+        <div className="mt-15 px-3">
           <CareerSection toProject={handleOpenFirstModal}/>
         </div>
-        <div ref={projectRef} className="mt-30">
+        <div ref={projectRef} className="mt-30 px-3">
           <ProjectSection selectedProject={selectedProject} setSelectedProject={setSelectedProject}/>
         </div>
-        <div>
+        <div className="px-3 sm:pb-10">
           <SummarySection />
+        </div>
+        <div className="mt-15 sm:hidden ">
+          <MobileSection />
         </div>
       </div>
       

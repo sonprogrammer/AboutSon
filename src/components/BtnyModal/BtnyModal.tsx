@@ -92,7 +92,7 @@ const BtnyModal = () => {
           도입, UI/UX 개선을 통해 모바일과 웹 사용자 경험을 향상시킴</li>
           
           </ul>
-        <ul className="grid grid-cols-3 gap-5">
+          <ul className="flex flex-col gap-2 sm:grid sm:grid-cols-3 sm:gap-5  ">
           {functions.map((f, i) => (
             <motion.li
               key={f.title}
@@ -149,7 +149,7 @@ const BtnyModal = () => {
       </motion.div>
 
       <motion.div
-        className='트러블 슈팅 bg-gray-50 rounded-2xl shadow-md p-3 px-7'
+        className='트러블 슈팅 bg-gray-50 rounded-2xl shadow-md p-1 sm:p-3 sm:px-7'
         initial={{ opacity: 0, x: -150 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}

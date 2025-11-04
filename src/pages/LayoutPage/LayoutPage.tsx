@@ -8,7 +8,7 @@ const LayoutPage = () => {
           <NavbarComponent />
       </div>
 
-      <div className='fixed z-10 mt-[120px] right-4'>
+      <div className='hidden sm:block sm:fixed z-20 mt-[120px] right-4 '>
         <ContactBtn />
       </div>
 

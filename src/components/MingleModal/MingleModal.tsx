@@ -61,14 +61,14 @@ const MingleModal = () => {
       </motion.div>
 
       <motion.div
-        className="기능 border-2 border-purple-400 rounded-2xl p-5"
+        className="기능 border-2 border-purple-400 rounded-2xl p-3 sm:p-5"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: true }}
       >
         <h1 className="font-bold text-xl mb-2 text-center">📱 담당 역할</h1>
-        <ul className="flex justify-around">
+        <ul className="flex flex-col gap-2 sm:grid sm:grid-cols-3 sm:gap-5  ">
           {functions.map((f, i) => (
             <motion.li
               key={f.title}
@@ -80,6 +80,7 @@ const MingleModal = () => {
                 ease: 'easeOut'
               }}
               viewport={{ once: true }}
+              className="bg-stone-50 rounded-xl p-2 sm:p-4 shadow-md"
             >
               <h4 className="font-bold">{f.title}</h4>
               <ul className="list-disc ml-5 mt-1">
@@ -104,7 +105,7 @@ const MingleModal = () => {
       </motion.div>
 
       <motion.div
-        className='트러블 슈팅 bg-gray-50 rounded-2xl shadow-md p-3 px-7'
+        className='트러블 슈팅 bg-gray-50 rounded-2xl shadow-md p-1 sm:p-3 sm:px-7'
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}

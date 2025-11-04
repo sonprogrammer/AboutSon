@@ -89,7 +89,7 @@ const VcModal = () => {
           <li>Skeleton UI 및 로딩바 적용으로 사용자 경험 향상</li>
 
         </ul>
-        <ul className="grid grid-cols-3 gap-5">
+        <ul className="flex flex-col gap-2 sm:grid sm:grid-cols-3 sm:gap-5 ">
           {functions.map((f, i) => (
             <motion.li
               key={f.title}
@@ -127,7 +127,7 @@ const VcModal = () => {
       </motion.div>
 
       <motion.div
-        className='트러블 슈팅 bg-gray-50 rounded-2xl shadow-md p-3 px-7'
+        className='트러블 슈팅 bg-gray-50 rounded-2xl shadow-md p-1 sm:p-3 sm:px-7'
         initial={{ opacity: 0, x: -150 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
@@ -135,7 +135,7 @@ const VcModal = () => {
       >
         <h1 className="font-bold text-xl mb-2 text-center">🔫 트러블슈팅</h1>
 
-        <div className="mb-3 flex flex-col gap-3 bg-gradient-to-r from-red-200 to-stone-50 px-10 py-7 rounded-xl ">
+        <div className="mb-3 flex flex-col gap-3 bg-gradient-to-r from-red-200 to-stone-50 px-3 py-3 sm:px-10 sm:py-7 rounded-xl ">
           {troubles.map((t,i) => (
             <motion.div
               key={i}

@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 
+
 .mySwiper{
   transition-timing-function: linear !important;
 }
