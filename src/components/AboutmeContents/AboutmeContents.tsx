@@ -13,7 +13,7 @@ const AboutmeContents = () => {
         </>
     ]
     return (
-        <div className='mt-7 flex flex-col gap-3 text-xl'>
+        <div className='mt-3 md:mt-7 flex flex-col gap-3 text-sm md:text-xl'>
             {sentences.map((sentence, i) => (
 
                 <motion.ul

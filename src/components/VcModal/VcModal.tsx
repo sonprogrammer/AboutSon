@@ -40,6 +40,14 @@ const VcModal = () => {
             https://github.com/sonprogrammer/VirtualCoin
           </a>
         </div>
+
+          <div>프로젝트 주소</div>
+          <div>
+            <a href="https://virtualcoinn.onrender.com/" target="_blank" rel="noopener noreferrer"
+            className="hover:text-red-500 hover:underline underline-offset-3 decoration-gray-300 decoration-2"
+            >https://virtualcoinn.onrender.com</a>
+          </div>
+
       </div>
 
       <div className="구분선 border border-gray-200"></div>
@@ -72,13 +80,23 @@ const VcModal = () => {
         <h1 className="text-center font-semibold text-gray-500 mb-5">
           개인 프로젝트로 백엔드와 프론트엔드 모두 설계·구현
         </h1>
-        <p className="shadow-md mb-3 p-3 rounded-md bg-stone-50 font-semibold">
-          업비트 웹소켓을 활용해 실시간 코인 시세등의 데이터를 수신하고, REST API기반 CRUD기능을 설계·구현하여
-          자산·거래 관리 기능을 개발<br/>
-          또한 REST API와 웹소켓을 연동하여 실시간 데이터 표시 및 사용자 인터렉션을 처리하고 사용자가 지정한 가격에 맞
-          춰 자동으로 주문이 체결되도록 로직을 구현 <br/>
-          PWA 및 반응형 UI적용하여 모바일 및 PC 사용자 경험을 향상 시킴
-        </p>
+        <ul className="shadow-md mb-3 p-3 rounded-md bg-stone-50 font-semibold list-disc pl-5">
+          <li>모델·컨트롤러·라우터 구조 기반으로 백엔드 로직을 설계하고 서비스 전반의 데이터 흐름을 구조화</li>
+          <li>업비트 웹소켓을 활용해 실시간 코인 시세등의 데이터를 수신하고, REST API기반 CRUD기능을 설계·구현하여
+          자산·거래 관리 기능을 개발</li>
+          <li>React Query 와 React hooks를 도입해 서버 상태를 효율적으로 관리하고 캐싱을 통한 데이터 동기화를 최적화</li>
+          <li>REST API와 웹소켓을 연동하여 실시간 데이터 표시 및 사용자 인터렉션을 처리하고 사용자가 지정한 가격에 맞춰 자동으로 주문이 체결되도록 로직을 구현</li>
+          <li>PWA 및 반응형 UI적용하여 모바일 및 PC 사용자 경험을 향상 시킴</li>
+        </ul>
+        <h1 className="text-center font-bold text-gray-700 mb-3 mt-5">
+          업데이트
+        </h1>
+        <ul className="update list-disc pl-5 mb-3 font-semibold">
+          <li>Refresh Token 만료 시 자동 로그아웃 처리로 안정적인 토큰관리 구현</li>
+          <li>WebSocket 중복 제거 및 불필요한 API 호출 최소화로 렌더링 성능 약 50% 개선</li>
+          <li>Skeleton UI 및 로딩바 적용으로 사용자 경험 향상</li>
+
+        </ul>
         <ul className="grid grid-cols-3 gap-5">
           {functions.map((f, i) => (
             <motion.li

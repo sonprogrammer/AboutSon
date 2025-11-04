@@ -1,6 +1,7 @@
 import { useRef, useState } from "react"
-import { AboutSection, LastSection, CareerSection, FeatureSection, ProjectSection, SkillSection, AppealSection } from "../../sections"
+import { AboutSection, LastSection, CareerSection, FeatureSection, ProjectSection, SkillSection, AppealSection, SummarySection } from "../../sections"
 import { projectData } from "../../data/project";
+
 
 
 
@@ -28,8 +29,8 @@ const MainPage = () => {
   
   
   return (
-    <div className="h-full mt-15 w-full">
-      <div className="p-10">
+    <div className="h-full w-full">
+      <div className="px-10">
 
         <div className="">
           <AboutSection />
@@ -43,16 +44,19 @@ const MainPage = () => {
         <div ref={projectRef} className="mt-30">
           <ProjectSection selectedProject={selectedProject} setSelectedProject={setSelectedProject}/>
         </div>
-        <div className="mt-30">
+        {/* <div className="mt-30">
           <FeatureSection />
+        </div> */}
+        <div>
+          <SummarySection />
         </div>
       </div>
-      <div>
+      {/* <div>
         <AppealSection />
-      </div>
-      <div className="">
+      </div> */}
+      {/* <div className="">
         <LastSection />
-      </div>
+      </div> */}
     </div>
   )
 }

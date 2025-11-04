@@ -42,7 +42,7 @@ const BtnyModal = () => {
         <div>프로젝트 주소 </div>
         <div>
           <a href='https://bnty.netlify.app/' target="_blank" rel="noreferrer"
-            className="hover:text-red-600  underline-offset-3 decoration-stone-600 decoration-2"
+            className="hover:text-red-600 hover:underline underline-offset-3 decoration-stone-600 decoration-2"
           >
             https://bnty.netlify.app/
           </a>
@@ -88,14 +88,17 @@ const BtnyModal = () => {
         <h1 className="text-center font-semibold text-gray-500 mb-5">
           개인 프로젝트로 백엔드와 프론트엔드 모두 설계·구현<br />
         </h1>
-        <p className="shadow-md mb-3 p-3 rounded-md bg-stone-50 font-semibold">
-          서버 측 REST API와 CRUD 기능을 직접 설계·구현하고 프론트엔드에서 이를 연동하여 
-          앨범 게시물, 날짜별 기록, 채팅, 노트 관리 기능을 완성.<br />
-          채팅의 실시간 처리를 위해 웹소켓을 도입하였고 추후에 사용자 경험을 위해 읽음/안읽음 처리를
-          통해 소통을 명확화.<br/>
-           QR코드 연결 성능 최적화, PWA
-          도입, UI/UX 개선을 통해 모바일과 웹 사용자 경험을 향상시킴
-          </p>
+        <ul className="shadow-md mb-3 p-3 rounded-md bg-stone-50 font-semibold list-disc pl-8">
+          <li>모델·컨트롤러·라우터 구조 기반으로 백엔드 로직을 설계하고 서비스 전반의 데이터 흐름을 구조화
+          </li>
+          <li>서버 측 REST API와 CRUD 기능을 직접 설계·구현하고 프론트엔드에서 이를 연동하여 
+          앨범 게시물, 날짜별 기록, 채팅, 노트 관리 기능을 완성</li>
+          <li>채팅의 실시간 처리를 위해 웹소켓을 도입하였고 추후에 사용자 경험을 위해 읽음/안읽음 처리를
+          통해 소통을 명확화</li>
+           <li>QR코드 연결 성능 최적화, PWA
+          도입, UI/UX 개선을 통해 모바일과 웹 사용자 경험을 향상시킴</li>
+          
+          </ul>
         <ul className="grid grid-cols-3 gap-5">
           {functions.map((f, i) => (
             <motion.li

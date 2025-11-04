@@ -29,6 +29,8 @@
     object-fit: contain;
 }
 
+
+
 .modal-content::-webkit-scrollbar {
   width: 8px;
 }

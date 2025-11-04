@@ -36,8 +36,8 @@ const CareerSection = ({toProject}: CareerSectionProps) => {
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 2, ease: 'easeOut' }}
       >
-        <h1 className="text-[100px] font-semibold">
-          Career
+        <h1 className="text-[80px] font-semibold">
+          Education
         </h1>
       </motion.div>
 
