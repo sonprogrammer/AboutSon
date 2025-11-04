@@ -1,5 +1,5 @@
 import { useRef, useState } from "react"
-import { AboutSection, LastSection, CareerSection, FeatureSection, ProjectSection, SkillSection, AppealSection, SummarySection } from "../../sections"
+import { AboutSection, CareerSection, ProjectSection, SkillSection, SummarySection } from "../../sections"
 import { projectData } from "../../data/project";
 
 
