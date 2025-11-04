@@ -36,12 +36,12 @@ const CareerSection = ({toProject}: CareerSectionProps) => {
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 2, ease: 'easeOut' }}
       >
-        <h1 className="text-[80px] font-semibold">
+        <h1 className="text-3xl sm:text-[60px] font-semibold pb-5 ml-5">
           Education
         </h1>
       </motion.div>
 
-      <div className="간단 박스형태 grid grid-cols-2 text-center gap-3">
+      <div className="간단 박스형태 grid grid-cols-1 sm:grid-cols-2 text-center gap-3">
         
         <div className={`${Box} flex flex-col items-center gap-5 shadow-[0_10px_10px_rgba(0,0,0,0.3),inset_0_0_25px_rgba(92,63,208,0.6)]`}>
           <img src="/elice.svg" alt="brandLogo" className="w-[150px] mt-10" />

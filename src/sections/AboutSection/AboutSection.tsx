@@ -34,13 +34,13 @@ const AboutSection = () => {
 
       <div className='flex flex-col gap-10 items-center relative p-10 rounded-3xl  md:p-12 mt-5 border border-stone-200 bg-stone-50 shadow-lg'>
 
-        <div className="flex flex-col md:flex-row md:gap-5 items-center">
+        <div className="flex flex-col lg:flex-row md:gap-5 items-center">
 
           <div className='w-[150px] md:w-[200px] flex justify-center md:justify-start'>
             <img src="/photo.png" alt="내사진" className='rounded-2xl border-3 border-white shadow-lg hover:scale-105 transition-transform duration-300' />
           </div>
 
-          <div className="flex-1 grid grid-cols-[120px_1fr] gap-2 mt-10 md:text-lg text-sm p-5 rounded-2xl ">
+          <div className="flex-1 grid grid-cols-[90px_1fr] md:grid-cols-[120px_1fr] gap-2 mt-10 md:text-lg text-sm p-5 rounded-2xl">
 
             <p>Name : </p> <p> 손 영 진</p>
 
@@ -72,11 +72,12 @@ const AboutSection = () => {
               <li>토익 835점</li>
             </ul>
           </div>
+          <div className="border w-full border-stone-200 lg:hidden"></div>
 
         </div>
 
         <div className='flex flex-col justify-center flex-1'>
-          <h1 className='font-bold text-sm md:text-xl'>Who I am</h1>
+          <h1 className='font-bold text-lg md:text-2xl'>Who I am</h1>
           <AboutmeContents />
         </div>
 

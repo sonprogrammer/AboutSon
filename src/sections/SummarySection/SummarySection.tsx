@@ -27,7 +27,7 @@ const SummarySection = () => {
             <div className="absolute bottom-0 left-0 w-52 h-52 bg-gradient-to-tr from-rose-100 via-amber-100 to-transparent rounded-full blur-3xl opacity-40" />
 
 
-            <div className="space-y-4 text-gray-700 relative z-10 mt-5 leading-relaxed text-base md:text-lg">
+            <div className="space-y-4 text-gray-700 relative z-10 mt-5 leading-relaxed text-sm md:text-lg">
                 <p>
                     해외 경험을 통해 다양한 환경 속에서도 빠르게 적응하고, 새로운 경험을 두려워하지 않는 태도를 갖게 되었습니다.
                 </p>

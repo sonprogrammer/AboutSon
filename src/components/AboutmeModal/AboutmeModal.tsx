@@ -37,7 +37,7 @@ const AboutmeModal = ({ handleClose }: AboutmeModalProps) => {
         initial='hidden'
         animate='visible'
         exit='exit'
-        className="modal-content relative w-[90%] xl:w-[70%] h-[85%] rounded-2xl flex flex-col p-8 px-14 bg-white overflow-y-auto"
+        className="modal-content relative w-[90%] xl:w-[70%] h-[85%] rounded-2xl flex flex-col p-8 px-5 md:px-10 bg-white overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         <button

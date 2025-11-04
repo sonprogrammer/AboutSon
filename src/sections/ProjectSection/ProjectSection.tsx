@@ -25,17 +25,17 @@ const ProjectSection = ({ selectedProject, setSelectedProject }: ProjectSectionP
 
 
   return (
-    <div className='flex flex-col gap-10 px-6'>
+    <div className='flex flex-col sm:gap-10 sm:px-6'>
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 2, ease: 'easeOut' }}
       >
-        <h1 className="text-[100px] font-semibold">
+        <h1 className="text-3xl sm:text-[60px] font-semibold pb-5 ml-5">
           Projects
         </h1>
       </motion.div>
-      <div className='grid grid-cols-2 gap-10 px-6'>
+      <div className='grid grid-cols-2 gap-3 sm:gap-10 sm:px-6'>
         {projects.map((a, i) => (
           <motion.div
             initial={{ opacity: 0, y: 50 }}

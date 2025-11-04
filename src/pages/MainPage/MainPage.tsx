@@ -30,9 +30,9 @@ const MainPage = () => {
   
   return (
     <div className="h-full w-full">
-      <div className="px-10">
+      <div className="px-3 md:px-10">
 
-        <div className="">
+        <div className="md:px-10">
           <AboutSection />
         </div>
         <div className="mt-30">
@@ -44,19 +44,11 @@ const MainPage = () => {
         <div ref={projectRef} className="mt-30">
           <ProjectSection selectedProject={selectedProject} setSelectedProject={setSelectedProject}/>
         </div>
-        {/* <div className="mt-30">
-          <FeatureSection />
-        </div> */}
         <div>
           <SummarySection />
         </div>
       </div>
-      {/* <div>
-        <AppealSection />
-      </div> */}
-      {/* <div className="">
-        <LastSection />
-      </div> */}
+      
     </div>
   )
 }

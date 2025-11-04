@@ -11,20 +11,13 @@ const MingleModal = () => {
   const functions = mingleFn
 
   return (
-    <div className='flex flex-col gap-5'>
+    <div className='flex flex-col gap-5 text-sm sm:text-md'>
       <h1 className='text-center font-medium'>(팀 프로젝트)</h1>
       <div className="구분선 border border-gray-200"></div>
 
       
       <div
-        className="맨위 소개 "
-        style={{
-          display: 'grid',
-          gridTemplateColumns: '150px 1fr',
-          gap: '10px',
-          alignItems: 'center',
-          margin: '0 auto'
-        }}
+        className="맨위 소개 grid gap-[10px] grid-cols-[80px_1fr] sm:grid-cols-[120px_1fr] items-center mx-auto"
       >
         <div>프로젝트 소개</div>
         <h3>다양한 사람들과 취향을 나누는 플레이리스트 공유 플랫폼</h3>

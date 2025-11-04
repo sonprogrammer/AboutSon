@@ -32,7 +32,7 @@ const ProjectModal = ({ project, handleCloseModal, children }: ProjectModalProps
                 initial='hidden'
                 animate='visible'
                 exit='exit'
-                className={`modal-content relative w-[90%] xl:w-[70%] h-[85%] rounded-2xl flex flex-col p-8 px-14 bg-white overflow-y-auto shadow-2xl ${color.shadow}`}
+                className={`modal-content relative w-[90%] xl:w-[70%] h-[85%] rounded-2xl flex flex-col p-8 px-3 sm:px-5 md:px-14 bg-white overflow-y-auto shadow-2xl ${color.shadow}`}
                 onClick={(e) => e.stopPropagation()}
             >
                 <button
@@ -40,7 +40,7 @@ const ProjectModal = ({ project, handleCloseModal, children }: ProjectModalProps
                     className={`absolute right-5 top-5 p-4 border rounded-full w-[24px] h-[24px]
                      cursor-pointer flex justify-center items-center ${color.bg} ${color.hover} text-white `}
                 >X</button>
-                <h1 className={`text-4xl font-bold text-center ${color.text}`}>{project}</h1>
+                <h1 className={`text-lg sm:text-4xl font-bold text-center ${color.text}`}>{project}</h1>
                
                 {children}
 
