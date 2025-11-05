@@ -58,7 +58,7 @@ const SummarySection = () => {
                 ].map((tag, index) => (
                     <motion.button
                         key={index}
-                        whileHover={{ scale: 1.05 }}
+                        whileHover={{ scale: 1.05, y: -12}}
                         transition={{ type: "spring", stiffness: 300 }}
                         className={`bg-white/80 backdrop-blur-sm border px-4 py-2 rounded-full
                          text-gray-700 font-medium text-sm md:text-base shadow-sm hover:shadow-md transition-all`}
