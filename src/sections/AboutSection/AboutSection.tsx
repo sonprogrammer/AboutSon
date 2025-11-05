@@ -94,7 +94,7 @@ const AboutSection = () => {
           transition={{ duration: 0.8, ease: 'easeInOut' }}
           onClick={handleMoreClick}
         >
-          more About
+          More About Me
         </MotionViewBtn>
       </div>
 
