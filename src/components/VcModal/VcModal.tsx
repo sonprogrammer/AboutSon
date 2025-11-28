@@ -72,12 +72,13 @@ const VcModal = () => {
         <h1 className="text-center font-semibold text-gray-500 mb-5">
           개인 프로젝트로 백엔드와 프론트엔드 모두 설계·구현
         </h1>
-        <ul className="shadow-md mb-3 p-3 rounded-md bg-stone-50 font-semibold list-disc pl-5">
+        <ul className="shadow-md mb-3 p-3 rounded-md bg-stone-50 font-semibold list-disc pl-5 flex flex-col gap-2">
           <li>모델·컨트롤러·라우터 구조 기반으로 백엔드 로직을 설계하고 서비스 전반의 데이터 흐름을 구조화</li>
           <li>업비트 웹소켓을 활용해 실시간 코인 시세등의 데이터를 수신하고, REST API기반 CRUD기능을 설계·구현하여
           자산·거래 관리 기능을 개발</li>
           <li>로그인 유지를 위해 짧은 주기의 Access Token은 로컬에 저장하고, Refresh Token은 httponly쿠키에 저장하는 방식을 적용해 보안을 강화</li>
-          <li>React Query 와 React hooks를 도입해 서버 상태를 효율적으로 관리하고 캐싱을 통한 데이터 동기화를 최적화</li>
+          <li>React Query와 커스텀 훅을 도입해 서버 상태와 사용자 인증상태를 효율적으로 관리하고, 캐싱을 통한 데이터 동기화를 최적화</li>
+          <li>서버에서는 컨트롤러와 미들웨어를 통해 사용자 권한을 검증하여 보안과 접근을 제어</li>
           <li>REST API와 웹소켓을 연동하여 실시간 데이터 표시 및 사용자 인터렉션을 처리하고 사용자가 지정한 가격에 맞춰 자동으로 주문이 체결되도록 로직을 구현</li>
           <li>PWA 및 반응형 UI적용하여 모바일 및 PC 사용자 경험을 향상 시킴</li>
         </ul>

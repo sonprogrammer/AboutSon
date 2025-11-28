@@ -81,9 +81,10 @@ const BtnyModal = () => {
         <h1 className="text-center font-semibold text-gray-500 mb-5">
           개인 프로젝트로 백엔드와 프론트엔드 모두 설계·구현<br />
         </h1>
-        <ul className="shadow-md mb-3 p-3 rounded-md bg-stone-50 font-semibold list-disc pl-8">
+        <ul className="shadow-md mb-3 p-3 rounded-md bg-stone-50 font-semibold list-disc pl-8 flex flex-col gap-2">
           <li>모델·컨트롤러·라우터 구조 기반으로 백엔드 로직을 설계하고 서비스 전반의 데이터 흐름을 구조화
           </li>
+          <li>서버에서는 컨트롤러와 미들웨어를 통해 사용자 권한을 검증하여 보안과 접근을 제어</li>
           <li>서버 측 REST API와 CRUD 기능을 직접 설계·구현하고 프론트엔드에서 이를 연동하여 
           앨범 게시물, 날짜별 기록, 채팅, 노트 관리 기능을 완성</li>
           <li>로그인 유지를 위해 짧은 주기의 Access Token은 로컬에 저장하고, Refresh Token은 httponly쿠키에 저장하는 방식을 적용해 보안을 강화</li>
