@@ -9,5 +9,6 @@ export const vcSkills = [
     'nodejs.svg', 
     'mongodb.svg', 
     'jwt.svg', 
-    'figma.svg'
-  ];
+    'figma.svg',
+    'reactquery.svg'
+  ]

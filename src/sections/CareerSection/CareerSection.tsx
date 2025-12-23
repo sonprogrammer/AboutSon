@@ -1,110 +1,126 @@
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
-import { Box } from "../../CommonStyle"
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Button, styled, type ButtonProps } from "@mui/material";
 import { purple } from "@mui/material/colors";
 
-
-interface CareerSectionProps{
+interface CareerSectionProps {
   toProject: () => void
 }
 
-
-const CareerSection = ({toProject}: CareerSectionProps) => {
-
+const CareerSection = ({ toProject }: CareerSectionProps) => {
   const ref = useRef(null)
-
-  const inView = useInView(ref, { margin: '-50px' })
+  const inView = useInView(ref, { margin: '-100px', once: true })
 
   const ViewBtn = styled(Button)<ButtonProps>(({ theme }) => ({
-    color: theme.palette.getContrastText(purple[500]),
+    color: '#fff',
     borderRadius: '100px',
-    padding: '10px 20px',
-    backgroundColor: purple[300],
+    padding: '12px 30px',
+    backgroundColor: purple[500],
+    fontWeight: 'bold',
+    textTransform: 'none',
     '&:hover': {
-      backgroundColor: purple[700]
+      backgroundColor: purple[700],
+      boxShadow: '0 10px 20px -5px rgba(168, 85, 247, 0.4)',
     }
   }))
 
   const MotionViewBtn = motion(ViewBtn)
 
+  const cardStyle = "bg-white p-8 rounded-[2rem] border border-slate-100 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] transition-all duration-300 flex flex-col justify-center items-center text-center";
+
   return (
     <div ref={ref} className="w-full">
       <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 2, ease: 'easeOut' }}
+        initial={{ opacity: 0, x: -20 }}
+        animate={inView ? { opacity: 1, x: 0 } : {}}
+        transition={{ duration: 0.8 }}
+        className="flex items-center gap-3 mb-10 ml-2"
       >
-        <h1 className="text-3xl sm:text-[60px] font-semibold pb-5 ml-5">
-          Education
-        </h1>
+        <div className="w-1.5 h-7 bg-purple-500 rounded-full" />
+        <h2 className='text-3xl font-bold text-slate-900 tracking-tight'>Education & Experience</h2>
       </motion.div>
 
-      <div className="간단 박스형태 grid grid-cols-1 sm:grid-cols-2 text-center gap-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         
-        <div className={`${Box} flex flex-col items-center gap-5 shadow-[0_10px_10px_rgba(0,0,0,0.3),inset_0_0_25px_rgba(92,63,208,0.6)]`}>
-          <img src="/elice.svg" alt="brandLogo" className="w-[150px] mt-10" />
-          <h1 className="font-bold text-2xl">
-            코테, 인터뷰로 선발
-          </h1>
-          <p className="text-gray-600 text-lg">
-            프론트엔드에 대한 전반적인 이해를 쌓았습니다.
+        <motion.div 
+          whileHover={{ y: -5 }}
+          className={`${cardStyle} md:col-span-1`}
+        >
+          <img src="/elice.svg" alt="elice" className="w-32 mb-6" />
+          <h3 className="font-bold text-xl text-slate-800 mb-3">코테, 인터뷰로 선발</h3>
+          <p className="text-slate-500 leading-relaxed">
+            체계적인 커리큘럼을 통해 <br className="hidden md:block"/> 프론트엔드 전반의 이해도를 높였습니다.
           </p>
-        </div>
+        </motion.div>
 
-        <div className={`${Box} shadow-[0_10px_10px_rgba(0,0,0,0.3),inset_0_0_25px_rgba(128,128,128,0.4)] !rounded-xl !border-purple-300 !border-2`}>
-          <div className="flex items-center justify-center gap-5">
-            <img src="/teamwork.svg" alt="협업이미지" className="w-12" />
-            <h1 className="font-bold text-2xl">
-              협업 경험
-            </h1>
+        <motion.div 
+          whileHover={{ y: -5 }}
+          className={`${cardStyle} md:row-span-2 !items-start !text-left bg-slate-50/50 border-dashed border-2 border-purple-100`}
+        >
+          <div className="flex items-center gap-3 mb-6">
+            <div className="p-2 bg-purple-100 rounded-lg">
+              <img src="/teamwork.svg" alt="협업" className="w-6 h-6" />
+            </div>
+            <h3 className="font-bold text-xl text-slate-800">협업 및 프로세스</h3>
           </div>
 
-          <ul className="list-disc text-left px-5 mt-5 text-gray-600 flex flex-col gap-2">
-            <li><strong className="text-black underline underline-offset-1">Git Flow 기반 브랜치 전략</strong>과 코드 리뷰 문화를 통해 이슈별 기능 개발부터 주기적 배포, 핫픽스까지 팀 협업과 안정적인 프로덕션 관리를 경험하였습니다.</li>
-            <li><strong className="text-black underline underline-offset-1">코딩 컨벤션</strong>을 준수해 코드 스타일 일관성을 유지함으로써 가독성과 유지보수성을 크게 향상 시켰습니다.</li>
-            <li><strong className="text-black underline underline-offset-1">애자일 개발 프로세스</strong>에 따라 스프린트 계획, 데일리 미팅, 회고에 참여하며 팀 내 효율적인 소통과 협업을 경험했습니다.</li>
-
+          <ul className="space-y-5 text-sm md:text-[15px] text-slate-600">
+            <li className="flex gap-3">
+              <span className="text-purple-500 font-bold">•</span>
+              <p>
+                <strong className="text-slate-900 font-semibold">Git Flow 전략:</strong> 이슈별 브랜치 관리와 코드 리뷰를 통한 안정적인 배포 프로세스를 경험했습니다.
+              </p>
+            </li>
+            <li className="flex gap-3">
+              <span className="text-purple-500 font-bold">•</span>
+              <p>
+                <strong className="text-slate-900 font-semibold">코딩 컨벤션:</strong> 일관된 스타일 유지를 통해 팀 생산성과 유지보수성을 극대화했습니다.
+              </p>
+            </li>
+            <li className="flex gap-3">
+              <span className="text-purple-500 font-bold">•</span>
+              <p>
+                <strong className="text-slate-900 font-semibold">애자일 프로세스:</strong> 데일리 미팅과 회고를 통해 팀 내 소통을 효율화했습니다.
+              </p>
+            </li>
           </ul>
-        </div>
+        </motion.div>
 
-        <div className={`${Box} rounded-xl shadow-[0_10px_10px_rgba(0,0,0,0.3),inset_0_0_25px_rgba(128,128,128,0.4)] !border-purple-300 !border-2`}>
-          <h1 className="font-bold text-2xl">
-            프론트엔드 & 백엔드 개발 경험
-          </h1>
-          <p className="mt-5 text-gray-600 text-lg">
-            두번의 팀프로젝트에서 각각 <strong className="text-black underline underline-offset-2">프론트엔드와 백엔드 역할</strong>을 수행을 하며, UI구현부터 서버 API개발까지 <strong className="text-black underline underline-offset-2">전반적인 웹 서비스 개발</strong> 과정을 경험했습니다.
+        <motion.div 
+          whileHover={{ y: -5 }}
+          className={cardStyle}
+        >
+          <h3 className="font-bold text-xl text-slate-800 mb-3">Full-stack Experience</h3>
+          <p className="text-slate-500 text-[15px] leading-relaxed">
+            UI 구현부터 서버 API 개발까지 <br/> <strong className="text-purple-600 font-semibold">웹 서비스의 라이프사이클</strong>을 직접 경험했습니다.
           </p>
-        </div>
+        </motion.div>
 
-        <div className={`${Box} shadow-[0_10px_10px_rgba(0,0,0,0.3),inset_0_0_25px_rgba(92,63,208,0.6)]`}>
-          <h1 className="font-bold text-2xl">
-            지속적인 성장과 도전
-          </h1>
-          <p className="mt-5 text-gray-600 text-lg">
-            부트캠프에서의 경험을 토대로 실무에 필요한 역량을 갖추었고, 지속해서 <strong className="text-black underline underline-offset-2">새로운 기술과 트렌드</strong>에 적극적으로 도전하며 성장하고 있습니다.
+        <motion.div 
+          whileHover={{ y: -5 }}
+          className={`${cardStyle} md:col-span-2 mt-2 bg-gradient-to-r from-purple-50 to-indigo-50 border-none`}
+        >
+          <h3 className="font-bold text-xl text-slate-800 mb-2">지속적인 성장과 도전</h3>
+          <p className="text-slate-600 max-w-2xl">
+            부트캠프의 경험을 발판 삼아, 실무에 필요한 역량을 갖추기 위해 <br className="hidden md:block"/>
+            <strong className="text-slate-900">새로운 기술 트렌드</strong>에 끊임없이 도전하며 성장하고 있습니다.
           </p>
-        </div>
+        </motion.div>
       </div>
 
-    {/* TODO 링크걸어주기 */}
-      <div className="mt-10 flex justify-center">
+      <div className="mt-16 flex justify-center">
         <MotionViewBtn
           variant='contained'
-          endIcon={<ArrowForwardIosIcon />}
-          initial={{ opacity: 0, y: 20 }}
+          endIcon={<ArrowForwardIosIcon sx={{ fontSize: '14px !important' }} />}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ amount: 0.5 }}
-          transition={{ duration: 0.8, ease: 'easeInOut' }}
-          whileHover={{}}
+          viewport={{ once: true }}
           onClick={toProject}
         >
-          View Project
+          View Projects
         </MotionViewBtn>
       </div>
-
-
     </div>
   )
 }

@@ -1,169 +1,205 @@
 import { mingleSkills } from "../../data/mingleSkills"
-import { StyledBox } from "../../style"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import { mingleFn } from "../../data/mingleFn";
 import { motion } from 'framer-motion'
 
 const MingleModal = () => {
-
   const skills = mingleSkills
   const functions = mingleFn
 
+
+  const SectionTitle = ({ title, icon, isDark = false }: { title: string; icon?: string; isDark?: boolean }) => (
+    <div className="flex items-center gap-2 mb-6 justify-center">
+      <span className="text-xl">{icon}</span>
+      <h2 className={`text-2xl font-bold tracking-tight ${isDark ? 'text-white' : 'text-slate-900'}`}>
+        {title}
+      </h2>
+    </div>
+  )
+
   return (
-    <div className='flex flex-col gap-5 text-sm sm:text-md'>
-      <h1 className='text-center font-medium'>(팀 프로젝트)</h1>
-      <div className="구분선 border border-gray-200"></div>
-
+    <div className='flex flex-col gap-12 text-slate-700 pb-10'>
       
-      <div
-        className="맨위 소개 grid gap-[10px] grid-cols-[80px_1fr] sm:grid-cols-[120px_1fr] items-center mx-auto"
-      >
-        <div>프로젝트 소개</div>
-        <h3>다양한 사람들과 취향을 나누는 플레이리스트 공유 플랫폼</h3>
 
-        <div>깃허브 주소</div>
-        <div>
-          <a href='https://github.com/sonprogrammer/mingle' target="_blank" rel="noreferrer"
-            className="hover:text-purple-500 hover:underline underline-offset-3  decoration-gray-400 decoration-2"
-          >
-            https://github.com/sonprogrammer/mingle
-          </a>
+      <section className="text-center space-y-4">
+        <span className="px-4 py-1 bg-purple-100 text-purple-600 rounded-full text-xs font-bold uppercase tracking-widest">
+          Team Project
+        </span>
+        <h1 className="text-3xl md:text-4xl mt-2 font-black text-slate-900 leading-tight">Mingle: 취향 공유 플레이리스트 SNS</h1>
+        <div className="flex flex-col md:flex-row justify-center items-center gap-3 md:gap-8 text-sm text-slate-500">
+          <div className="flex items-center gap-2">
+            <span className="font-bold text-slate-900 italic">Description</span>
+            <span>음악 취향을 나누는 커뮤니티 플랫폼</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="font-bold text-slate-900 italic">GitHub</span>
+            <a href='https://github.com/sonprogrammer/mingle' target="_blank" rel="noreferrer" className="text-purple-500 hover:underline">Link</a>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div className="border border-gray-200"></div>
+      <div className="h-px bg-slate-100" />
 
-      <motion.div
-        className="역할 bg-gray-50 rounded-2xl shadow-md"
-        initial={{ opacity: 0, y: 50 }}
+
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="bg-slate-50 rounded-[2rem] p-8 md:p-10 border border-slate-100"
+      >
+        <SectionTitle title="Core Role" icon="👤" />
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="md:col-span-1 flex flex-col items-center justify-center border-r border-slate-200">
+             <span className="text-4xl font-black text-purple-600 mb-2 font-mono">Front-End</span>
+             <p className="text-slate-400 text-sm font-medium">Lead Developer</p>
+          </div>
+          <div className="md:col-span-2 space-y-4 text-[15px] md:text-base leading-relaxed">
+            <p className="flex gap-3"><span className="text-purple-500 font-bold">01.</span> 다양한 서비스 기능을 유기적으로 연결하기 위한 컴포넌트 아키텍처 설계 및 백엔드 데이터 바인딩</p>
+            <p className="flex gap-3"><span className="text-purple-500 font-bold">02.</span> RESTful API를 활용한 동적 화면 업데이트 및 사용자 인터랙션 중심의 데이터 흐름 구축</p>
+            <p className="flex gap-3"><span className="text-purple-500 font-bold">03.</span> 전역 상태 관리 및 효율적인 API 요청 처리를 통한 애플리케이션 최적화</p>
+          </div>
+        </div>
+      </motion.section>
+
+
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
       >
-        <div className="flex flex-col items-center justify-center mb-2 mt-2">
-          <h1 className="text-xl font-bold">역할</h1>
-          <h2 className="font-semibold text-blue-600">프론트엔드</h2>
-        </div>
-
-        <div className=" p-3 rounded-2xl font-semibold flex flex-col gap-3 px-7 py-5">
-          <p>
-            1. 프로젝트에서 다양한 기능을 구현하기 위해 여러 컴포넌트를 제작하고 백엔드와의 원활한 데이터 흐름을 구축
-          </p>
-          <p>
-            2. REST API를 통해 사용자 입력을 서버에 전달하고 서버 처리 결과를 받아와 React에서
-            동적으로 화면을 업데이트하는 기능을 구현
-          </p>
-          <p>
-            3. 라이브러리들을 활용하여 상태관리와 API 요청을 처리하여 애플리케이션의 흐름을 유기적으로 연결
-          </p>
-        </div>
-      </motion.div>
-
-      <motion.div
-        className="기능 border-2 border-purple-400 rounded-2xl p-3 sm:p-5"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        viewport={{ once: true }}
-      >
-        <h1 className="font-bold text-xl mb-2 text-center">📱 담당 역할</h1>
-        <ul className="flex flex-col gap-2 sm:grid sm:grid-cols-3 sm:gap-5  ">
+        <SectionTitle title="Key Features" icon="📱" />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {functions.map((f, i) => (
-            <motion.li
-              key={f.title}
-              initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50}}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{
-                duration: 0.6,
-                delay: i * 0.3,
-                ease: 'easeOut'
-              }}
-              viewport={{ once: true }}
-              className="bg-stone-50 rounded-xl p-2 sm:p-4 shadow-md"
-            >
-              <h4 className="font-bold">{f.title}</h4>
-              <ul className="list-disc ml-5 mt-1">
+            <div key={i} className="bg-white border border-slate-100 p-6 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.02)] hover:border-purple-200 transition-colors">
+              <h4 className="font-bold text-lg text-slate-900 mb-3 flex items-center gap-2">
+                <div className="w-1 h-4 bg-purple-400 rounded-full" /> {f.title}
+              </h4>
+              <ul className="space-y-2">
                 {f.items.map((item, j) => (
-                  <motion.li
-                    key={item}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{
-                      duration: 0.4,
-                      delay: i * 0.2 + j * 0.1,
-                    }}
-                    viewport={{ once: true }}
-                  >
-                    {item}
-                  </motion.li>
+                  <li key={j} className="text-sm text-slate-500 flex gap-2">
+                    <span className="text-purple-300">•</span> {item}
+                  </li>
                 ))}
               </ul>
-            </motion.li>
+            </div>
           ))}
-        </ul>
-      </motion.div>
+        </div>
+      </motion.section>
 
-      <motion.div
-        className='트러블 슈팅 bg-gray-50 rounded-2xl shadow-md p-1 sm:p-3 sm:px-7'
-        initial={{ opacity: 0, y: 50 }}
+
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: true }}
+        className="bg-[#0f172a] rounded-[2.5rem] p-8 md:p-12 text-white overflow-hidden relative"
       >
-        <h1 className="font-bold text-xl mb-2 text-center">🔫 트러블슈팅</h1>
 
-        <div className="mb-3 grid grid-cols-[100px_1fr] gap-x-4 gap-y-2 bg-gradient-to-r from-purple-100 to-indigo-50 p-5 rounded-xl ">
-          <h1 className="font-bold col-span-2">🎯 날씨 api cors 이슈</h1>
-
-          <p className="font-bold">reason</p>
-          <p>api 요청시 커스텀 훅을 통해 헤더에 토큰 값을 포함시켜 요청</p>
-
-          <p className="font-bold">problem</p>
-          <p>openweathermap api는 api 제공자가 제공하는 서비스의 보안을 강화하고 무단 엑세스를 방지하기 위해 Authorization 토큰을 포함하는 것을 허용하지 않음. 이에 따라 브라우저에서 CORS 정책에 의해 요청이 차단되어 오류가 발생함</p>
-
-          <p className="font-bold">solution</p>
-          <p>기존에 사용하던 커스텀 Axios 인스턴스는 Authorization헤더를 포함하고 있기 때문에 이를 사용하지 않고 기본 axios.get(...) 으로 직접 요청을 보내도록 수정하여 문제를 해결함</p>
+        <div className="absolute top-0 right-0 p-10 opacity-5 font-black text-8xl italic select-none">
+          DEBUG
         </div>
-      </motion.div>
 
-      <motion.div
-        className="느낀점 p-6 bg-gray-50 rounded-xl shadow-md"
-        initial={{ opacity: 0, scale: 0.9 }}
+
+        <SectionTitle title="Trouble Shooting" icon="🔫" isDark={true} />
+        
+        <div className="relative z-10 bg-white/5 backdrop-blur-md rounded-3xl p-6 md:p-10 border border-white/10 shadow-2xl">
+          <div className="flex flex-col md:flex-row md:items-center gap-4 mb-8">
+            <span className="w-fit bg-purple-500 text-white text-[10px] px-3 py-1 rounded-full font-black tracking-widest">
+              ISSUE 01
+            </span>
+            <h3 className="text-xl md:text-2xl font-bold text-white">
+              날씨 API CORS 정책 위반 이슈
+            </h3>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-3 relative">
+            <div className="hidden md:block absolute top-1/2 left-1/3 w-px h-12 bg-white/10 -translate-y-1/2" />
+            <div className="hidden md:block absolute top-1/2 left-2/3 w-px h-12 bg-white/10 -translate-y-1/2" />
+
+            <div className="space-y-3">
+              <div className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-purple-400" />
+                <p className="text-xs font-black text-purple-400 uppercase tracking-tighter">Reason</p>
+              </div>
+              <p className="text-[15px] text-slate-300 leading-relaxed">
+                공통 Axios 인스턴스의 인터셉터를 통해 모든 요청 헤더에 <span className="text-white font-medium underline underline-offset-4 decoration-purple-500/50">Authorization 토큰이 자동 포함</span>되도록 설계됨
+              </p>
+            </div>
+
+            <div className="space-y-3">
+              <div className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
+                <p className="text-xs font-black text-red-400 uppercase tracking-tighter">Problem</p>
+              </div>
+              <p className="text-[15px] text-slate-300 leading-relaxed">
+                OpenWeather API는 보안 규정상 헤더의 커스텀 토큰을 허용하지 않음. 이로 인해 브라우저 단에서 <span className="text-red-300 font-medium">CORS Preflight 에러</span> 발생
+              </p>
+            </div>
+
+            <div className="space-y-3">
+              <div className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-green-400" />
+                <p className="text-xs font-black text-green-400 uppercase tracking-tighter">Solution</p>
+              </div>
+              <p className="text-[15px] text-emerald-100 leading-relaxed font-medium">
+                해당 요청에 한해서만 인터셉터가 없는 <span className="bg-emerald-500/20 px-1 rounded text-emerald-300 underline underline-offset-4">기본 axios 인스턴스</span>를 사용하도록 분리하여 헤더 충돌 해결
+              </p>
+            </div>
+          </div>
+        </div>
+      </motion.section>
+
+      <motion.section
+        initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-      viewport={{ once: true }}
+        viewport={{ once: true }}
+        className="text-center bg-purple-50/50 rounded-3xl p-8 md:p-12"
       >
-        <h1 className="font-bold text-xl mb-2 text-center">❗느낀점</h1>
-        <p className="leading-relaxed text-gray-700 text-justify">팀 프로젝트를 하면서 혼자 고민하는 것보다 팀원들과 적극적으로 소통하고 피드백을 주고받는 과정이 더 좋은 결과를
-          만든다는 점을 깨달았습니다. 다양한 관점에서 문제를 바라보고 서로의 의견을 존중하는 것이 프로젝트 완성도 향상에 큰
-          도움이 되었습니다</p>
-      </motion.div>
+        <SectionTitle title="Insights" icon="❗" />
+        <p className="max-w-3xl mx-auto leading-relaxed text-slate-600 md:text-lg italic">
+          "팀 프로젝트를 통해 <span className="text-purple-600 font-bold">적극적인 소통</span>이 어떻게 결과물의 품질로 이어지는지 체감했습니다. 
+          다양한 관점의 피드백을 수용하며 데이터의 정합성을 맞추고, UI의 완성도를 높이는 과정은 혼자서는 얻을 수 없는 값진 성장이었습니다."
+        </p>
+      </motion.section>
 
-      <div className='기술 스택 w-full flex justify-center'>
-        <div className={`${StyledBox} w-full`}>
-          <Swiper
-            spaceBetween={60}
-            slidesPerView={"auto"}
-            autoplay={{ delay: 10, disableOnInteraction: false }}
-            loop={true}
-            speed={3000}
-            modules={[Autoplay]}
-            className='mySwiper'
-            style={{ height: '100px' }}
-          >
-            {skills.map((skill) => (
-              <SwiperSlide key={skill}>
-                <img src={skill} alt={skill} className="transition-transform duration-300 hover:scale-110"/>
 
-              </SwiperSlide>
-            ))}
-          </Swiper>
+      <div className='w-full mt-10 border-t border-slate-100 pt-10 overflow-hidden'>
+  <div className="flex justify-center mb-6">
+    <span className="text-[10px] font-black text-slate-300 uppercase tracking-[0.2em]">Technologies Used</span>
+  </div>
+  
+  <Swiper
+
+    modules={[Autoplay]}
+    spaceBetween={50} 
+    slidesPerView={"auto"} 
+    loop={true} 
+    speed={4000}
+    autoplay={{
+      delay: 0, 
+      disableOnInteraction: false, 
+    }}
+   
+    className="flex items-center !overflow-visible" 
+    style={{ height: '100px' }}
+  >
+
+    {[...skills, ...skills, ...skills].map((skill, i) => (
+      <SwiperSlide key={i} style={{ width: 'auto' }} className="flex items-center">
+        <div className="group flex items-center justify-center px-2">
+          <img 
+            src={skill} 
+            alt="skill icon" 
+            className="h-10 w-auto object-contain opacity-40 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300 transform group-hover:scale-110" 
+          />
         </div>
-      </div>
+      </SwiperSlide>
+    ))}
+  </Swiper>
+</div>
 
     </div>
   )
 }
 
-export default MingleModal
+export default MingleModal;

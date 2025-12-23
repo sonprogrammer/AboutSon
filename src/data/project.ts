@@ -6,13 +6,6 @@ export const projectData = [
       link: "#"
     },
     {
-      img: "CAN.svg",
-      title: "CAN (Check Again Note)",
-      desc: "나만의 웹 오답노트 서비스",
-      shorts: 'Check Again Note',
-      link: "#"
-    },
-    {
       img: "bnty.svg",
       title: "BNTY (Be Next To You)",
       desc: "트레이너와 회원간 소통 서비스",

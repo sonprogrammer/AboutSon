@@ -3,18 +3,20 @@ import { ContactBtn, NavbarComponent } from '../../components'
 
 const LayoutPage = () => {
   return (
-    <div className='h-screen flex flex-col'>
-      <div className='nav fixed top-0 w-full z-10'>
-          <NavbarComponent />
-      </div>
+    <div className='min-h-screen flex flex-col bg-white'>
+      
+      <nav className='fixed top-0 w-full z-[100] backdrop-blur-md bg-white/80 border-b border-slate-50'>
+        <NavbarComponent />
+      </nav>
 
-      <div className='hidden sm:block sm:fixed z-20 mt-[120px] right-4 '>
+      <div className='hidden sm:block fixed z-50 top-30 right-10 animate-bounce-slow'>
         <ContactBtn />
       </div>
 
-      <div className='mt-[104px] flex-1'>
+      <main className='mt-[80px] md:mt-[100px] flex-1 w-full'>
         <Outlet />
-      </div>
+      </main>
+
     </div>
   )
 }
