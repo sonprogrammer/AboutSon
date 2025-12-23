@@ -25,5 +25,11 @@ export const projectData = [
       desc: "모의코인 투자 서비스",
       shorts: 'Virtual Coin',
       link: "#"
-    },
+    },{
+      img: "fuelly.png",
+      title: "Fuelly",
+      desc: "AI기반 개인 맞춤 영양 관리 웹 서비스",
+      shorts: '',
+      link: "#"
+    }
   ]

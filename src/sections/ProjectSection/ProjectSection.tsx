@@ -79,6 +79,7 @@ const ProjectSection = ({ selectedProject, setSelectedProject }: ProjectSectionP
           {selectedProject === 'CAN (Check Again Note)' && <CanModal />}
           {selectedProject === 'BNTY (Be Next To You)' && <BtnyModal />}
           {selectedProject === 'VC (Virtual Coin)' && <VcModal />}
+          {selectedProject === 'Fuelly' && <VcModal />}
         </ProjectModal>
       }
       </AnimatePresence>
