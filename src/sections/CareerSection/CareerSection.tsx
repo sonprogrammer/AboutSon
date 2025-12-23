@@ -12,7 +12,7 @@ const CareerSection = ({ toProject }: CareerSectionProps) => {
   const ref = useRef(null)
   const inView = useInView(ref, { margin: '-100px', once: true })
 
-  const ViewBtn = styled(Button)<ButtonProps>(({ theme }) => ({
+  const ViewBtn = styled(Button)<ButtonProps>(() => ({
     color: '#fff',
     borderRadius: '100px',
     padding: '12px 30px',

@@ -8,7 +8,7 @@ import { AboutmeContents, AboutmeModal } from "../../components";
 const AboutSection = () => {
   const [modalOpen, setModalOpen] = useState<boolean>(false)
 
-  const ViewBtn = styled(Button)<ButtonProps>(({ theme }) => ({
+  const ViewBtn = styled(Button)<ButtonProps>(() => ({
     color: '#fff',
     borderRadius: '100px',
     padding: '10px 24px',
