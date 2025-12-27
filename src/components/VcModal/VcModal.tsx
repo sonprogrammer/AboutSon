@@ -27,7 +27,7 @@ const VcModal = () => {
 
       <section className="text-center space-y-4">
         <span className="px-4 py-1.5 bg-rose-100 text-rose-600 rounded-full text-xs font-bold uppercase tracking-widest">Full-Stack Project</span>
-        <h1 className="text-3xl md:text-4xl mt-2 font-black text-slate-900 leading-tight">Virtual Coin : 모의 투자 플랫폼</h1>
+        <h1 className="text-xl mt-2 font-black text-slate-900 leading-tight">모의 투자 플랫폼</h1>
         <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 text-sm text-slate-500">
           <div className="flex items-center gap-2">
             <span className="font-bold text-slate-900 italic underline decoration-rose-200">GitHub</span>

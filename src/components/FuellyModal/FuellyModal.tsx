@@ -24,7 +24,7 @@ const NutriAIModal = () => {
 
       <section className="text-center space-y-4">
         <span className="px-4 py-1.5 bg-emerald-100 text-emerald-600 rounded-full text-xs font-bold uppercase tracking-widest">AI & Health Tech</span>
-        <h1 className="text-3xl md:text-4xl mt-2 font-black text-slate-900 leading-tight">Nutri-AI : 개인 맞춤 영양 관리 서비스</h1>
+        <h1 className=" md:text-xl mt-2 font-black text-slate-900 leading-tight">개인 맞춤 영양 관리 서비스</h1>
         <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 text-sm text-slate-500 font-medium">
           <div className="flex items-center gap-2">
             <span className="font-bold text-slate-900 italic">GitHub</span>
@@ -150,8 +150,8 @@ const NutriAIModal = () => {
             </h4>
 
             <div className="space-y-3 text-sm text-slate-300">
-              <p><b>Selection:</b> 비용 효율성과 성능을 고려하여 GPT-4 API 대신 무료 고성능 추론이 가능한 <b>Grok (Groq) AI</b>로 대체 선정.</p>
-              <p><b>Security:</b> 프롬프트 인젝션 방지 및 API 키 노출 차단을 위해 프롬프트 작성 로직을 클라이언트가 아닌 <b>서버(Next.js Server Side)</b>에서 처리하도록 설계하여 보안성 강화.</p>
+              <p><b>Selection:</b> 비용 효율성과 성능을 고려하여 GPT-4 API 대신 무료 고성능 추론이 가능한 <b>Grok AI</b>로 대체 선정.</p>
+              <p><b>Security:</b> 프롬프트 인젝션 방지 및 API 키 노출 차단을 위해 프롬프트 작성 로직을 클라이언트가 아닌 <b>서버</b>에서 처리하도록 설계하여 보안성 강화.</p>
             </div>
           </div>
 

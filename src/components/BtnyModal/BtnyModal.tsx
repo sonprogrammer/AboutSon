@@ -27,7 +27,7 @@ const BtnyModal = () => {
    
       <section className="text-center space-y-4">
         <span className="px-4 py-1.5 bg-red-100 text-red-600 rounded-full text-xs font-bold uppercase tracking-widest">Personal Project</span>
-        <h1 className="text-3xl md:text-4xl mt-2 font-black text-slate-900 leading-tight">BNTY : 트레이너용 소통 플랫폼</h1>
+        <h1 className="text-xl mt-2 font-black text-slate-900 leading-tight">트레이너용 소통 플랫폼</h1>
         <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 text-sm text-slate-500">
           <div className="flex items-center gap-2">
             <span className="font-bold text-slate-900 italic underline decoration-red-200">GitHub</span>

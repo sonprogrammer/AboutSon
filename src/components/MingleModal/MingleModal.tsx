@@ -26,7 +26,7 @@ const MingleModal = () => {
         <span className="px-4 py-1 bg-purple-100 text-purple-600 rounded-full text-xs font-bold uppercase tracking-widest">
           Team Project
         </span>
-        <h1 className="text-3xl md:text-4xl mt-2 font-black text-slate-900 leading-tight">Mingle: 취향 공유 플레이리스트 SNS</h1>
+        <h1 className="text-xl mt-2 font-black text-slate-900 leading-tight">취향 공유 플레이리스트 SNS</h1>
         <div className="flex flex-col md:flex-row justify-center items-center gap-3 md:gap-8 text-sm text-slate-500">
           <div className="flex items-center gap-2">
             <span className="font-bold text-slate-900 italic">Description</span>
