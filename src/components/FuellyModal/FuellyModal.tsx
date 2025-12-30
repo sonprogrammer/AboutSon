@@ -3,11 +3,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css'
 import { fuellySkills } from '../../data/fuellySkills'
-import { fuellyFn } from '../../data/fuellyFn' 
+import { fuellyFn } from '../../data/fuellyFn'
 
 const NutriAIModal = () => {
   const skills = fuellySkills
-  const functions = fuellyFn 
+  const functions = fuellyFn
 
   const SectionTitle = ({ title, icon, isDark = false }: { title: string; icon?: string; isDark?: boolean }) => (
     <div className="flex items-center gap-2 mb-6 justify-center">
@@ -22,7 +22,7 @@ const NutriAIModal = () => {
     <div className='flex flex-col gap-12 text-slate-700 pb-10'>
 
 
-      <section className="text-center space-y-4">
+      <section className="text-center space-y-4 p-2">
         <span className="px-4 py-1.5 bg-emerald-100 text-emerald-600 rounded-full text-xs font-bold uppercase tracking-widest">AI & Health Tech</span>
         <h1 className=" md:text-xl mt-2 font-black text-slate-900 leading-tight">개인 맞춤 영양 관리 서비스</h1>
         <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 text-sm text-slate-500 font-medium">
@@ -39,7 +39,7 @@ const NutriAIModal = () => {
 
       <div className="h-px bg-slate-100" />
 
-   
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -48,20 +48,20 @@ const NutriAIModal = () => {
       >
         <SectionTitle title="Core Concept" icon="❓" />
         <p className="text-[15px] md:text-lg leading-relaxed text-slate-600 text-center max-w-3xl mx-auto">
-          "매번 반복되는 칼로리 계산의 번거로움과 영양 성분 파악의 어려움을 해결하고자 했습니다.
-          <span className="font-bold text-emerald-600"> AI 기반 데이터 분석</span>을 통해 사용자 개인의 신체 정보와 활동량에 최적화된 식단 가이드를 시각화하여 제공합니다."
+          "매번 반복되는 칼로리 계산의 번거로움과 영양 성분 파악의 어려움을 해결하고<br />
+          <span className="font-bold text-emerald-600"> AI 기반 데이터 분석</span>을 통해 사용자 개인의 신체 정보와 활동량에 최적화된 식단 가이드를 시각화하여 제공."
         </p>
       </motion.div>
 
-     
+
       <motion.section
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <SectionTitle title="Core Engineering" icon="🛠️" />
+        <SectionTitle title="Full-Stack Implementation" icon="📱" />
 
-       
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {functions.map((f, i) => (
             <div key={i} className="p-6 rounded-3xl border border-slate-100 bg-white hover:border-emerald-200 transition-all hover:shadow-md group">
@@ -87,16 +87,15 @@ const NutriAIModal = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <SectionTitle title="Key Features" icon="📱" />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          
+
           {[
             { title: "로그인/설문", items: ["카카오/이메일 로그인 지원", "신체 정보 설문", "권장 섭취량 자동 산출"] },
-            { title: "메인 대시보드", items: ["AI 일별 응원 메시지", "실시간 영양 프로세스 바", "목표 즉시 수정 카드"] },
-            { title: "스마트 식단 관리", items: ["음식 즉시 추가/삭제", "실시간 영양소 차감", "커스텀 음식 라이브러리"] },
-            { title: "AI 추천 시스템", items: ["남은 영양소 기반 메뉴 추천", "AI 추천 즉시 저장 기능", "JSON 데이터 실시간 연동"] },
-            { title: "AI 검색 & 좋아요", items: ["AI 영양 성분 상세 검색", "대체 메뉴 추천 제공", "관심 식단 즉시 반영"] },
-            { title: "분석 및 통계", items: ["Recharts 주간 섭취 추이", "7/30일 히스토리 타임라인", "섭취 패턴 시각화 분석"] }
+            { title: "홈페이지", items: ["AI 일별 응원 메시지", "실시간 영양 프로세스 바", "목표 즉시 수정 카드"] },
+            { title: "식단 관리 페이지(1)", items: ["음식 즉시 추가/삭제", "실시간 영양소 차감", "커스텀 음식 라이브러리"] },
+            { title: "식단 관리 페이지(2)", items: ["남은 영양소 기반 메뉴 추천", "AI 추천 즉시 저장 기능", "JSON 데이터 실시간 연동"] },
+            { title: "AI 검색 & 좋아요 페이지", items: ["AI 영양 성분 상세 검색", "대체 메뉴 추천 제공", "관심 식단 즉시 반영"] },
+            { title: "분석 및 통계 페이지", items: ["Recharts 주간 섭취 추이", "7/30일 히스토리 타임라인", "섭취 패턴 시각화 분석"] }
           ].map((f, i) => (
             <div key={i} className="p-5 rounded-2xl bg-slate-50 border border-slate-100 hover:border-emerald-200 transition-colors">
               <h5 className="font-bold text-emerald-600 text-sm mb-3 uppercase tracking-tight flex items-center gap-2">
@@ -110,59 +109,153 @@ const NutriAIModal = () => {
         </div>
       </motion.section>
 
-    
       <motion.section
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         className="bg-[#0f172a] rounded-[2.5rem] p-8 md:p-12 text-white relative overflow-hidden"
       >
-        <div className="absolute top-0 right-0 p-10 opacity-5 font-black text-7xl italic select-none">DEBUGGING</div>
+       
         <SectionTitle title="Trouble Shooting" icon="🔫" isDark={true} />
-        <div className="relative z-10 grid gap-6">
+
+        <div className="relative z-10 flex flex-col gap-10 mt-8">
 
 
-          <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
-            <h4 className="text-emerald-400 font-bold mb-3 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" /> React 19: useEffect 내 동기적 setState 경고
-            </h4>
-            <div className="space-y-3 text-sm text-slate-300">
-              <p><b>Issue:</b> 로컬 스토리지에 저장된 메시지를 불러올 때, <code>useEffect</code> 내부에서 조건에 따라 즉시 <code>setState</code>를 호출하자 React 19에서 렌더링 사이클 위반 경고 발생.</p>
-              <p><b>Solution:</b> <code>Promise.resolve().then()</code>을 활용해 상태 업데이트를 마이크로태스크 큐로 위임. 렌더링이 완료된 후 상태가 변경되도록 비동기 처리하여 React 19의 엄격한 렌더링 규칙 준수.</p>
+          <div className="bg-white/5 backdrop-blur-md rounded-[2rem] p-6 md:p-10 border border-white/10 shadow-2xl">
+            <div className="flex flex-col md:flex-row md:items-center gap-4 mb-8">
+              <span className="w-fit bg-red-500 text-white text-[10px] px-3 py-1 rounded-full font-black tracking-widest">ISSUE 01</span>
+              <h3 className="text-xl md:text-2xl font-bold text-white">React 19: useEffect 내 동기적 상태 업데이트 경고</h3>
+            </div>
+            <div className="grid gap-8 md:grid-cols-3 relative">
+              <div className="hidden md:block absolute top-1/2 left-1/3 w-px h-12 bg-white/10 -translate-y-1/2" />
+              <div className="hidden md:block absolute top-1/2 left-2/3 w-px h-12 bg-white/10 -translate-y-1/2" />
+
+              <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                  <p className="text-xs font-black text-blue-400 uppercase tracking-tighter">Reason</p>
+                </div>
+                <p className="text-[14px] text-slate-300 leading-relaxed">React 19의 엄격해진 렌더링 규칙에 따라 렌더링 도중 발생하는 동기적 상태 변경을 감지함</p>
+              </div>
+
+              <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
+                  <p className="text-xs font-black text-red-400 uppercase tracking-tighter">Problem</p>
+                </div>
+                <p className="text-[14px] text-slate-300 leading-relaxed">useEffect 내부에서 로컬 스토리지 데이터 로드 시 <span className="text-red-300">렌더링 사이클 위반 경고</span> 발생</p>
+              </div>
+
+              <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-green-400" />
+                  <p className="text-xs font-black text-green-400 uppercase tracking-tighter">Solution</p>
+                </div>
+                <p className="text-[14px] text-emerald-100 font-medium"><code>Promise.resolve()</code>를 통해 마이크로태스크 큐로 위임하여 렌더링 완료 후 상태가 변경되도록 비동기 처리</p>
+              </div>
             </div>
           </div>
 
+          <div className="bg-white/5 backdrop-blur-md rounded-[2rem] p-6 md:p-10 border border-white/10 shadow-2xl">
+            <div className="flex flex-col md:flex-row md:items-center gap-4 mb-8">
+              <span className="w-fit bg-red-500 text-white text-[10px] px-3 py-1 rounded-full font-black tracking-widest">ISSUE 02</span>
+              <h3 className="text-xl md:text-2xl font-bold text-white">AI 모델 최적화 및 보안 아키텍처 설계</h3>
+            </div>
+            <div className="grid gap-8 md:grid-cols-3 relative">
+              <div className="hidden md:block absolute top-1/2 left-1/3 w-px h-12 bg-white/10 -translate-y-1/2" />
+              <div className="hidden md:block absolute top-1/2 left-2/3 w-px h-12 bg-white/10 -translate-y-1/2" />
 
-          <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
-            <h4 className="text-emerald-400 font-bold mb-3 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" /> Next.js App Router: API 핸들러 명명 규칙
-            </h4>
-            <div className="space-y-3 text-sm text-slate-300">
-              <p><b>Issue:</b> Pages Router의 <code>export default</code> 방식에 익숙하여 App Router에서 핸들러 인지 오류 발생.</p>
-              <p><b>Solution:</b> App Router의 <code>route.ts</code>는 HTTP 메서드(GET, POST 등)를 명시적으로 <code>export</code> 해야 함을 파악. Named Export와 Default Export의 차이를 이해하고 모듈 시스템에 맞게 리팩토링 수행.</p>
+              <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                  <p className="text-xs font-black text-blue-400 uppercase tracking-tighter">Selection</p>
+                </div>
+                <p className="text-[14px] text-slate-300 leading-relaxed">비용 효율성과 최신 추론 성능을 고려하여 GPT-4 대비 경쟁력 있는 <span className="text-white">Grok AI</span>를 대체 모델로 채택</p>
+              </div>
+
+              <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
+                  <p className="text-xs font-black text-red-400 uppercase tracking-tighter">Security</p>
+                </div>
+                <p className="text-[14px] text-slate-300 leading-relaxed">클라이언트 단의 프롬프트 작성 로직은 <span className="text-red-300">인젝션 및 API 키 노출</span>의 취약점이 존재함</p>
+              </div>
+
+              <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-green-400" />
+                  <p className="text-xs font-black text-green-400 uppercase tracking-tighter">Solution</p>
+                </div>
+                <p className="text-[14px] text-emerald-100 font-medium">모든 프롬프트 로직을 <b>Server-Side</b>에서 처리하도록 설계하여 보안 아키텍처 강화 및 API 키 은닉</p>
+              </div>
             </div>
           </div>
 
+          <div className="bg-white/5 backdrop-blur-md rounded-[2rem] p-6 md:p-10 border border-white/10 shadow-2xl">
+            <div className="flex flex-col md:flex-row md:items-center gap-4 mb-8">
+              <span className="w-fit bg-red-500 text-white text-[10px] px-3 py-1 rounded-full font-black tracking-widest">ISSUE 03</span>
+              <h3 className="text-xl md:text-2xl font-bold text-white">TanStack Query v5: 인터페이스 변화 및 규격 대응</h3>
+            </div>
+            <div className="grid gap-8 md:grid-cols-3 relative">
+              <div className="hidden md:block absolute top-1/2 left-1/3 w-px h-12 bg-white/10 -translate-y-1/2" />
+              <div className="hidden md:block absolute top-1/2 left-2/3 w-px h-12 bg-white/10 -translate-y-1/2" />
 
-          <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
-            <h4 className="text-emerald-400 font-bold mb-3 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" /> AI 모델 최적화 및 보안 아키텍처
-            </h4>
+              <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                  <p className="text-xs font-black text-blue-400 uppercase tracking-tighter">Reason</p>
+                </div>
+                <p className="text-[14px] text-slate-300 leading-relaxed">
+                  TanStack Query가 v5로 업데이트되며 명확성을 위해 <span className="text-white">API 인터페이스와 속성명</span>이 대거 변경됨
+                </p>
+              </div>
 
-            <div className="space-y-3 text-sm text-slate-300">
-              <p><b>Selection:</b> 비용 효율성과 성능을 고려하여 GPT-4 API 대신 무료 고성능 추론이 가능한 <b>Grok AI</b>로 대체 선정.</p>
-              <p><b>Security:</b> 프롬프트 인젝션 방지 및 API 키 노출 차단을 위해 프롬프트 작성 로직을 클라이언트가 아닌 <b>서버</b>에서 처리하도록 설계하여 보안성 강화.</p>
+              <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
+                  <p className="text-xs font-black text-red-400 uppercase tracking-tighter">Problem</p>
+                </div>
+                <p className="text-[14px] text-slate-300 leading-relaxed">
+                  기존 v4 방식의 속성 사용 시 타입 에러 발생 및 폐기된 옵션으로 인한 <span className="text-red-300">캐싱 전략</span> 오작동
+                </p>
+              </div>
+
+              <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-green-400" />
+                  <p className="text-xs font-black text-green-400 uppercase tracking-tighter">Solution</p>
+                </div>
+                <p className="text-[14px] text-emerald-100 font-medium">
+                  <p>v5부터 기존 <code>isLoading</code>이 <code>isPending</code>으로 변경됨에 따라 상태 기반 UI 로직을 최신 라이브러리 규격에 맞춰 마이그레이션 진행.</p>
+                </p>
+              </div>
             </div>
           </div>
 
-          <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
-            <h4 className="text-emerald-400 font-bold mb-3 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" /> TanStack Query v5: 인터페이스 변화 대응
-            </h4>
-            <div className="space-y-3 text-sm text-slate-300">
-              <p><b>Change:</b> v5부터 기존 <code>isLoading</code>이 <code>isPending</code>으로 변경됨에 따라 상태 기반 UI 로직을 최신 라이브러리 규격에 맞춰 마이그레이션 진행.</p>
-            </div>
+        </div>
+      </motion.section>
+
+
+
+      <motion.section
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        className="bg-emerald-50/50 rounded-3xl p-8 md:p-12 text-center "
+      >
+        <SectionTitle title="Insights" icon="❗" />
+
+        <div className="max-w-4xl mx-auto space-y-8">
+          <div className="relative">
+            <p className="text-[16px] md:text-lg text-slate-600 leading-relaxed font-medium italic">
+
+              "이번 프로젝트를 통해 <strong className="text-slate-900 underline decoration-emerald-300 underline-offset-4">처음으로 AI 모델을 실제 서비스에 접목</strong>해 보는 뜻깊은 경험을 했습니다.
+              단순한 데이터 조회를 넘어 AI가 사용자 요구사항을 분석하고 응답을 생성하는 과정을 구현하며,
+              앞으로 제가 만들어갈 프로젝트들의 <strong className="text-slate-900 italic">확장성과 가능성이 무궁무진함</strong>을 느꼈습니다."
+            </p>
           </div>
+
+
         </div>
 
       </motion.section>

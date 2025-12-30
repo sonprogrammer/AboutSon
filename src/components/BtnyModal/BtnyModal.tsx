@@ -23,10 +23,10 @@ const BtnyModal = () => {
 
   return (
     <div className='flex flex-col gap-12 text-slate-700 pb-10'>
-      
-   
-      <section className="text-center space-y-4">
-        <span className="px-4 py-1.5 bg-red-100 text-red-600 rounded-full text-xs font-bold uppercase tracking-widest">Personal Project</span>
+
+
+      <section className="text-center space-y-4 p-2">
+        <span className="px-4 py-1.5  bg-red-100 text-red-600 rounded-full text-xs font-bold uppercase tracking-widest">Personal Project</span>
         <h1 className="text-xl mt-2 font-black text-slate-900 leading-tight">트레이너용 소통 플랫폼</h1>
         <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 text-sm text-slate-500">
           <div className="flex items-center gap-2">
@@ -44,7 +44,7 @@ const BtnyModal = () => {
 
 
       <div className="grid md:grid-cols-2 gap-6">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -52,11 +52,15 @@ const BtnyModal = () => {
         >
           <SectionTitle title="Core Concept" icon="❓" />
           <p className="text-[15px] leading-relaxed text-slate-600">
-            개인정보 유출과 사생활 침해 우려를 해결하기 위해 기획되었습니다. 개인 연락처 노출 없이 <span className="font-bold text-red-600">독립된 시스템을 통한 안전한 소통 공간</span>을 제공하며, 트레이너의 실무 경험을 반영해 불편 사항을 개선했습니다.
+            개인정보 유출과 사생활 침해 문제를 해결하기 위해 기획되었습니다. 개인 연락처 노출 없는
+            <span className="font-bold text-red-600"> 독립된 소통 시스템</span>을 구축하고,
+            실무 경험을 바탕으로 현장의 불편함을 개선<br /> 특히,
+            <span className="font-bold text-red-600"> 수업 횟수의 실시간 공유 및 관리</span> 기능을 통해
+            운영의 투명성을 확보하고 트레이너와 회원 간의 탄탄한 신뢰를 구축
           </p>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -64,23 +68,22 @@ const BtnyModal = () => {
         >
           <SectionTitle title="Major Update" icon="✨" />
           <p className="text-[15px] leading-relaxed text-slate-600 font-medium text-center">
-            기존 오류 개선 및 QR코드 연결 성능 최적화, <br/>
-            <span className="text-red-600 font-bold">PWA 도입</span>을 통해 모바일 웹 환경에서 네이티브 앱에 준하는 사용자 경험(UI/UX) 제공.
+            기존 오류 개선 및 QR코드 연결 성능 최적화, <br />
+            <span className="text-red-600 font-bold">PWA 도입</span>을 통해 모바일 웹 환경에서 네이티브 앱에 준하는 사용자 경험(UI/UX) 제공
           </p>
         </motion.div>
       </div>
 
-     
+
       <motion.section
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         className="space-y-8"
       >
-        <SectionTitle title="Development & Roles" icon="📱" />
-        
+        <SectionTitle title="Full-Stack Implementation" icon="📱" />
+
         <div className="bg-white border border-slate-100 p-8 rounded-[2rem] shadow-sm space-y-4">
-          <p className="text-center font-bold text-slate-400 text-sm mb-6 uppercase tracking-widest">Full-Stack Implementation</p>
           <div className="grid md:grid-cols-2 gap-4 text-sm leading-relaxed">
             {[
               "MVC 구조 기반의 백엔드 로직 설계 및 데이터 흐름 구조화",
@@ -97,7 +100,7 @@ const BtnyModal = () => {
           </div>
         </div>
 
-       
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {functions.map((f, i) => (
             <div key={i} className="group p-6 rounded-3xl border border-slate-100 bg-white hover:border-red-200 transition-colors">
@@ -124,31 +127,69 @@ const BtnyModal = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="bg-[#0f172a] rounded-[2.5rem] p-8 md:p-12 text-white relative overflow-hidden"
+        className="bg-[#0f172a] rounded-[2.5rem] p-8 md:p-12 text-white overflow-hidden relative mt-10" // mt-10은 섹션 간 간격 조절용
       >
-        <div className="absolute top-0 right-0 p-10 opacity-5 font-black text-7xl italic select-none">DEBUGGING</div>
+
         <SectionTitle title="Trouble Shooting" icon="🔫" isDark={true} />
-        
-        <div className="grid gap-6">
-          <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
-            <h4 className="text-red-400 font-bold mb-2 flex items-center gap-2">
-               <span className="w-2 h-2 rounded-full bg-red-400 animate-pulse"/> 한글 중복 전송 이슈 (IME)
-            </h4>
-            <p className="text-sm text-slate-300 leading-relaxed mb-4">
-              Enter 키로 전송 시 한글 조합 과정에서 <span className="text-white font-medium">onKeyDown, onSubmit</span>이 중복 트리거되는 현상 발생.
-            </p>
-            <div className="bg-white/5 p-3 rounded-lg border-l-4 border-emerald-500">
-               <p className="text-sm text-emerald-100 italic font-medium">"isComposing을 체크하여 글자 조합이 완료된 시점에만 이벤트를 실행하도록 분기 처리하여 해결했습니다."</p>
+
+        <div className="relative z-10 bg-white/5 backdrop-blur-md rounded-3xl p-6 md:p-10 border border-white/10 shadow-2xl">
+          <div className="flex flex-col md:flex-row md:items-center gap-4 mb-8">
+            <span className="w-fit bg-red-500 text-white text-[10px] px-3 py-1 rounded-full font-black tracking-widest">
+              ISSUE 01
+            </span>
+            <h3 className="text-xl md:text-2xl font-bold text-white">
+            한글 중복 전송 이슈 (IME)
+            </h3>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-3 relative">
+            <div className="hidden md:block absolute top-1/2 left-1/3 w-px h-12 bg-white/10 -translate-y-1/2" />
+            <div className="hidden md:block absolute top-1/2 left-2/3 w-px h-12 bg-white/10 -translate-y-1/2" />
+
+            <div className="space-y-3">
+              <div className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                <p className="text-xs font-black text-blue-400 uppercase tracking-tighter">Reason</p>
+              </div>
+              <p className="text-[15px] text-slate-300 leading-relaxed">
+                한글은 자음과 모음이 결합되는 <span className="text-white font-medium underline underline-offset-4 decoration-blue-500/50">
+                IME(Input Method Editor)
+                </span>
+                 과정을 거치며, Enter 입력 시 글자 조합이 완료되지 않은 것으로 간주됨
+              </p>
+            </div>
+
+            <div className="space-y-3">
+              <div className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
+                <p className="text-xs font-black text-red-400 uppercase tracking-tighter">Problem</p>
+              </div>
+              <p className="text-[15px] text-slate-300 leading-relaxed">
+              마지막 글자가 조합 중인 상태에서 Enter를 누르면 <span className="text-red-300 font-medium">조합 완료 이벤트와 전송 이벤트가 중복 발생</span>하여 결과적으로 동일한 데이터가 두 번 전송되는 현상 확인
+              </p>
+            </div>
+
+            <div className="space-y-3">
+              <div className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-green-400" />
+                <p className="text-xs font-black text-green-400 uppercase tracking-tighter">Solution</p>
+              </div>
+              <p className="text-[15px] text-emerald-100 leading-relaxed font-medium">
+                <span className="bg-emerald-500/20 px-1 rounded text-emerald-300 underline underline-offset-4">
+                isComposing</span>체크하여 글자 조합이 완료된 시점에만 이벤트를 실행하도록 분기 처리하여 해결
+              </p>
             </div>
           </div>
         </div>
       </motion.section>
 
+     
+
       <motion.section
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
-        className="bg-slate-50 rounded-3xl p-8 md:p-12 text-center"
+        className="bg-red-50/50 rounded-3xl p-8 md:p-12 text-center"
       >
         <SectionTitle title="Insights" icon="❗" />
         <div className="max-w-3xl mx-auto space-y-4 text-slate-600 italic leading-relaxed md:text-lg">
@@ -158,10 +199,10 @@ const BtnyModal = () => {
 
       <div className='w-full border-t border-slate-100 pt-10 overflow-hidden'>
 
-      <div className="flex justify-center mb-6">
-    <span className="text-[10px] font-black text-slate-300 uppercase tracking-[0.2em]">Technologies Used</span>
-  </div>
-        
+        <div className="flex justify-center mb-6">
+          <span className="text-[10px] font-black text-slate-300 uppercase tracking-[0.2em]">Technologies Used</span>
+        </div>
+
         <Swiper
           modules={[Autoplay]}
           spaceBetween={60}

@@ -32,8 +32,8 @@ const SummarySection = () => {
                         도전과 경험을 중시하게 되었고, 늘 긍정적인 자세로 성장해왔습니다.
                     </p>
                     <p>
-                        졸업 전 디자인에 대한 관심으로 <span className="font-bold text-slate-900">GTQ 자격증</span>을 취득하였으며,
-                        이후 해외 경험을 바탕으로 꾸준히 영어를 공부하며 자기계발을 이어왔습니다.
+                        디자인에 대한 관심으로 <span className="font-bold text-slate-900">GTQ 자격증</span>을 취득하였으며,
+                        해외 경험을 바탕으로 꾸준히 영어를 공부하며 자기계발을 이어왔습니다.
                         부족한 부분을 채우기 위해 부트캠프를 수료하며 웹 개발 전반의 지식과 협업 능력을 키웠고, 
                         전문성을 높이기 위해 <span className="font-bold  border-b-2 border-purple-200 text-purple-700">정보처리기사</span> 자격증을 취득하며 개발자로서의 역량을 체계적으로 쌓아왔습니다.
                     </p>

@@ -22,7 +22,7 @@ const MingleModal = () => {
     <div className='flex flex-col gap-12 text-slate-700 pb-10'>
       
 
-      <section className="text-center space-y-4">
+      <section className="text-center space-y-4 p-2">
         <span className="px-4 py-1 bg-purple-100 text-purple-600 rounded-full text-xs font-bold uppercase tracking-widest">
           Team Project
         </span>
@@ -52,7 +52,7 @@ const MingleModal = () => {
         <div className="grid md:grid-cols-3 gap-6">
           <div className="md:col-span-1 flex flex-col items-center justify-center border-r border-slate-200">
              <span className="text-4xl font-black text-purple-600 mb-2 font-mono">Front-End</span>
-             <p className="text-slate-400 text-sm font-medium">Lead Developer</p>
+             
           </div>
           <div className="md:col-span-2 space-y-4 text-[15px] md:text-base leading-relaxed">
             <p className="flex gap-3"><span className="text-purple-500 font-bold">01.</span> 다양한 서비스 기능을 유기적으로 연결하기 위한 컴포넌트 아키텍처 설계 및 백엔드 데이터 바인딩</p>
@@ -95,16 +95,12 @@ const MingleModal = () => {
         className="bg-[#0f172a] rounded-[2.5rem] p-8 md:p-12 text-white overflow-hidden relative"
       >
 
-        <div className="absolute top-0 right-0 p-10 opacity-5 font-black text-8xl italic select-none">
-          DEBUG
-        </div>
-
 
         <SectionTitle title="Trouble Shooting" icon="🔫" isDark={true} />
         
         <div className="relative z-10 bg-white/5 backdrop-blur-md rounded-3xl p-6 md:p-10 border border-white/10 shadow-2xl">
           <div className="flex flex-col md:flex-row md:items-center gap-4 mb-8">
-            <span className="w-fit bg-purple-500 text-white text-[10px] px-3 py-1 rounded-full font-black tracking-widest">
+            <span className="w-fit bg-red-500 text-white text-[10px] px-3 py-1 rounded-full font-black tracking-widest">
               ISSUE 01
             </span>
             <h3 className="text-xl md:text-2xl font-bold text-white">
@@ -118,8 +114,8 @@ const MingleModal = () => {
 
             <div className="space-y-3">
               <div className="flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-purple-400" />
-                <p className="text-xs font-black text-purple-400 uppercase tracking-tighter">Reason</p>
+                <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                <p className="text-xs font-black text-blue-400 uppercase tracking-tighter">Reason</p>
               </div>
               <p className="text-[15px] text-slate-300 leading-relaxed">
                 공통 Axios 인스턴스의 인터셉터를 통해 모든 요청 헤더에 <span className="text-white font-medium underline underline-offset-4 decoration-purple-500/50">Authorization 토큰이 자동 포함</span>되도록 설계됨

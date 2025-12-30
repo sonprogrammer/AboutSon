@@ -5,12 +5,11 @@ import 'swiper/css';
 
 import { vcFn } from "../../data/vcFn";
 import { vcSkills } from "../../data/vcskills";
-import { vcTroubles } from "../../data/vcTroubles";
+
 
 const VcModal = () => {
   const functions = vcFn
   const skills = vcSkills
-  const troubles = vcTroubles
 
   const SectionTitle = ({ title, icon, isDark = false }: { title: string; icon?: string; isDark?: boolean }) => (
     <div className="flex items-center gap-2 mb-6 justify-center">
@@ -25,13 +24,13 @@ const VcModal = () => {
     <div className='flex flex-col gap-12 text-slate-700 pb-10'>
       
 
-      <section className="text-center space-y-4">
+      <section className="text-center space-y-4 p-2">
         <span className="px-4 py-1.5 bg-rose-100 text-rose-600 rounded-full text-xs font-bold uppercase tracking-widest">Full-Stack Project</span>
         <h1 className="text-xl mt-2 font-black text-slate-900 leading-tight">모의 투자 플랫폼</h1>
         <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 text-sm text-slate-500">
           <div className="flex items-center gap-2">
             <span className="font-bold text-slate-900 italic underline decoration-rose-200">GitHub</span>
-            <a href='https://github.com/sonprogrammer/VirtualCoin' target="_blank" rel="noreferrer" className="text-rose-600 hover:underline">Repository</a>
+            <a href='https://github.com/sonprogrammer/VirtualCoin' target="_blank" rel="noreferrer" className="text-rose-600 hover:underline">Link</a>
           </div>
           <div className="flex items-center gap-2">
             <span className="font-bold text-slate-900 italic underline decoration-rose-200">Live Demo</span>
@@ -52,8 +51,8 @@ const VcModal = () => {
         <SectionTitle title="Core Concept" icon="❓" />
         <h3 className="text-xl font-bold text-rose-600 mb-4">실제 코인 거래를 안전하게 경험하는 가상 체험 공간</h3>
         <p className="text-[15px] md:text-lg leading-relaxed text-slate-600 max-w-2xl mx-auto">
-          복잡한 코인 시장을 처음 접하는 입문자들을 위한 학습 환경을 제공합니다. 
-          <span className="font-bold text-slate-900"> 업비트 API 기반의 실시간 데이터</span>를 활용해 실제 시장과 동일한 투자 환경을 직접 설계하고 구현했습니다.
+          복잡한 코인 시장을 처음 접하는 입문자들을 위한 학습 환경을 제공.<br />
+          <span className="font-bold text-slate-900"> 업비트 API 기반의 실시간 데이터</span>를 활용해 실제 시장과 동일한 투자 환경을 직접 설계하고 구현.
         </p>
       </motion.div>
 
@@ -82,7 +81,6 @@ const VcModal = () => {
 
 
         <div className="bg-slate-900 text-white rounded-3xl p-8 mb-8 relative overflow-hidden">
-           <div className="absolute top-0 right-0 p-6 opacity-10 font-black text-4xl italic uppercase">Performance</div>
            <h4 className="text-rose-400 font-bold mb-4 flex items-center gap-2 italic tracking-widest uppercase text-sm">Optimization Update</h4>
            <ul className="grid md:grid-cols-3 gap-6 text-sm">
              <li className="bg-white/5 p-4 rounded-xl border border-white/10 text-center">
@@ -115,25 +113,113 @@ const VcModal = () => {
         </div>
       </motion.section>
 
-
       <motion.section
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="bg-[#0f172a] rounded-[2.5rem] p-8 md:p-12 text-white relative overflow-hidden"
-      >
-        <div className="absolute top-0 right-0 p-10 opacity-5 font-black text-7xl italic select-none">RESOLVED</div>
-        <SectionTitle title="Trouble Shooting" icon="🔫" isDark={true} />
-        
-        <div className="flex flex-col gap-4 relative z-10">
-          {troubles.map((t, i) => (
-            <div key={i} className="bg-white/5 p-6 rounded-2xl border border-white/10 flex items-start gap-4">
-              
-              <p className="text-sm md:text-base text-slate-300 leading-relaxed font-medium">{t}</p>
-            </div>
-          ))}
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  className="bg-[#0f172a] rounded-[2.5rem] p-8 md:p-12 text-white relative overflow-hidden"
+>
+
+
+  <SectionTitle title="Trouble Shooting" icon="🔫" isDark={true} />
+
+  <div className="flex flex-col gap-10 relative z-10 mt-8">
+
+    <div className="bg-white/5 backdrop-blur-md rounded-[2rem] p-6 md:p-10 border border-white/10 shadow-2xl">
+      <div className="flex flex-col md:flex-row md:items-center gap-4 mb-8">
+        <span className="w-fit px-3 py-1 rounded-full text-[10px] font-black tracking-widest text-white bg-rose-500">
+          ISSUE 01
+        </span>
+        <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight">
+          사용자 타겟에 따른 API 선정 및 UX 최적화
+        </h3>
+      </div>
+
+      <div className="grid gap-8 md:grid-cols-3 relative">
+        <div className="hidden md:block absolute top-1/2 left-1/3 w-px h-12 bg-white/10 -translate-y-1/2" />
+        <div className="hidden md:block absolute top-1/2 left-2/3 w-px h-12 bg-white/10 -translate-y-1/2" />
+
+        <div className="space-y-3">
+          <div className="flex items-center gap-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+            <p className="text-xs font-black text-blue-400 uppercase tracking-tighter">Reason</p>
+          </div>
+          <p className="text-[14px] md:text-[15px] text-slate-300 leading-relaxed">
+            바이낸스 API는 다양한 종목을 지원하지만, <span className="text-white font-medium underline underline-offset-4 decoration-rose-500/50">방대한 코인 수</span>는 투자를 처음 접하는 입문자에게 과도한 피로감을 줄 수 있음
+          </p>
         </div>
-      </motion.section>
+
+        <div className="space-y-3">
+          <div className="flex items-center gap-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
+            <p className="text-xs font-black text-red-400 uppercase tracking-tighter">Problem</p>
+          </div>
+          <p className="text-[14px] md:text-[15px] text-slate-300 leading-relaxed">
+            초기 기획 의도인 <span className="text-white font-medium">'초보자를 위한 가상 투자 공간'</span> 구축에 있어 복잡한 인터페이스는 진입 장벽이 됨
+          </p>
+        </div>
+
+        <div className="space-y-3">
+          <div className="flex items-center gap-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-green-400" />
+            <p className="text-xs font-black text-green-400 uppercase tracking-tighter">Solution</p>
+          </div>
+          <p className="text-[14px] md:text-[15px] text-emerald-100 leading-relaxed font-medium">
+            비교적 코인 종류가 적고 국내 사용자에게 직관적인 <span className="bg-rose-500/20 px-1 rounded text-rose-300">업비트 API</span>로 선회하여 핵심 기능 중심의 깔끔한 학습 환경 구현
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <div className="bg-white/5 backdrop-blur-md rounded-[2rem] p-6 md:p-10 border border-white/10 shadow-2xl">
+      <div className="flex flex-col md:flex-row md:items-center gap-4 mb-8">
+        <span className="w-fit px-3 py-1 rounded-full text-[10px] font-black tracking-widest text-white bg-red-500">
+          ISSUE 02
+        </span>
+        <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight">
+          업비트 WebSocket 실시간 데이터 수신 오류
+        </h3>
+      </div>
+
+      <div className="grid gap-8 md:grid-cols-3 relative">
+        <div className="hidden md:block absolute top-1/2 left-1/3 w-px h-12 bg-white/10 -translate-y-1/2" />
+        <div className="hidden md:block absolute top-1/2 left-2/3 w-px h-12 bg-white/10 -translate-y-1/2" />
+
+        <div className="space-y-3">
+          <div className="flex items-center gap-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+            <p className="text-xs font-black text-blue-400 uppercase tracking-tighter">Reason</p>
+          </div>
+          <p className="text-[14px] md:text-[15px] text-slate-300 leading-relaxed">
+            업비트 서버 정책상 브라우저(Origin)에서 직접적인 WebSocket 연결을 허용하지 않으며 보안 강화 조치가 적용되어 있음
+          </p>
+        </div>
+
+        <div className="space-y-3">
+          <div className="flex items-center gap-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
+            <p className="text-xs font-black text-red-400 uppercase tracking-tighter">Problem</p>
+          </div>
+          <p className="text-[14px] md:text-[15px] text-slate-300 leading-relaxed">
+            클라이언트 단에서 직접 연동 시 <span className="text-red-300 font-medium">CORS 에러</span> 및 "Too many request" 제한이 발생하여 실시간 시세 업데이트 불가
+          </p>
+        </div>
+
+        <div className="space-y-3">
+          <div className="flex items-center gap-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-green-400" />
+            <p className="text-xs font-black text-green-400 uppercase tracking-tighter">Solution</p>
+          </div>
+          <p className="text-[14px] md:text-[15px] text-emerald-100 leading-relaxed font-medium">
+            중계 역할을 하는 <span className="underline underline-offset-4 decoration-emerald-500/50">백엔드 프록시 서버</span>를 구축하여 서버 간 통신으로 WebSocket 데이터를 수신 및 클라이언트에 전달하여 안정적 수신 성공
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</motion.section>
+
 
 
       <div className='w-full border-t border-slate-100 pt-10 overflow-hidden'>
