@@ -6,11 +6,14 @@ const AboutmeContents = () => {
             아이디어를 <strong className='text-slate-900 font-bold decoration-purple-300 underline underline-offset-4 decoration-2'>서비스</strong>로, 서비스를 <strong className='text-slate-900 font-bold decoration-purple-300 underline underline-offset-4 decoration-2'>경험</strong>으로 만드는 개발자를 꿈꾸며 성장하고 있습니다.
         </>,
         <>
-            <strong className='text-slate-900 font-bold decoration-purple-300 underline underline-offset-4 decoration-2'>긍정적인 마인드셋</strong>으로 문제를 해결하고, <strong className='text-slate-900 font-bold decoration-purple-300 underline underline-offset-4 decoration-2'>도전</strong>을 즐깁니다.
+            <strong className='text-slate-900 font-bold decoration-purple-300 underline underline-offset-4 decoration-2'>긍정적인 마인드셋</strong>으로 문제를 해결하고, <strong className='text-slate-900 font-bold decoration-purple-300 underline underline-offset-4 decoration-2'>새로운 도전</strong>을 즐깁니다.
         </>,
         <>
             더 나은 <strong className='text-slate-900 font-bold decoration-purple-300 underline underline-offset-4 decoration-2'>UI/UX</strong>와 최적화된 코드를 위해 지속적으로 고민합니다.
-        </>
+        </>,
+        <>
+        사용자의 일상에 <strong className='text-slate-900 font-bold decoration-purple-300 underline underline-offset-4 decoration-2'>긍정적인 변화</strong>와 새로운 가치를 선물하는 개발자가 되고 싶습니다.
+    </>
     ]
 
     return (

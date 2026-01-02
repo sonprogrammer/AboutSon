@@ -217,6 +217,57 @@ const VcModal = () => {
         </div>
       </div>
     </div>
+
+    <div className="bg-white/5 backdrop-blur-md rounded-[2rem] p-6 md:p-10 border border-white/10 shadow-2xl">
+      <div className="flex flex-col md:flex-row md:items-center gap-4 mb-8">
+        <span className="w-fit px-3 py-1 rounded-full text-[10px] font-black tracking-widest text-white bg-red-500">
+          ISSUE 03
+        </span>
+        <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight">
+          대량의 실시간 데이터 수신 시 초기 로딩 지연
+        </h3>
+      </div>
+
+      <div className="grid gap-8 md:grid-cols-3 relative">
+        <div className="hidden md:block absolute top-1/2 left-1/3 w-px h-12 bg-white/10 -translate-y-1/2" />
+        <div className="hidden md:block absolute top-1/2 left-2/3 w-px h-12 bg-white/10 -translate-y-1/2" />
+
+        <div className="space-y-3">
+          <div className="flex items-center gap-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+            <p className="text-xs font-black text-blue-400 uppercase tracking-tighter">Reason</p>
+          </div>
+          <p className="text-[14px] md:text-[15px] text-slate-300 leading-relaxed">
+            수백 개의 코인 데이터를 웹소켓 스트림으로만 수신할 경우 모든 코인의 실시간 데이터가 수신될 때까지 
+            <span className="text-white font-medium italic"> 로딩 상태</span>가 지속됨
+          </p>
+        </div>
+
+        <div className="space-y-3">
+          <div className="flex items-center gap-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
+            <p className="text-xs font-black text-red-400 uppercase tracking-tighter">Problem</p>
+          </div>
+          <p className="text-[14px] md:text-[15px] text-slate-300 leading-relaxed">
+          페이지 진입 시 실시간 데이터를 확인하기까지 <span className="text-red-300 font-medium">
+          시간이 지체되어 부정적인 첫인상 발생 가능성</span> 확인
+          </p>
+        </div>
+
+        <div className="space-y-3">
+          <div className="flex items-center gap-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-green-400" />
+            <p className="text-xs font-black text-green-400 uppercase tracking-tighter">Solution</p>
+          </div>
+          <p className="text-[14px] md:text-[15px] text-emerald-100 leading-relaxed font-medium">
+            <span className="bg-amber-500/20 px-1 rounded text-amber-300">REST API
+            </span>로 현재 시세를 즉시 불러와 화면을 먼저 렌더링한 후 백그라운드에서 웹소켓을 연결하는 하이브리드 방식으로 전환하여 
+            <span className="underline underline-offset-4 decoration-emerald-500/50"> 초기 로딩 속도를 80% 이상 개선</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    
   </div>
 </motion.section>
 
