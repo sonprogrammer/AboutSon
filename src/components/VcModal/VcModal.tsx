@@ -33,10 +33,25 @@ const VcModal = () => {
             <a href='https://github.com/sonprogrammer/VirtualCoin' target="_blank" rel="noreferrer" className="text-rose-600 hover:underline">Link</a>
           </div>
           <div className="flex items-center gap-2">
-            <span className="font-bold text-slate-900 italic underline decoration-rose-200">Live Demo</span>
+            <span className="font-bold text-slate-900 italic underline decoration-rose-200">WebSite</span>
             <a href='https://virtualcoinn.onrender.com/' target="_blank" rel="noreferrer" className="text-rose-600 hover:underline">Visit Site</a>
           </div>
         </div>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 5 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          className="inline-flex items-center gap-2 px-4 py-2 bg-amber-50 border border-amber-100 rounded-xl mt-2"
+        >
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+          </span>
+          <p className="text-[12px] text-amber-700 font-medium">
+            무료 호스팅 특성상 초기 접속 시 서버 기동을 위해 <span className="font-bold underline">약 1~2분</span> 정도 소요될 수 있습니다.
+          </p>
+        </motion.div>
       </section>
 
       <div className="h-px bg-slate-100" />
