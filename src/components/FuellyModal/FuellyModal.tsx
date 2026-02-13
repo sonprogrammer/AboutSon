@@ -136,44 +136,11 @@ const NutriAIModal = () => {
         <div className="relative z-10 flex flex-col gap-10 mt-8">
 
 
+          
+
           <div className="bg-white/5 backdrop-blur-md rounded-[2rem] p-6 md:p-10 border border-white/10 shadow-2xl">
             <div className="flex flex-col md:flex-row md:items-center gap-4 mb-8">
               <span className="w-fit bg-red-500 text-white text-[10px] px-3 py-1 rounded-full font-black tracking-widest">ISSUE 01</span>
-              <h3 className="text-xl md:text-2xl font-bold text-white">React 19: useEffect 내 동기적 상태 업데이트 경고</h3>
-            </div>
-            <div className="grid gap-8 md:grid-cols-3 relative">
-              <div className="hidden md:block absolute top-1/2 left-1/3 w-px h-12 bg-white/10 -translate-y-1/2" />
-              <div className="hidden md:block absolute top-1/2 left-2/3 w-px h-12 bg-white/10 -translate-y-1/2" />
-
-              <div className="space-y-3">
-                <div className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
-                  <p className="text-xs font-black text-blue-400 uppercase tracking-tighter">Reason</p>
-                </div>
-                <p className="text-[14px] text-slate-300 leading-relaxed">React 19의 엄격해진 렌더링 규칙에 따라 렌더링 도중 발생하는 동기적 상태 변경을 감지함</p>
-              </div>
-
-              <div className="space-y-3">
-                <div className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
-                  <p className="text-xs font-black text-red-400 uppercase tracking-tighter">Problem</p>
-                </div>
-                <p className="text-[14px] text-slate-300 leading-relaxed">useEffect 내부에서 로컬 스토리지 데이터 로드 시 <span className="text-red-300">렌더링 사이클 위반 경고</span> 발생</p>
-              </div>
-
-              <div className="space-y-3">
-                <div className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-green-400" />
-                  <p className="text-xs font-black text-green-400 uppercase tracking-tighter">Solution</p>
-                </div>
-                <p className="text-[14px] text-emerald-100 font-medium"><code>Promise.resolve()</code>를 통해 마이크로태스크 큐로 위임하여 렌더링 완료 후 상태가 변경되도록 비동기 처리</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-white/5 backdrop-blur-md rounded-[2rem] p-6 md:p-10 border border-white/10 shadow-2xl">
-            <div className="flex flex-col md:flex-row md:items-center gap-4 mb-8">
-              <span className="w-fit bg-red-500 text-white text-[10px] px-3 py-1 rounded-full font-black tracking-widest">ISSUE 02</span>
               <h3 className="text-xl md:text-2xl font-bold text-white">AI 모델 최적화 및 보안 아키텍처 설계</h3>
             </div>
             <div className="grid gap-8 md:grid-cols-3 relative">
@@ -208,7 +175,7 @@ const NutriAIModal = () => {
 
           <div className="bg-white/5 backdrop-blur-md rounded-[2rem] p-6 md:p-10 border border-white/10 shadow-2xl">
             <div className="flex flex-col md:flex-row md:items-center gap-4 mb-8">
-              <span className="w-fit bg-red-500 text-white text-[10px] px-3 py-1 rounded-full font-black tracking-widest">ISSUE 03</span>
+              <span className="w-fit bg-red-500 text-white text-[10px] px-3 py-1 rounded-full font-black tracking-widest">ISSUE 02</span>
               <h3 className="text-xl md:text-2xl font-bold text-white">TanStack Query v5: 인터페이스 변화 및 규격 대응</h3>
             </div>
             <div className="grid gap-8 md:grid-cols-3 relative">
