@@ -32,7 +32,7 @@ const NutriAIModal = () => {
           </div>
           <div className="flex items-center gap-2 border-l border-slate-200 pl-4">
             <span className="font-bold text-slate-900 underline italic">Live Demo</span>
-            <a href='https://fuelly.onrender.com/' target='_blank' rel='noreferrer' className="text-emerald-600 hover:underline">Visit Site</a>
+            <a href='https://fuelly-mauve.vercel.app/' target='_blank' rel='noreferrer' className="text-emerald-600 hover:underline">Visit Site</a>
           </div>
         </div>
 
