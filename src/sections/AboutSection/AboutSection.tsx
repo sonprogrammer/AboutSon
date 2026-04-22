@@ -33,11 +33,11 @@ const AboutSection = () => {
         
         <div className="flex flex-col lg:flex-row items-center lg:items-start gap-10 md:gap-16">
           
-          <div className='flex-shrink-0 w-[160px] md:w-[220px]'>
+          <div className='shrink-0 w-40 md:w-55'>
             <img 
               src="/photo.png" 
               alt="프로필" 
-              className='rounded-2xl w-full grayscale-[20%] hover:grayscale-0 transition-all duration-500 shadow-sm' 
+              className='rounded-2xl w-full grayscale-20 hover:grayscale-0 transition-all duration-500 shadow-sm' 
             />
           </div>
 
@@ -73,7 +73,7 @@ const AboutSection = () => {
 
               <div className="flex flex-col sm:flex-row sm:gap-6 pt-1">
                 <span className="w-24 text-slate-400 font-semibold shrink-0">Resume</span>
-                <a href="/resume.pdf"  target="_blank" className="font-bold text-purple-600 hover:underline">
+                <a href="/resume1.pdf"  target="_blank" className="font-bold text-purple-600 hover:underline">
                   PDF 이력서 열기
                 </a>
               </div>

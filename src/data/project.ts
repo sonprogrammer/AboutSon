@@ -27,7 +27,7 @@ export const projectData = [
     },{
       img: "mungpass.png",
       title: "Mungpass",
-      desc: "ㅇ",
+      desc: "애견 시설 통합 O2O 서비스",
       shorts: '',
       link: "#"
     }
