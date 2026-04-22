@@ -9,7 +9,7 @@ const SkillSection = () => {
   const skills = [
     'html.svg', 'css.svg', 'javascript.svg', 'typescript.svg', 'react.svg', 
     'nextjs.svg', 'reactquery.svg', 'nodejs.svg', 'mongodb.svg', 'tailwind.svg', 
-    'styled.svg', 'mui.svg', 'zustand.svg', 'axios.svg'
+    'styled.svg', 'mui.svg', 'zustand.svg', 'axios.svg', 'supabase.svg', 'antd.svg'
   ]
 
   const ref = useRef(null)
@@ -30,9 +30,6 @@ const SkillSection = () => {
 
       <div className={`${StyledBox} relative bg-white rounded-3xl border border-slate-50 py-8 shadow-[0_10px_40px_rgba(0,0,0,0.02)]`}>
         
-
-        <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
         <Swiper
           spaceBetween={40} 

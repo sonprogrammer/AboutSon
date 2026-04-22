@@ -24,5 +24,11 @@ export const projectData = [
       desc: "AI기반 개인 맞춤 영양 관리 웹 서비스",
       shorts: '',
       link: "#"
+    },{
+      img: "mungpass.png",
+      title: "Mungpass",
+      desc: "ㅇ",
+      shorts: '',
+      link: "#"
     }
   ]

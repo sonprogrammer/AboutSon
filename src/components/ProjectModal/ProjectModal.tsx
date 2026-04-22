@@ -15,10 +15,11 @@ const ProjectModal = ({ project, handleCloseModal, children }: ProjectModalProps
 
 
     const projectColors: Record<string, { bg: string; hover: string, text: string, shadow:string }> = {
-        Mingle: { bg: 'bg-purple-500', hover: 'hover:bg-gray-500', text: 'text-purple-500',shadow:'shadow-purple-100' },
-        'CAN (Check Again Note)' : { bg: 'bg-yellow-300', hover: 'hover:bg-blue-500', text: 'text-blue-500',shadow:'shadow-blue-100'   },
+        'Mingle': { bg: 'bg-purple-500', hover: 'hover:bg-purple-400', text: 'text-purple-500',shadow:'shadow-purple-100' },
         'BNTY (Be Next To You)' : { bg: 'bg-red-700', hover:  'hover:bg-gray-600', text: 'text-red-700',shadow:'shadow-red-950'  },
-        'VC (Virtual Coin)' : { bg: 'bg-red-500', hover: 'hover:bg-stone-400', text: 'text-red-500',shadow:'shadow-red-100'   }
+        'VC (Virtual Coin)' : { bg: 'bg-red-500', hover: 'hover:bg-red-400', text: 'text-red-500',shadow:'shadow-red-100'   },
+        'Fuelly' : { bg: 'bg-emerald-500', hover: 'hover:bg-emerald-400', text: 'text-emerald-500',shadow:'shadow-emerald-100'   },
+        'Mungpass' : { bg: 'bg-orange-500', hover: 'hover:bg-orange-400', text: 'text-orange-500',shadow:'shadow-orange-100'   },
     }
 
     const color = projectColors[project] || { bg: 'bg-black', hover: 'bg-black/80' }
@@ -37,7 +38,7 @@ const ProjectModal = ({ project, handleCloseModal, children }: ProjectModalProps
             >
                 <button
                     onClick={handleCloseModal}
-                    className={`absolute right-5 top-5 p-4 border rounded-full w-[24px] h-[24px]
+                    className={`absolute right-5 top-5 p-4 border rounded-full w-6 h-6
                      cursor-pointer flex justify-center items-center ${color.bg} ${color.hover} text-white `}
                 >X</button>
                 <h1 className={`text-lg sm:text-4xl font-bold text-center ${color.text}`}>{project}</h1>

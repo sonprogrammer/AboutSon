@@ -5,7 +5,7 @@ import 'swiper/css'
 import { fuellySkills } from '../../data/fuellySkills'
 import { fuellyFn } from '../../data/fuellyFn'
 
-const NutriAIModal = () => {
+const FuellyModal = () => {
   const skills = fuellySkills
   const functions = fuellyFn
 
@@ -36,7 +36,7 @@ const NutriAIModal = () => {
           </div>
         </div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 5 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
@@ -130,15 +130,15 @@ const NutriAIModal = () => {
         viewport={{ once: true }}
         className="bg-[#0f172a] rounded-[2.5rem] p-8 md:p-12 text-white relative overflow-hidden"
       >
-       
+
         <SectionTitle title="Trouble Shooting" icon="🔫" isDark={true} />
 
         <div className="relative z-10 flex flex-col gap-10 mt-8">
 
 
-          
 
-          <div className="bg-white/5 backdrop-blur-md rounded-[2rem] p-6 md:p-10 border border-white/10 shadow-2xl">
+
+          <div className="bg-white/5 backdrop-blur-md rounded-4xl p-6 md:p-10 border border-white/10 shadow-2xl">
             <div className="flex flex-col md:flex-row md:items-center gap-4 mb-8">
               <span className="w-fit bg-red-500 text-white text-[10px] px-3 py-1 rounded-full font-black tracking-widest">ISSUE 01</span>
               <h3 className="text-xl md:text-2xl font-bold text-white">AI 모델 최적화 및 보안 아키텍처 설계</h3>
@@ -149,16 +149,16 @@ const NutriAIModal = () => {
 
               <div className="space-y-3">
                 <div className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
-                  <p className="text-xs font-black text-blue-400 uppercase tracking-tighter">Selection</p>
+                  <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
+                  <p className="text-xs font-black text-red-400 uppercase tracking-tighter">Selection</p>
                 </div>
                 <p className="text-[14px] text-slate-300 leading-relaxed">비용 효율성과 최신 추론 성능을 고려하여 GPT-4 대비 경쟁력 있는 <span className="text-white">Grok AI</span>를 대체 모델로 채택</p>
               </div>
 
               <div className="space-y-3">
                 <div className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
-                  <p className="text-xs font-black text-red-400 uppercase tracking-tighter">Security</p>
+                  <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                  <p className="text-xs font-black text-blue-400 uppercase tracking-tighter">Security</p>
                 </div>
                 <p className="text-[14px] text-slate-300 leading-relaxed">클라이언트 단의 프롬프트 작성 로직은 <span className="text-red-300">인젝션 및 API 키 노출</span>의 취약점이 존재함</p>
               </div>
@@ -173,7 +173,7 @@ const NutriAIModal = () => {
             </div>
           </div>
 
-          <div className="bg-white/5 backdrop-blur-md rounded-[2rem] p-6 md:p-10 border border-white/10 shadow-2xl">
+          <div className="bg-white/5 backdrop-blur-md rounded-4xl p-6 md:p-10 border border-white/10 shadow-2xl">
             <div className="flex flex-col md:flex-row md:items-center gap-4 mb-8">
               <span className="w-fit bg-red-500 text-white text-[10px] px-3 py-1 rounded-full font-black tracking-widest">ISSUE 02</span>
               <h3 className="text-xl md:text-2xl font-bold text-white">TanStack Query v5: 인터페이스 변화 및 규격 대응</h3>
@@ -184,21 +184,21 @@ const NutriAIModal = () => {
 
               <div className="space-y-3">
                 <div className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
-                  <p className="text-xs font-black text-blue-400 uppercase tracking-tighter">Reason</p>
-                </div>
-                <p className="text-[14px] text-slate-300 leading-relaxed">
-                  TanStack Query가 v5로 업데이트되며 명확성을 위해 <span className="text-white">API 인터페이스와 속성명</span>이 대거 변경됨
-                </p>
-              </div>
-
-              <div className="space-y-3">
-                <div className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
                   <p className="text-xs font-black text-red-400 uppercase tracking-tighter">Problem</p>
                 </div>
                 <p className="text-[14px] text-slate-300 leading-relaxed">
                   기존 v4 방식의 속성 사용 시 타입 에러 발생 및 폐기된 옵션으로 인한 <span className="text-red-300">캐싱 전략</span> 오작동
+                </p>
+              </div>
+
+              <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                  <p className="text-xs font-black text-blue-400 uppercase tracking-tighter">Reason</p>
+                </div>
+                <p className="text-[14px] text-slate-300 leading-relaxed">
+                  TanStack Query가 v5로 업데이트되며 명확성을 위해 <span className="text-white">API 인터페이스와 속성명</span>이 대거 변경됨
                 </p>
               </div>
 
@@ -252,7 +252,7 @@ const NutriAIModal = () => {
           loop={true}
           speed={4000}
           autoplay={{ delay: 0, disableOnInteraction: false }}
-          className="!overflow-visible"
+          className="overflow-visible!"
           style={{ height: '100px' }}
         >
           {skills.map((skill, i) => (
@@ -267,4 +267,4 @@ const NutriAIModal = () => {
   )
 }
 
-export default NutriAIModal;
+export default FuellyModal

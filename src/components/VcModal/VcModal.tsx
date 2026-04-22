@@ -79,7 +79,7 @@ const VcModal = () => {
       >
         <SectionTitle title="Full-Stack Implementation" icon="📱" />
         
-        <div className="bg-white border border-slate-100 p-8 rounded-[2rem] shadow-sm mb-8">
+        <div className="bg-white border border-slate-100 p-8 rounded-4xl shadow-sm mb-8">
           <div className="grid md:grid-cols-2 gap-x-12 gap-y-6 text-[15px] leading-relaxed">
             <div className="space-y-4">
               <div className="flex gap-3"><span className="text-rose-500 font-bold">✓</span><p><b>실시간 시세 처리:</b> 업비트 WebSocket 연동 및 데이터 동기화</p></div>
@@ -140,7 +140,7 @@ const VcModal = () => {
 
   <div className="flex flex-col gap-10 relative z-10 mt-8">
 
-    <div className="bg-white/5 backdrop-blur-md rounded-[2rem] p-6 md:p-10 border border-white/10 shadow-2xl">
+    <div className="bg-white/5 backdrop-blur-md rounded-4xl p-6 md:p-10 border border-white/10 shadow-2xl">
       <div className="flex flex-col md:flex-row md:items-center gap-4 mb-8">
         <span className="w-fit px-3 py-1 rounded-full text-[10px] font-black tracking-widest text-white bg-rose-500">
           ISSUE 01
@@ -156,8 +156,8 @@ const VcModal = () => {
 
         <div className="space-y-3">
           <div className="flex items-center gap-2">
-            <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
-            <p className="text-xs font-black text-blue-400 uppercase tracking-tighter">Reason</p>
+            <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
+            <p className="text-xs font-black text-red-400 uppercase tracking-tighter">problem</p>
           </div>
           <p className="text-[14px] md:text-[15px] text-slate-300 leading-relaxed">
             바이낸스 API는 다양한 종목을 지원하지만, <span className="text-white font-medium underline underline-offset-4 decoration-rose-500/50">방대한 코인 수</span>는 투자를 처음 접하는 입문자에게 과도한 피로감을 줄 수 있음
@@ -166,8 +166,8 @@ const VcModal = () => {
 
         <div className="space-y-3">
           <div className="flex items-center gap-2">
-            <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
-            <p className="text-xs font-black text-red-400 uppercase tracking-tighter">Problem</p>
+            <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+            <p className="text-xs font-black text-blue-400 uppercase tracking-tighter">reason</p>
           </div>
           <p className="text-[14px] md:text-[15px] text-slate-300 leading-relaxed">
             초기 기획 의도인 <span className="text-white font-medium">'초보자를 위한 가상 투자 공간'</span> 구축에 있어 복잡한 인터페이스는 진입 장벽이 됨
@@ -187,7 +187,7 @@ const VcModal = () => {
     </div>
 
 
-    <div className="bg-white/5 backdrop-blur-md rounded-[2rem] p-6 md:p-10 border border-white/10 shadow-2xl">
+    <div className="bg-white/5 backdrop-blur-md rounded-4xl p-6 md:p-10 border border-white/10 shadow-2xl">
       <div className="flex flex-col md:flex-row md:items-center gap-4 mb-8">
         <span className="w-fit px-3 py-1 rounded-full text-[10px] font-black tracking-widest text-white bg-red-500">
           ISSUE 02
@@ -203,6 +203,16 @@ const VcModal = () => {
 
         <div className="space-y-3">
           <div className="flex items-center gap-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
+            <p className="text-xs font-black text-red-400 uppercase tracking-tighter">Problem</p>
+          </div>
+          <p className="text-[14px] md:text-[15px] text-slate-300 leading-relaxed">
+            클라이언트 단에서 직접 연동 시 <span className="text-red-300 font-medium">CORS 에러</span> 및 "Too many request" 제한이 발생하여 실시간 시세 업데이트 불가
+          </p>
+        </div>
+
+        <div className="space-y-3">
+          <div className="flex items-center gap-2">
             <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
             <p className="text-xs font-black text-blue-400 uppercase tracking-tighter">Reason</p>
           </div>
@@ -211,15 +221,6 @@ const VcModal = () => {
           </p>
         </div>
 
-        <div className="space-y-3">
-          <div className="flex items-center gap-2">
-            <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
-            <p className="text-xs font-black text-red-400 uppercase tracking-tighter">Problem</p>
-          </div>
-          <p className="text-[14px] md:text-[15px] text-slate-300 leading-relaxed">
-            클라이언트 단에서 직접 연동 시 <span className="text-red-300 font-medium">CORS 에러</span> 및 "Too many request" 제한이 발생하여 실시간 시세 업데이트 불가
-          </p>
-        </div>
 
         <div className="space-y-3">
           <div className="flex items-center gap-2">
@@ -233,7 +234,7 @@ const VcModal = () => {
       </div>
     </div>
 
-    <div className="bg-white/5 backdrop-blur-md rounded-[2rem] p-6 md:p-10 border border-white/10 shadow-2xl">
+    <div className="bg-white/5 backdrop-blur-md rounded-4xl p-6 md:p-10 border border-white/10 shadow-2xl">
       <div className="flex flex-col md:flex-row md:items-center gap-4 mb-8">
         <span className="w-fit px-3 py-1 rounded-full text-[10px] font-black tracking-widest text-white bg-red-500">
           ISSUE 03
@@ -249,8 +250,8 @@ const VcModal = () => {
 
         <div className="space-y-3">
           <div className="flex items-center gap-2">
-            <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
-            <p className="text-xs font-black text-blue-400 uppercase tracking-tighter">Reason</p>
+            <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
+            <p className="text-xs font-black text-red-400 uppercase tracking-tighter">problem</p>
           </div>
           <p className="text-[14px] md:text-[15px] text-slate-300 leading-relaxed">
             수백 개의 코인 데이터를 웹소켓 스트림으로만 수신할 경우 모든 코인의 실시간 데이터가 수신될 때까지 
@@ -260,8 +261,8 @@ const VcModal = () => {
 
         <div className="space-y-3">
           <div className="flex items-center gap-2">
-            <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
-            <p className="text-xs font-black text-red-400 uppercase tracking-tighter">Problem</p>
+            <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+            <p className="text-xs font-black text-blue-400 uppercase tracking-tighter">Reason</p>
           </div>
           <p className="text-[14px] md:text-[15px] text-slate-300 leading-relaxed">
           페이지 진입 시 실시간 데이터를 확인하기까지 <span className="text-red-300 font-medium">
@@ -301,7 +302,7 @@ const VcModal = () => {
           loop={true}
           speed={4000}
           autoplay={{ delay: 0, disableOnInteraction: false }}
-          className="!overflow-visible"
+          className="overflow-visible!"
           style={{ height: '100px' }}
         >
           {[...skills, ...skills, ...skills].map((skill, i) => (

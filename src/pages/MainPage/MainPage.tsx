@@ -31,7 +31,7 @@ const MainPage = () => {
   return (
     <div className="w-full bg-white text-slate-900 selection:bg-purple-100 selection:text-purple-900">
       
-      <div className="max-w-[1100px] mx-auto">
+      <div className="max-w-275 mx-auto">
 
         <section className="md:px-10 px-6 py-8 md:py-10">
           <AboutSection />

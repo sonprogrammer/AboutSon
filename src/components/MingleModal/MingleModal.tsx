@@ -46,7 +46,7 @@ const MingleModal = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="bg-slate-50 rounded-[2rem] p-8 md:p-10 border border-slate-100"
+        className="bg-slate-50 rounded-4xl p-8 md:p-10 border border-slate-100"
       >
         <SectionTitle title="Core Role" icon="👤" />
         <div className="grid md:grid-cols-3 gap-6">
@@ -114,21 +114,21 @@ const MingleModal = () => {
 
             <div className="space-y-3">
               <div className="flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
-                <p className="text-xs font-black text-blue-400 uppercase tracking-tighter">Reason</p>
-              </div>
-              <p className="text-[15px] text-slate-300 leading-relaxed">
-                공통 Axios 인스턴스의 인터셉터를 통해 모든 요청 헤더에 <span className="text-white font-medium underline underline-offset-4 decoration-purple-500/50">Authorization 토큰이 자동 포함</span>되도록 설계됨
-              </p>
-            </div>
-
-            <div className="space-y-3">
-              <div className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
                 <p className="text-xs font-black text-red-400 uppercase tracking-tighter">Problem</p>
               </div>
               <p className="text-[15px] text-slate-300 leading-relaxed">
                 OpenWeather API는 보안 규정상 헤더의 커스텀 토큰을 허용하지 않음. 이로 인해 브라우저 단에서 <span className="text-red-300 font-medium">CORS Preflight 에러</span> 발생
+              </p>
+            </div>
+
+            <div className="space-y-3">
+              <div className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                <p className="text-xs font-black text-blue-400 uppercase tracking-tighter">Reason</p>
+              </div>
+              <p className="text-[15px] text-slate-300 leading-relaxed">
+                공통 Axios 인스턴스의 인터셉터를 통해 모든 요청 헤더에 <span className="text-white font-medium underline underline-offset-4 decoration-purple-500/50">Authorization 토큰이 자동 포함</span>되도록 설계됨
               </p>
             </div>
 
@@ -176,7 +176,7 @@ const MingleModal = () => {
       disableOnInteraction: false, 
     }}
    
-    className="flex items-center !overflow-visible" 
+    className="flex items-center overflow-visible!" 
     style={{ height: '100px' }}
   >
 

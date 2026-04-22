@@ -98,7 +98,7 @@ const BtnyModal = () => {
       >
         <SectionTitle title="Full-Stack Implementation" icon="📱" />
 
-        <div className="bg-white border border-slate-100 p-8 rounded-[2rem] shadow-sm space-y-4">
+        <div className="bg-white border border-slate-100 p-8 rounded-4xl shadow-sm space-y-4">
           <div className="grid md:grid-cols-2 gap-4 text-sm leading-relaxed">
             {[
               "MVC 구조 기반의 백엔드 로직 설계 및 데이터 흐름 구조화",
@@ -142,7 +142,7 @@ const BtnyModal = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="bg-[#0f172a] rounded-[2.5rem] p-8 md:p-12 text-white overflow-hidden relative mt-10" // mt-10은 섹션 간 간격 조절용
+        className="bg-[#0f172a] rounded-[2.5rem] p-8 md:p-12 text-white overflow-hidden relative mt-10" 
       >
 
         <SectionTitle title="Trouble Shooting" icon="🔫" isDark={true} />
@@ -163,6 +163,16 @@ const BtnyModal = () => {
 
             <div className="space-y-3">
               <div className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
+                <p className="text-xs font-black text-red-400 uppercase tracking-tighter">Problem</p>
+              </div>
+              <p className="text-[15px] text-slate-300 leading-relaxed">
+              마지막 글자가 조합 중인 상태에서 Enter를 누르면 <span className="text-red-300 font-medium">조합 완료 이벤트와 전송 이벤트가 중복 발생</span>하여 결과적으로 동일한 데이터가 두 번 전송되는 현상 확인
+              </p>
+            </div>
+
+            <div className="space-y-3">
+              <div className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
                 <p className="text-xs font-black text-blue-400 uppercase tracking-tighter">Reason</p>
               </div>
@@ -174,15 +184,6 @@ const BtnyModal = () => {
               </p>
             </div>
 
-            <div className="space-y-3">
-              <div className="flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
-                <p className="text-xs font-black text-red-400 uppercase tracking-tighter">Problem</p>
-              </div>
-              <p className="text-[15px] text-slate-300 leading-relaxed">
-              마지막 글자가 조합 중인 상태에서 Enter를 누르면 <span className="text-red-300 font-medium">조합 완료 이벤트와 전송 이벤트가 중복 발생</span>하여 결과적으로 동일한 데이터가 두 번 전송되는 현상 확인
-              </p>
-            </div>
 
             <div className="space-y-3">
               <div className="flex items-center gap-2">
@@ -225,7 +226,7 @@ const BtnyModal = () => {
           loop={true}
           speed={4000}
           autoplay={{ delay: 0, disableOnInteraction: false }}
-          className="!overflow-visible"
+          className="overflow-visible!"
           style={{ height: '100px' }}
         >
           {[...skills, ...skills, ...skills].map((skill, i) => (
