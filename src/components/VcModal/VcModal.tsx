@@ -5,7 +5,7 @@ import 'swiper/css';
 
 import { vcFn } from "../../data/vcFn";
 import { vcSkills } from "../../data/vcskills";
-
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 const VcModal = () => {
   const functions = vcFn
@@ -70,6 +70,70 @@ const VcModal = () => {
           <span className="font-bold text-slate-900"> 업비트 API 기반의 실시간 데이터</span>를 활용해 실제 시장과 동일한 투자 환경을 직접 설계하고 구현.
         </p>
       </motion.div>
+
+
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="space-y-6"
+      >
+        <SectionTitle title="System Architecture & Flow" icon="🏗️" />
+        
+        <div className="bg-slate-50 border border-slate-200 rounded-4xl p-6 md:p-10">
+          <div className="flex flex-col md:flex-row gap-8 items-center">
+
+            <div className="w-full md:w-2/3 bg-white rounded-2xl border border-slate-100 shadow-inner overflow-hidden group relative">
+              <div className="absolute top-3 right-3 z-10 bg-slate-800/60 text-white text-[10px] px-2 py-1 rounded-md backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity">
+                이미지를 클릭하여 확대/이동 가능합니다
+              </div>
+              
+              <TransformWrapper>
+                <TransformComponent wrapperClass="w-full! h-full!">
+                  <img 
+                    src="/vcflow.png"
+                    alt="VC Architecture" 
+                    className="w-full h-auto cursor-zoom-in"
+                  />
+                </TransformComponent>
+              </TransformWrapper>
+            </div>
+
+            <div className="w-full md:w-1/3 space-y-4">
+              <div className="space-y-2">
+                <h4 className="text-sm font-bold text-slate-900 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-rose-500 rounded-full"></span>
+                  실시간 거래 시스템 설계
+                </h4>
+                <ul className="text-xs text-slate-600 space-y-3 leading-relaxed">
+                  <li>
+                    <strong className="text-slate-800">1. 하이브리드 데이터 로드 전략:</strong><br/>
+                    초기 로딩 시 REST API로 전체 시세를 즉시 렌더링하고, 이후 WebSocket으로 전환하여 실시간성을 확보하는 최적화된 시세 확인 플로우를 구축했습니다.
+                  </li>
+                  <li>
+                    <strong className="text-slate-800">2. 안정적인 백엔드 프록시 구조:</strong><br/>
+                    CORS 및 요청 제한 이슈를 해결하기 위해 Node.js를 중계 서버로 활용, 업비트 API와의 통신을 안정화하고 클라이언트에 데이터를 효율적으로 전달합니다.
+                  </li>
+                  <li>
+                    <strong className="text-slate-800">3. 정밀한 자산 관리 시스템:</strong><br/>
+                    매수/매도 주문 시 서버 측 검증 로직을 거쳐 DB에 반영하며, 평가 손익 및 수익률을 실시간 시세 데이터와 연동해 즉각적으로 계산합니다.
+                  </li>
+                  <li>
+                    <strong className="text-slate-800">4. 효율적인 클라이언트 상태 최적화:</strong><br/>
+                    React Query의 캐싱 시스템과 Recoil의 전역 상태를 조합하여, 수많은 코인 데이터의 빈번한 업데이트에도 렌더링 부하를 최소화했습니다.
+                  </li>
+                </ul>
+              </div>
+              
+              <div className="p-4 bg-white rounded-2xl border border-slate-100">
+                <p className="text-[11px] text-slate-400 italic leading-relaxed">
+                * 설계도는 VC 서비스의 User Flow부터 Tech Stack까지의 연동 구조를 직접 도식화한 자료입니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.section>
 
 
       <motion.section

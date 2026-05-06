@@ -6,6 +6,7 @@ import 'swiper/css';
 import { bntySkills } from "../../data/bntyskills";
 import { bntyFn } from "../../data/bntyFn";
 import { bntyR } from "../../data/bntyLast.tsx";
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch"
 
 const BtnyModal = () => {
   const functions = bntyFn
@@ -39,7 +40,7 @@ const BtnyModal = () => {
           </div>
         </div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 5 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
@@ -94,6 +95,69 @@ const BtnyModal = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
+        className="space-y-6"
+      >
+        <SectionTitle title="System Architecture & Flow" icon="🏗️" />
+
+        <div className="bg-slate-50 border border-slate-200 rounded-4xl p-6 md:p-10">
+          <div className="flex flex-col md:flex-row gap-8 items-center">
+            <div className="w-full md:w-2/3 bg-white rounded-2xl border border-slate-100 shadow-inner overflow-hidden group relative">
+              <div className="absolute top-3 right-3 z-10 bg-slate-800/60 text-white text-[10px] px-2 py-1 rounded-md backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity">
+              이미지를 클릭하여 확대/이동 가능합니다
+              </div>
+
+              <TransformWrapper>
+                <TransformComponent wrapperClass="w-full! h-full!">
+                  <img
+                    src="/Bntyflow.png"
+                    alt="Flowchart"
+                    className="w-full h-auto cursor-zoom-in"
+                  />
+                </TransformComponent>
+              </TransformWrapper>
+            </div>
+
+            <div className="w-full md:w-1/3 space-y-4">
+              <div className="space-y-2">
+                <h4 className="text-sm font-bold text-slate-900 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-red-500 rounded-full"></span>
+                  핵심 설계 및 아키텍처
+                </h4>
+                <ul className="text-xs text-slate-600 space-y-3 leading-relaxed">
+                  <li>
+                    <strong className="text-slate-800">1. 유연한 역할 기반 서비스 플로우:</strong><br />
+                    로그인 후 트레이너와 회원의 역할을 명확히 분리하고, QR 코드를 통한 즉시 매칭 시스템으로 진입 장벽을 최소화하도록 설계했습니다.
+                  </li>
+                  <li>
+                    <strong className="text-slate-800">2. 계층화된 시스템 아키텍처:</strong><br />
+                    React 기반 UI 레이어부터 Node.js 서버 레이어까지 MVC 패턴을 준수하여 설계했습니다.
+                  </li>
+                  <li>
+                    <strong className="text-slate-800">3. 하이브리드 상태 관리 전략:</strong><br />
+                    Recoil을 통한 전역 UI 상태 관리와 React-Query를 통한 서버 데이터 캐싱/동기화 전략을 분리하여 프론트엔드 성능과 데이터 정밀도를 높였습니다.
+                  </li>
+                  <li>
+                    <strong className="text-slate-800">4. 양방향 실시간 통신 최적화:</strong><br />
+                    HTTP REST API와 Socket.io를 병행 사용하여 일반적인 CRUD 작업과 실시간 채팅/읽음 처리 기능을 목적에 맞게 최적화했습니다.
+                  </li>
+                </ul>
+              </div>
+
+              <div className="p-4 bg-white rounded-2xl border border-slate-100">
+                <p className="text-[11px] text-slate-400 italic">
+                  * 설계도는 BNTY 서비스의 User Flow부터 Tech Stack까지의 연동 구조를 직접 도식화한 자료입니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.section>
+
+
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
         className="space-y-8"
       >
         <SectionTitle title="Full-Stack Implementation" icon="📱" />
@@ -142,7 +206,7 @@ const BtnyModal = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="bg-[#0f172a] rounded-[2.5rem] p-8 md:p-12 text-white overflow-hidden relative mt-10" 
+        className="bg-[#0f172a] rounded-[2.5rem] p-8 md:p-12 text-white overflow-hidden relative mt-10"
       >
 
         <SectionTitle title="Trouble Shooting" icon="🔫" isDark={true} />
@@ -153,7 +217,7 @@ const BtnyModal = () => {
               ISSUE 01
             </span>
             <h3 className="text-xl md:text-2xl font-bold text-white">
-            한글 중복 전송 이슈 (IME)
+              한글 중복 전송 이슈 (IME)
             </h3>
           </div>
 
@@ -167,7 +231,7 @@ const BtnyModal = () => {
                 <p className="text-xs font-black text-red-400 uppercase tracking-tighter">Problem</p>
               </div>
               <p className="text-[15px] text-slate-300 leading-relaxed">
-              마지막 글자가 조합 중인 상태에서 Enter를 누르면 <span className="text-red-300 font-medium">조합 완료 이벤트와 전송 이벤트가 중복 발생</span>하여 결과적으로 동일한 데이터가 두 번 전송되는 현상 확인
+                마지막 글자가 조합 중인 상태에서 Enter를 누르면 <span className="text-red-300 font-medium">조합 완료 이벤트와 전송 이벤트가 중복 발생</span>하여 결과적으로 동일한 데이터가 두 번 전송되는 현상 확인
               </p>
             </div>
 
@@ -178,9 +242,9 @@ const BtnyModal = () => {
               </div>
               <p className="text-[15px] text-slate-300 leading-relaxed">
                 한글은 자음과 모음이 결합되는 <span className="text-white font-medium underline underline-offset-4 decoration-blue-500/50">
-                IME(Input Method Editor)
+                  IME(Input Method Editor)
                 </span>
-                 과정을 거치며, Enter 입력 시 글자 조합이 완료되지 않은 것으로 간주됨
+                과정을 거치며, Enter 입력 시 글자 조합이 완료되지 않은 것으로 간주됨
               </p>
             </div>
 
@@ -192,14 +256,14 @@ const BtnyModal = () => {
               </div>
               <p className="text-[15px] text-emerald-100 leading-relaxed font-medium">
                 <span className="bg-emerald-500/20 px-1 rounded text-emerald-300 underline underline-offset-4">
-                isComposing</span>체크하여 글자 조합이 완료된 시점에만 이벤트를 실행하도록 분기 처리하여 해결
+                  isComposing</span>체크하여 글자 조합이 완료된 시점에만 이벤트를 실행하도록 분기 처리하여 해결
               </p>
             </div>
           </div>
         </div>
       </motion.section>
 
-     
+
 
       <motion.section
         initial={{ opacity: 0, scale: 0.95 }}

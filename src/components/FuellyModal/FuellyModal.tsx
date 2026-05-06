@@ -4,6 +4,7 @@ import { Autoplay } from 'swiper/modules';
 import 'swiper/css'
 import { fuellySkills } from '../../data/fuellySkills'
 import { fuellyFn } from '../../data/fuellyFn'
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch"
 
 const FuellyModal = () => {
   const skills = fuellySkills
@@ -68,6 +69,69 @@ const FuellyModal = () => {
         </p>
       </motion.div>
 
+
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="space-y-6"
+      >
+        <SectionTitle title="System Architecture & Flow" icon="🏗️" />
+        
+        <div className="bg-slate-50 border border-slate-200 rounded-4xl p-6 md:p-10">
+          <div className="flex flex-col md:flex-row gap-8 items-center">
+            {/* 왼쪽: 시스템 설계도 이미지 */}
+            <div className="w-full md:w-2/3 bg-white rounded-2xl border border-slate-100 shadow-inner overflow-hidden group relative">
+              <div className="absolute top-3 right-3 z-10 bg-slate-800/60 text-white text-[10px] px-2 py-1 rounded-md backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity">
+              이미지를 클릭하여 확대/이동 가능합니다
+              </div>
+              
+              <TransformWrapper>
+                <TransformComponent wrapperClass="w-full! h-full!">
+                  <img 
+                    src="/fuellyflow.png" 
+                    alt="Fuelly System Architecture" 
+                    className="w-full h-auto cursor-zoom-in"
+                  />
+                </TransformComponent>
+              </TransformWrapper>
+            </div>
+
+            <div className="w-full md:w-1/3 space-y-4">
+              <div className="space-y-2">
+                <h4 className="text-sm font-bold text-slate-900 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                  AI 헬스케어 설계 핵심
+                </h4>
+                <ul className="text-xs text-slate-600 space-y-3 leading-relaxed">
+                  <li>
+                    <strong className="text-slate-800">1. 사용자 맞춤형 목표 설정:</strong><br/>
+                    개인 정보(나이, 성별, 활동량 등)를 기반으로 권장 섭취량을 자동 산출하고, 실시간 영양 밸런스를 계산하는 정밀한 알고리즘을 구축했습니다.
+                  </li>
+                  <li>
+                    <strong className="text-slate-800">2. 고성능 AI 추론 및 데이터 정형화:</strong><br/>
+                    <strong>Groq AI(LPU)</strong>를 연동하여 타 LLM 대비 압도적인 분석 속도를 확보하고, 비정형 AI 응답을 서버에서 <strong>JSON 구조로 정형화</strong>하여 UI에 즉시 반영되는 파이프라인을 구축했습니다.
+                  </li>
+                  <li>
+                    <strong className="text-slate-800">3. 보안 중심의 서버리스 구조:</strong><br/>
+                    Next.js API Routes를 브릿지로 활용하여 API 키 노출을 방지하고, 모든 외부 API통신을 Server-Side에서 처리하여 보안성을 높였습니다.
+                  </li>
+                  <li>
+                    <strong className="text-slate-800">4. 효율적 상태 관리 전략:</strong><br/>
+                    Zustand로 UI 상태를 가볍게 유지하고, React Query를 통해 MongoDB의 영양 데이터 및 식단 기록을 효율적으로 캐싱/동기화합니다.
+                  </li>
+                </ul>
+              </div>
+              
+              <div className="p-4 bg-white rounded-2xl border border-slate-100">
+                <p className="text-[11px] text-slate-400 italic leading-relaxed">
+                * 설계도는 Fuelly 서비스의 User Flow부터 Tech Stack까지의 연동 구조를 직접 도식화한 자료입니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.section>
 
       <motion.section
         initial={{ opacity: 0, y: 20 }}
