@@ -159,7 +159,7 @@ export default function MungpassModal() {
                     <div className="bg-white/5 backdrop-blur-md rounded-4xl p-6 md:p-10 border border-white/10 shadow-2xl">
                         <div className="flex flex-col md:flex-row md:items-center gap-4 mb-8">
                             <span className="w-fit bg-red-500 text-white text-[10px] px-3 py-1 rounded-full font-black tracking-widest">ISSUE 03</span>
-                            <h3 className="text-xl md:text-2xl font-bold text-white">Vercel 빌드 시 SearchParams 관련 Static Rendering 오류</h3>
+                            <h3 className="text-xl md:text-2xl font-bold text-white">useSearchParams 사용 시 Prerender Build Error 발생</h3>
                         </div>
                         <div className="grid gap-8 md:grid-cols-3 relative">
                             <div className="hidden md:block absolute top-1/2 left-1/3 w-px h-12 bg-white/10 -translate-y-1/2" />
@@ -169,28 +169,28 @@ export default function MungpassModal() {
                                     <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
                                     <p className="text-xs font-black text-red-400 uppercase tracking-tighter">Problem</p>
                                 </div>
-                                <p className="text-[14px] text-slate-300 leading-relaxed">빌드 단계에서 <code>useSearchParams</code>를 사용할 때 쿼리 스트링을 확정할 수 없어 <span className="text-red-300 font-bold">Build Error</span> 발생 및 배포 중단</p>
+                                <p className="text-[14px] text-slate-300 leading-relaxed">Vercel 배포 빌드 과정에서 <code>useSearchParams</code>를 사용하는 페이지가 사전 렌더링(Prerender)되며, <span className="text-red-300 font-bold">Suspense Boundary</span> 가 없다는 오류와 함께 빌드가 중단됨</p>
                             </div>
                             <div className="space-y-3">
                                 <div className="flex items-center gap-2">
                                     <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
                                     <p className="text-xs font-black text-blue-400 uppercase tracking-tighter">Reason</p>
                                 </div>
-                                <p className="text-[14px] text-slate-300 leading-relaxed">Next.js의 기본 전략인 <span className="text-white">Static Generation(SSG)</span>은 빌드 시점에 HTML을 만드는데, 런타임 값인 URL 쿼리를 읽으려 시도하여 충돌 발생</p>
+                                <p className="text-[14px] text-slate-300 leading-relaxed">Next.js App Router의 useSearchParams는 런타임 기반의 <span className="text-white">Client Hook으로 동작하며, CSR Bailout이 발생하는 훅</span>이기 때문에 반드시 Suspense Boundary 내부에서 실행되어야 함</p>
                             </div>
                             <div className="space-y-3">
                                 <div className="flex items-center gap-2">
                                     <div className="w-1.5 h-1.5 rounded-full bg-green-400" />
                                     <p className="text-xs font-black text-green-400 uppercase tracking-tighter">Solution</p>
                                 </div>
-                                <p className="text-[14px] text-emerald-100 font-medium">해당 페이지를 <code>Suspense</code>로 감싸거나, <code>force-dynamic</code> 설정을 통해 <span className="text-white">Dynamic Rendering</span>으로 강제 전환하여 런타임 시점에 유연하게 대응</p>
+                                <p className="text-[14px] text-emerald-100 font-medium">useSearchParams를 사용하는 로직을 별도 <code>Client Component로 분리</code> 하고, 상위 페이지에서 <span className="text-white">Suspense</span> 로 감싸 CSR 전환 시점을 명확히 분리하여 빌드 오류 해결</p>
                             </div>
                         </div>
                     </div>
 
                     <div className="bg-white/5 backdrop-blur-md rounded-4xl p-6 md:p-10 border border-white/10 shadow-2xl">
                         <div className="flex flex-col md:flex-row md:items-center gap-4 mb-8">
-                            <span className="w-fit bg-red-500 text-white text-[10px] px-3 py-1 rounded-full font-black tracking-widest">ISSUE 04</span>
+                            <span className="inline-flex items-center whitespace-nowrap shrink-0 bg-red-500 text-white text-[10px] px-3 py-1 rounded-full font-black tracking-widest">ISSUE 04</span>
                             <h3 className="text-xl md:text-2xl font-bold text-white">
                                 Refine 내부 QueryClient 분리로 인한 React Query 캐시 불일치 문제
                             </h3>
@@ -243,7 +243,9 @@ export default function MungpassModal() {
 
                     <div className="bg-white/5 backdrop-blur-md rounded-4xl p-6 md:p-10 border border-white/10 shadow-2xl">
                         <div className="flex flex-col md:flex-row md:items-center gap-4 mb-8">
-                            <span className="w-fit bg-red-500 text-white text-[10px] px-3 py-1 rounded-full font-black tracking-widest">ISSUE 05</span>
+                            <span className="inline-flex items-center whitespace-nowrap shrink-0 bg-red-500 text-white text-[10px] px-3 py-1 rounded-full font-black tracking-widest">
+                                ISSUE 05
+                            </span>
                             <h3 className="text-xl md:text-2xl font-bold text-white">
                                 Supabase Singleton 구조에서 발생한 인증 세션 및 연결 불안정 문제
                             </h3>
