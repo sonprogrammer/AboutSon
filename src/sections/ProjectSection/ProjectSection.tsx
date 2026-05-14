@@ -24,7 +24,7 @@ const ProjectSection = ({ selectedProject, setSelectedProject }: ProjectSectionP
         <h2 className='text-3xl font-bold text-slate-900 tracking-tight'>Featured Projects</h2>
       </motion.div>
 
-      <div className='grid grid-cols-1 gap-6 sm:gap-10'>
+      <div className='grid grid-cols-1 xl:grid-cols-2 gap-6'>
         {projects.map((a, i) => {
           return (
             <motion.div
@@ -41,9 +41,9 @@ const ProjectSection = ({ selectedProject, setSelectedProject }: ProjectSectionP
             >
               <div className="absolute inset-0 bg-linear-to-br from-purple-50/50 to-indigo-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-              <div className="relative z-10 flex flex-col md:flex-row items-center gap-6 md:gap-10 flex-1 w-full">
+              <div className="relative z-10 flex flex-col items-center gap-6 flex-1 w-full">
                 <div className="relative overflow-hidden rounded-2xl bg-slate-50 flex items-center justify-center shrink-0
-                                w-full md:w-[320px] lg:w-100 h-45 md:h-55">
+                                w-full h-52">
                   <img 
                     src={`/${a.img}`} 
                     alt={a.title}
@@ -54,7 +54,7 @@ const ProjectSection = ({ selectedProject, setSelectedProject }: ProjectSectionP
                   </div>
                 </div>
 
-                <div className="space-y-3 flex-1 text-center md:text-left">
+                <div className="space-y-3 flex-1 text-center">
                   <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 group-hover:text-purple-600 transition-colors">
                     {a.title}
                   </h3>
@@ -68,7 +68,7 @@ const ProjectSection = ({ selectedProject, setSelectedProject }: ProjectSectionP
                 whileTap={{ scale: 0.95 }}
                 className="relative z-10 px-8 py-3 rounded-full bg-slate-900 text-white text-sm font-bold 
                            flex items-center gap-2 hover:bg-purple-600 transition-colors shrink-0
-                           mt-4 md:mt-0 md:ml-6"
+                           mt-2"
                 onClick={() => setSelectedProject(a.title)}
               >
                 View Project

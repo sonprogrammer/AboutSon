@@ -7,14 +7,14 @@ export const projectData = [
     },
     {
       img: "bnty.svg",
-      title: "BNTY (Be Next To You)",
+      title: "BNTY",
       desc: "트레이너와 회원간 소통 서비스",
       shorts: 'Be Next To You',
       link: "#"
     },
     {
       img: "vc.svg",
-      title: "VC (Virtual Coin)",
+      title: "VC",
       desc: "모의코인 투자 서비스",
       shorts: 'Virtual Coin',
       link: "#"
