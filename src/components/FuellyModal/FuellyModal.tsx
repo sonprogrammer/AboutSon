@@ -80,7 +80,6 @@ const FuellyModal = () => {
         
         <div className="bg-slate-50 border border-slate-200 rounded-4xl p-6 md:p-10">
           <div className="flex flex-col md:flex-row gap-8 items-center">
-            {/* 왼쪽: 시스템 설계도 이미지 */}
             <div className="w-full md:w-2/3 bg-white rounded-2xl border border-slate-100 shadow-inner overflow-hidden group relative">
               <div className="absolute top-3 right-3 z-10 bg-slate-800/60 text-white text-[10px] px-2 py-1 rounded-md backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity">
               이미지를 클릭하여 확대/이동 가능합니다

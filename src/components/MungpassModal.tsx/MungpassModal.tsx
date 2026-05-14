@@ -187,6 +187,163 @@ export default function MungpassModal() {
                             </div>
                         </div>
                     </div>
+
+                    <div className="bg-white/5 backdrop-blur-md rounded-4xl p-6 md:p-10 border border-white/10 shadow-2xl">
+                        <div className="flex flex-col md:flex-row md:items-center gap-4 mb-8">
+                            <span className="w-fit bg-red-500 text-white text-[10px] px-3 py-1 rounded-full font-black tracking-widest">ISSUE 04</span>
+                            <h3 className="text-xl md:text-2xl font-bold text-white">
+                                Refine 내부 QueryClient 분리로 인한 React Query 캐시 불일치 문제
+                            </h3>
+                        </div>
+
+                        <div className="grid gap-8 md:grid-cols-3 relative">
+                            <div className="hidden md:block absolute top-1/2 left-1/3 w-px h-12 bg-white/10 -translate-y-1/2" />
+                            <div className="hidden md:block absolute top-1/2 left-2/3 w-px h-12 bg-white/10 -translate-y-1/2" />
+
+                            <div className="space-y-3">
+                                <div className="flex items-center gap-2">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
+                                    <p className="text-xs font-black text-red-400 uppercase tracking-tighter">Problem</p>
+                                </div>
+
+                                <p className="text-[14px] text-slate-300 leading-relaxed">
+                                    매장 검색 시 네트워크 요청은 정상적으로 발생했지만
+                                    <span className="text-red-300 font-bold"> React Query Devtools에 쿼리가 표시되지 않거나</span>,
+                                    특정 상황에서 캐시 데이터와 실제 UI 상태가 어긋나는 현상 발생
+                                </p>
+                            </div>
+
+                            <div className="space-y-3">
+                                <div className="flex items-center gap-2">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                                    <p className="text-xs font-black text-blue-400 uppercase tracking-tighter">Reason</p>
+                                </div>
+
+                                <p className="text-[14px] text-slate-300 leading-relaxed">
+                                    Refine 내부에서 별도의 <span className="text-white">QueryClient</span>를 생성하면서,
+                                    최상단 Provider의 QueryClient와 캐시 저장소가 분리됨.
+                                    이로 인해 훅과 Devtools가 서로 다른 캐시를 바라보며 데이터 정합성 문제 발생
+                                </p>
+                            </div>
+
+                            <div className="space-y-3">
+                                <div className="flex items-center gap-2">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-green-400" />
+                                    <p className="text-xs font-black text-green-400 uppercase tracking-tighter">Solution</p>
+                                </div>
+
+                                <p className="text-[14px] text-emerald-100 font-medium">
+                                    상위 <code>QueryClient</code> 인스턴스를 Refine 설정에 명시적으로 주입하여
+                                    모든 훅이 <span className="text-white underline underline-offset-4">하나의 캐시 저장소(shared instance)</span>를
+                                    공유하도록 구조 개선
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="bg-white/5 backdrop-blur-md rounded-4xl p-6 md:p-10 border border-white/10 shadow-2xl">
+                        <div className="flex flex-col md:flex-row md:items-center gap-4 mb-8">
+                            <span className="w-fit bg-red-500 text-white text-[10px] px-3 py-1 rounded-full font-black tracking-widest">ISSUE 05</span>
+                            <h3 className="text-xl md:text-2xl font-bold text-white">
+                                Supabase Singleton 구조에서 발생한 인증 세션 및 연결 불안정 문제
+                            </h3>
+                        </div>
+
+                        <div className="grid gap-8 md:grid-cols-3 relative">
+                            <div className="hidden md:block absolute top-1/2 left-1/3 w-px h-12 bg-white/10 -translate-y-1/2" />
+                            <div className="hidden md:block absolute top-1/2 left-2/3 w-px h-12 bg-white/10 -translate-y-1/2" />
+
+                            <div className="space-y-3">
+                                <div className="flex items-center gap-2">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
+                                    <p className="text-xs font-black text-red-400 uppercase tracking-tighter">Problem</p>
+                                </div>
+
+                                <p className="text-[14px] text-slate-300 leading-relaxed">
+                                    특정 상황에서 인증 상태가 즉시 반영되지 않거나,
+                                    네트워크 요청이 무한 대기 상태에 빠지는 현상 발생
+                                </p>
+                            </div>
+
+                            <div className="space-y-3">
+                                <div className="flex items-center gap-2">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                                    <p className="text-xs font-black text-blue-400 uppercase tracking-tighter">Reason</p>
+                                </div>
+
+                                <p className="text-[14px] text-slate-300 leading-relaxed">
+                                    Supabase Client를 전역 변수(singleton)로 고정 생성하면서,
+                                    초기 인증 상태와 연결 정보를 지속적으로 재사용하게 되었고
+                                    세션 변경 및 연결 종료 상황에 유연하게 대응하지 못함
+                                </p>
+                            </div>
+
+                            <div className="space-y-3">
+                                <div className="flex items-center gap-2">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-green-400" />
+                                    <p className="text-xs font-black text-green-400 uppercase tracking-tighter">Solution</p>
+                                </div>
+
+                                <p className="text-[14px] text-emerald-100 font-medium">
+                                    Supabase Client를 함수형 팩토리 구조로 변경하여
+                                    요청 시점마다 최신 인증 상태를 반영하도록 개선하고,
+                                    <span className="text-white">SSR Hydration 및 연결 안정성 문제</span> 해결
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="bg-white/5 backdrop-blur-md rounded-4xl p-6 md:p-10 border border-white/10 shadow-2xl">
+                        <div className="flex flex-col md:flex-row md:items-center gap-4 mb-8">
+                            <span className="w-fit bg-red-500 text-white text-[10px] px-3 py-1 rounded-full font-black tracking-widest">ISSUE 06</span>
+                            <h3 className="text-xl md:text-2xl font-bold text-white">
+                                Zustand Persist 사용 시 SSR Hydration 타이밍 불일치 문제
+                            </h3>
+                        </div>
+
+                        <div className="grid gap-8 md:grid-cols-3 relative">
+                            <div className="hidden md:block absolute top-1/2 left-1/3 w-px h-12 bg-white/10 -translate-y-1/2" />
+                            <div className="hidden md:block absolute top-1/2 left-2/3 w-px h-12 bg-white/10 -translate-y-1/2" />
+
+                            <div className="space-y-3">
+                                <div className="flex items-center gap-2">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
+                                    <p className="text-xs font-black text-red-400 uppercase tracking-tighter">Problem</p>
+                                </div>
+
+                                <p className="text-[14px] text-slate-300 leading-relaxed">
+                                    새로고침 직후 persisted 상태가 아직 복구되지 않아,
+                                    초기 렌더링 시점에 데이터가 비어있는 상태로 처리되는 문제 발생
+                                </p>
+                            </div>
+
+                            <div className="space-y-3">
+                                <div className="flex items-center gap-2">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                                    <p className="text-xs font-black text-blue-400 uppercase tracking-tighter">Reason</p>
+                                </div>
+
+                                <p className="text-[14px] text-slate-300 leading-relaxed">
+                                    Next.js SSR 환경에서는 브라우저 저장소(localStorage)가
+                                    클라이언트에서만 접근 가능하기 때문에,
+                                    상태 복구(Rehydration) 이전과 이후의 렌더링 타이밍 차이 발생
+                                </p>
+                            </div>
+
+                            <div className="space-y-3">
+                                <div className="flex items-center gap-2">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-green-400" />
+                                    <p className="text-[14px] font-black text-green-400 uppercase tracking-tighter">Solution</p>
+                                </div>
+
+                                <p className="text-[14px] text-emerald-100 font-medium">
+                                    Zustand Persist의 <code>onRehydrateStorage</code>를 활용하여
+                                    Hydration 완료 상태를 명시적으로 관리하고,
+                                    <span className="text-white underline underline-offset-4">클라이언트 상태 복구 이후에만 UI를 렌더링</span>하도록 개선
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </motion.section>
 
