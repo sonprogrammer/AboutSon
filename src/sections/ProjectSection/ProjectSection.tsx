@@ -83,8 +83,8 @@ const ProjectSection = ({ selectedProject, setSelectedProject }: ProjectSectionP
         {selectedProject && (
           <ProjectModal project={selectedProject} handleCloseModal={() => setSelectedProject(null)}>
             {selectedProject === 'Mingle' && <MingleModal />}
-            {selectedProject === 'BNTY (Be Next To You)' && <BtnyModal />}
-            {selectedProject === 'VC (Virtual Coin)' && <VcModal />}
+            {selectedProject === 'BNTY' && <BtnyModal />}
+            {selectedProject === 'VC' && <VcModal />}
             {selectedProject === 'Fuelly' && <FuellyModal />}
             {selectedProject === 'Mungpass' && <MungpassModal />}
           </ProjectModal>
