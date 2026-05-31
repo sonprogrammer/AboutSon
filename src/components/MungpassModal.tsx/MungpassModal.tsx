@@ -34,8 +34,8 @@ export default function MungpassModal() {
                         <a href='https://github.com/sonprogrammer/Mungpass' target='_blank' rel='noreferrer' className="text-orange-600 hover:underline">Link</a>
                     </div>
                     <div className="flex items-center gap-2 border-l border-slate-200 pl-4">
-                        <span className="font-bold text-slate-900 underline italic">LandingPage</span>
-                        <a href="https://mungpass-landing.vercel.app/" target="_blank" className="text-orange-600 hover:underline">Visit site</a>
+                        <span className="font-bold text-slate-900 underline italic">WebSite</span>
+                        <a href="https://mungpass.vercel.app" target="_blank" className="text-orange-600 hover:underline">Visit site</a>
                     </div>
                 </div>
             </section>
