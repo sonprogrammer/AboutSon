@@ -38,6 +38,21 @@ export default function MungpassModal() {
                         <a href="https://mungpass.vercel.app" target="_blank" className="text-orange-600 hover:underline">Visit site</a>
                     </div>
                 </div>
+
+                {/* //TODO 테스트 계정 적어놓기 */}
+                {/* <div className="mt-4 max-w-md mx-auto p-4 rounded-2xl bg-slate-50 border border-slate-100 text-left text-xs md:text-sm text-slate-600 space-y-1.5 shadow-sm">
+                    <div className="font-bold text-slate-800 flex items-center gap-1 mb-1 text-[13px]">
+                        <span>🔑</span> 편리한 기능 확인을 위한 테스트 계정
+                    </div>
+                    <div className="flex justify-between border-b border-slate-200/60 pb-1">
+                        <span className="font-medium text-slate-500">일반 견주 계정</span>
+                        <span className="font-mono text-slate-700 font-semibold select-all">user@test.com / password123!</span>
+                    </div>
+                    <div className="flex justify-between pt-0.5">
+                        <span className="font-medium text-slate-500">매장 관리자 (Refine 어드민)</span>
+                        <span className="font-mono text-slate-700 font-semibold select-all">admin@test.com / password123!</span>
+                    </div>
+                </div> */}
             </section>
 
             <div className="h-px bg-slate-100" />
@@ -156,7 +171,7 @@ export default function MungpassModal() {
                         </div>
                     </div>
 
-                    <div className="bg-white/5 backdrop-blur-md rounded-4xl p-6 md:p-10 border border-white/10 shadow-2xl">
+                    {/* <div className="bg-white/5 backdrop-blur-md rounded-4xl p-6 md:p-10 border border-white/10 shadow-2xl">
                         <div className="flex flex-col md:flex-row md:items-center gap-4 mb-8">
                             <span className="w-fit bg-red-500 text-white text-[10px] px-3 py-1 rounded-full font-black tracking-widest">ISSUE 03</span>
                             <h3 className="text-xl md:text-2xl font-bold text-white">useSearchParams 사용 시 Prerender Build Error 발생</h3>
@@ -184,6 +199,71 @@ export default function MungpassModal() {
                                     <p className="text-xs font-black text-green-400 uppercase tracking-tighter">Solution</p>
                                 </div>
                                 <p className="text-[14px] text-emerald-100 font-medium">useSearchParams를 사용하는 로직을 별도 <code>Client Component로 분리</code> 하고, 상위 페이지에서 <span className="text-white">Suspense</span> 로 감싸 CSR 전환 시점을 명확히 분리하여 빌드 오류 해결</p>
+                            </div>
+                        </div>
+                    </div> */}
+                    <div className="bg-white/5 backdrop-blur-md rounded-4xl p-6 md:p-10 border border-white/10 shadow-2xl">
+                        <div className="flex flex-col md:flex-row md:items-center gap-4 mb-8">
+                            <span className="w-fit bg-red-500 text-white text-[10px] px-3 py-1 rounded-full font-black tracking-widest">ISSUE 03</span>
+                            <h3 className="text-xl md:text-2xl font-bold text-white">Next.js SSR 환경의 Hydration 및 사전 렌더링 에러 해결</h3>
+                        </div>
+                        
+                        {/* 서브 이슈 1: useSearchParams 빌드 오류 */}
+                        <div className="mb-8 pb-8 border-b border-white/5">
+                            <div className="text-xs font-bold text-orange-400 mb-3 tracking-wider"># Case 01. useSearchParams Prerender Build Error</div>
+                            <div className="grid gap-6 md:grid-cols-3 relative">
+                                <div className="hidden md:block absolute top-1/2 left-1/3 w-px h-12 bg-white/10 -translate-y-1/2" />
+                                <div className="hidden md:block absolute top-1/2 left-2/3 w-px h-12 bg-white/10 -translate-y-1/2" />
+                                <div className="space-y-2">
+                                    <div className="flex items-center gap-2">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
+                                        <p className="text-[11px] font-black text-red-400 uppercase tracking-tighter">Problem</p>
+                                    </div>
+                                    <p className="text-[13px] text-slate-300 leading-relaxed">Vercel 배포 빌드 시 Suspense Boundary 없이 useSearchParams가 사전 렌더링되어 빌드가 중단됨</p>
+                                </div>
+                                <div className="space-y-2">
+                                    <div className="flex items-center gap-2">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                                        <p className="text-[11px] font-black text-blue-400 uppercase tracking-tighter">Reason</p>
+                                    </div>
+                                    <p className="text-[13px] text-slate-300 leading-relaxed">런타임 기반 클라이언트 훅으로 CSR Bailout을 유발하므로 정적 최적화 시 반드시 컴포넌트 격리 필요</p>
+                                </div>
+                                <div className="space-y-2">
+                                    <div className="flex items-center gap-2">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-green-400" />
+                                        <p className="text-[11px] font-black text-green-400 uppercase tracking-tighter">Solution</p>
+                                    </div>
+                                    <p className="text-[13px] text-emerald-100 font-medium">쿼리 스트링 로직을 별도 컴포넌트로 분리하고 상위 페이지를 <code>Suspense</code>로 감싸 CSR 전환 시점을 명확히 분리</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div className="text-xs font-bold text-orange-400 mb-3 tracking-wider"># Case 02. Zustand Persist SSR Hydration 타이밍 불일치</div>
+                            <div className="grid gap-6 md:grid-cols-3 relative">
+                                <div className="hidden md:block absolute top-1/2 left-1/3 w-px h-12 bg-white/10 -translate-y-1/2" />
+                                <div className="hidden md:block absolute top-1/2 left-2/3 w-px h-12 bg-white/10 -translate-y-1/2" />
+                                <div className="space-y-2">
+                                    <div className="flex items-center gap-2">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
+                                        <p className="text-[11px] font-black text-red-400 uppercase tracking-tighter">Problem</p>
+                                    </div>
+                                    <p className="text-[13px] text-slate-300 leading-relaxed">새로고침 직후 브라우저 저장소 데이터가 복구되기 전 초기 렌더링 시점에 유저 데이터가 비어 보이는 현상</p>
+                                </div>
+                                <div className="space-y-2">
+                                    <div className="flex items-center gap-2">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                                        <p className="text-[11px] font-black text-blue-400 uppercase tracking-tighter">Reason</p>
+                                    </div>
+                                    <p className="text-[13px] text-slate-300 leading-relaxed">서버는 localStorage에 접근 불가하므로, 클라이언트 측 Rehydration 완료 시점과 첫 렌더링 시점의 차이 발생</p>
+                                </div>
+                                <div className="space-y-2">
+                                    <div className="flex items-center gap-2">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-green-400" />
+                                        <p className="text-[11px] font-black text-green-400 uppercase tracking-tighter">Solution</p>
+                                    </div>
+                                    <p className="text-[13px] text-emerald-100 font-medium"><code>onRehydrateStorage</code> 라이프사이클을 활용해 복구 완료 플래그를 관리, Hydration이 끝난 시점에만 UI 렌더링</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -295,7 +375,7 @@ export default function MungpassModal() {
                         </div>
                     </div>
 
-                    <div className="bg-white/5 backdrop-blur-md rounded-4xl p-6 md:p-10 border border-white/10 shadow-2xl">
+                    {/* <div className="bg-white/5 backdrop-blur-md rounded-4xl p-6 md:p-10 border border-white/10 shadow-2xl">
                         <div className="flex flex-col md:flex-row md:items-center gap-4 mb-8">
                             <span className="w-fit bg-red-500 text-white text-[10px] px-3 py-1 rounded-full font-black tracking-widest">ISSUE 06</span>
                             <h3 className="text-xl md:text-2xl font-bold text-white">
@@ -345,7 +425,7 @@ export default function MungpassModal() {
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </motion.section>
 
