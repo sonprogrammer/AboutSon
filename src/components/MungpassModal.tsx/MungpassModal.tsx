@@ -30,8 +30,8 @@ export default function MungpassModal() {
                 <h1 className="md:text-xl mt-2 font-black text-slate-900 leading-tight">애견 카페 간편 입장 및 통합 관리 플랫폼 '멍패스'</h1>
                 <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 text-sm text-slate-500 font-medium">
                     <div className="flex items-center gap-2">
-                        <span className="font-bold text-slate-900 italic uppercase">Readme</span>
-                        <a href='https://github.com/sonprogrammer/mungpass-description' target='_blank' rel='noreferrer' className="text-orange-600 hover:underline">Link</a>
+                        <span className="font-bold text-slate-900 italic">GitHub</span>
+                        <a href='https://github.com/sonprogrammer/Mungpass' target='_blank' rel='noreferrer' className="text-orange-600 hover:underline">Link</a>
                     </div>
                     <div className="flex items-center gap-2 border-l border-slate-200 pl-4">
                         <span className="font-bold text-slate-900 underline italic">WebSite</span>
