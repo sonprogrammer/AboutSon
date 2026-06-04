@@ -73,7 +73,7 @@ const AboutSection = () => {
 
               <div className="flex flex-col sm:flex-row sm:gap-6 pt-1">
                 <span className="w-24 text-slate-400 font-semibold shrink-0">Resume</span>
-                <a href="/finalResume.pdf"  target="_blank" className="font-bold text-purple-600 hover:underline">
+                <a href="/resume.pdf"  target="_blank" className="font-bold text-purple-600 hover:underline">
                   PDF 이력서 열기
                 </a>
               </div>
