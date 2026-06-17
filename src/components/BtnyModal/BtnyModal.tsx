@@ -261,6 +261,52 @@ const BtnyModal = () => {
             </div>
           </div>
         </div>
+        <div className="relative z-10 bg-white/5 backdrop-blur-md rounded-3xl p-6 md:p-10 border border-white/10 shadow-2xl mt-8">
+          <div className="flex flex-col md:flex-row md:items-center gap-4 mb-8">
+            <span className="w-fit bg-red-500 text-white text-[10px] px-3 py-1 rounded-full font-black tracking-widest">
+              ISSUE 02
+            </span>
+            <h3 className="text-xl md:text-2xl font-bold text-white">
+              Lighthouse 지표 기반 성능 최적화
+            </h3>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-3 relative">
+            <div className="hidden md:block absolute top-1/2 left-1/3 w-px h-12 bg-white/10 -translate-y-1/2" />
+            <div className="hidden md:block absolute top-1/2 left-2/3 w-px h-12 bg-white/10 -translate-y-1/2" />
+
+            <div className="space-y-3">
+              <div className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
+                <p className="text-xs font-black text-red-400 uppercase tracking-tighter">Problem</p>
+              </div>
+              <p className="text-[15px] text-slate-300 leading-relaxed">
+                초기 로딩 시 대량의 리소스 호출로 인해 <span className="text-red-300 font-medium">LCP(Largest Contentful Paint) 및 TBT(Total Blocking Time) 지표 저하</span> 발생
+              </p>
+            </div>
+
+            <div className="space-y-3">
+              <div className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                <p className="text-xs font-black text-blue-400 uppercase tracking-tighter">Reason</p>
+              </div>
+              <p className="text-[15px] text-slate-300 leading-relaxed">
+                컴포넌트의 비효율적인 코드 분할과 이미지/폰트 로딩 시점의 최적화 부족으로 인한 렌더링 블로킹
+              </p>
+            </div>
+
+            <div className="space-y-3">
+              <div className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-green-400" />
+                <p className="text-xs font-black text-green-400 uppercase tracking-tighter">Solution</p>
+              </div>
+              <p className="text-[15px] text-emerald-100 leading-relaxed font-medium">
+                <span className="bg-emerald-500/20 px-1 rounded text-emerald-300 underline underline-offset-4">React.lazy/Suspense</span>와 <span className="bg-emerald-500/20 px-1 rounded text-emerald-300 underline underline-offset-4">Promise.all</span> 병렬 처리 도입, 
+                LCP 약 2배 단축 및 메모이제이션을 통해 TBT를 유의미하게 개선
+              </p>
+            </div>
+          </div>
+        </div>
       </motion.section>
 
 
