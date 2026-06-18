@@ -171,44 +171,13 @@ export default function MungpassModal() {
                         </div>
                     </div>
 
-                    {/* <div className="bg-white/5 backdrop-blur-md rounded-4xl p-6 md:p-10 border border-white/10 shadow-2xl">
-                        <div className="flex flex-col md:flex-row md:items-center gap-4 mb-8">
-                            <span className="w-fit bg-red-500 text-white text-[10px] px-3 py-1 rounded-full font-black tracking-widest">ISSUE 03</span>
-                            <h3 className="text-xl md:text-2xl font-bold text-white">useSearchParams 사용 시 Prerender Build Error 발생</h3>
-                        </div>
-                        <div className="grid gap-8 md:grid-cols-3 relative">
-                            <div className="hidden md:block absolute top-1/2 left-1/3 w-px h-12 bg-white/10 -translate-y-1/2" />
-                            <div className="hidden md:block absolute top-1/2 left-2/3 w-px h-12 bg-white/10 -translate-y-1/2" />
-                            <div className="space-y-3">
-                                <div className="flex items-center gap-2">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
-                                    <p className="text-xs font-black text-red-400 uppercase tracking-tighter">Problem</p>
-                                </div>
-                                <p className="text-[14px] text-slate-300 leading-relaxed">Vercel 배포 빌드 과정에서 <code>useSearchParams</code>를 사용하는 페이지가 사전 렌더링(Prerender)되며, <span className="text-red-300 font-bold">Suspense Boundary</span> 가 없다는 오류와 함께 빌드가 중단됨</p>
-                            </div>
-                            <div className="space-y-3">
-                                <div className="flex items-center gap-2">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
-                                    <p className="text-xs font-black text-blue-400 uppercase tracking-tighter">Reason</p>
-                                </div>
-                                <p className="text-[14px] text-slate-300 leading-relaxed">Next.js App Router의 useSearchParams는 런타임 기반의 <span className="text-white">Client Hook으로 동작하며, CSR Bailout이 발생하는 훅</span>이기 때문에 반드시 Suspense Boundary 내부에서 실행되어야 함</p>
-                            </div>
-                            <div className="space-y-3">
-                                <div className="flex items-center gap-2">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-green-400" />
-                                    <p className="text-xs font-black text-green-400 uppercase tracking-tighter">Solution</p>
-                                </div>
-                                <p className="text-[14px] text-emerald-100 font-medium">useSearchParams를 사용하는 로직을 별도 <code>Client Component로 분리</code> 하고, 상위 페이지에서 <span className="text-white">Suspense</span> 로 감싸 CSR 전환 시점을 명확히 분리하여 빌드 오류 해결</p>
-                            </div>
-                        </div>
-                    </div> */}
+
                     <div className="bg-white/5 backdrop-blur-md rounded-4xl p-6 md:p-10 border border-white/10 shadow-2xl">
                         <div className="flex flex-col md:flex-row md:items-center gap-4 mb-8">
                             <span className="w-fit bg-red-500 text-white text-[10px] px-3 py-1 rounded-full font-black tracking-widest">ISSUE 03</span>
                             <h3 className="text-xl md:text-2xl font-bold text-white">Next.js SSR 환경의 Hydration 및 사전 렌더링 에러 해결</h3>
                         </div>
-                        
-                        {/* 서브 이슈 1: useSearchParams 빌드 오류 */}
+
                         <div className="mb-8 pb-8 border-b border-white/5">
                             <div className="text-xs font-bold text-orange-400 mb-3 tracking-wider"># Case 01. useSearchParams Prerender Build Error</div>
                             <div className="grid gap-6 md:grid-cols-3 relative">
@@ -375,57 +344,39 @@ export default function MungpassModal() {
                         </div>
                     </div>
 
-                    {/* <div className="bg-white/5 backdrop-blur-md rounded-4xl p-6 md:p-10 border border-white/10 shadow-2xl">
+                    <div className="bg-white/5 backdrop-blur-md rounded-4xl p-6 md:p-10 border border-white/10 shadow-2xl">
                         <div className="flex flex-col md:flex-row md:items-center gap-4 mb-8">
-                            <span className="w-fit bg-red-500 text-white text-[10px] px-3 py-1 rounded-full font-black tracking-widest">ISSUE 06</span>
-                            <h3 className="text-xl md:text-2xl font-bold text-white">
-                                Zustand Persist 사용 시 SSR Hydration 타이밍 불일치 문제
-                            </h3>
+                            <span className="inline-flex items-center whitespace-nowrap shrink-0 bg-red-500 text-white text-[10px] px-3 py-1 rounded-full font-black tracking-widest">ISSUE 06</span>
+                            <h3 className="text-xl md:text-2xl font-bold text-white">모바일 브라우저의 인풋창 포커스 시 화면 강제 확대 현상</h3>
                         </div>
-
                         <div className="grid gap-8 md:grid-cols-3 relative">
                             <div className="hidden md:block absolute top-1/2 left-1/3 w-px h-12 bg-white/10 -translate-y-1/2" />
                             <div className="hidden md:block absolute top-1/2 left-2/3 w-px h-12 bg-white/10 -translate-y-1/2" />
-
                             <div className="space-y-3">
                                 <div className="flex items-center gap-2">
                                     <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
                                     <p className="text-xs font-black text-red-400 uppercase tracking-tighter">Problem</p>
                                 </div>
-
-                                <p className="text-[14px] text-slate-300 leading-relaxed">
-                                    새로고침 직후 persisted 상태가 아직 복구되지 않아,
-                                    초기 렌더링 시점에 데이터가 비어있는 상태로 처리되는 문제 발생
-                                </p>
+                                <p className="text-[14px] text-slate-300 leading-relaxed">모바일 환경에서 검색창이나 입력 폼을 클릭해 포커싱되는 순간, 화면이 부자연스럽게 우측으로 자동 줌인되며 전체 레이아웃 구도가 깨지는 현상</p>
                             </div>
-
                             <div className="space-y-3">
                                 <div className="flex items-center gap-2">
                                     <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
                                     <p className="text-xs font-black text-blue-400 uppercase tracking-tighter">Reason</p>
                                 </div>
-
-                                <p className="text-[14px] text-slate-300 leading-relaxed">
-                                    Next.js SSR 환경에서는 브라우저 저장소(localStorage)가
-                                    클라이언트에서만 접근 가능하기 때문에,
-                                    상태 복구(Rehydration) 이전과 이후의 렌더링 타이밍 차이 발생
-                                </p>
+                                <p className="text-[14px] text-slate-300 leading-relaxed">iOS 사파리 브라우저 자체 정책 상, 입력 요소의 폰트 크기가 <span className="text-red-300 font-bold">16px 미만</span>일 경우 가독성 확보를 목적으로 뷰포트를 강제로 자동 확대시키기 때문임</p>
                             </div>
-
                             <div className="space-y-3">
                                 <div className="flex items-center gap-2">
                                     <div className="w-1.5 h-1.5 rounded-full bg-green-400" />
-                                    <p className="text-[14px] font-black text-green-400 uppercase tracking-tighter">Solution</p>
+                                    <p className="text-xs font-black text-green-400 uppercase tracking-tighter">Solution</p>
                                 </div>
-
-                                <p className="text-[14px] text-emerald-100 font-medium">
-                                    Zustand Persist의 <code>onRehydrateStorage</code>를 활용하여
-                                    Hydration 완료 상태를 명시적으로 관리하고,
-                                    <span className="text-white underline underline-offset-4">클라이언트 상태 복구 이후에만 UI를 렌더링</span>하도록 개선
-                                </p>
+                                <p className="text-[14px] text-emerald-100 font-medium">수많은 인풋 파일들을 개별 수정하지 않고, <code>viewport</code> <span className="text-white underline underline-offset-4">메타데이터의 설정을 통해 최대 배율 제한 및 사용자 확대 방지를 전역에 적용</span> 하여 브라우저의 강제 줌인 동작을 레이아웃 단에서 원천 차단하고 안정적인 모바일 UX 확보</p>
                             </div>
                         </div>
-                    </div> */}
+                    </div>
+
+
                 </div>
             </motion.section>
 

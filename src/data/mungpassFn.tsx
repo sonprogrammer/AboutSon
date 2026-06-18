@@ -52,4 +52,12 @@ export const mungpassFn = [
 
     ]
   },
+  {
+    title: "Lighthouse 기반 웹 퍼포먼스 최적화 및 PWA 도입",
+    items: [
+      <><strong>Service Worker</strong> 캐싱 전략과 Web Manifest 설정을 구축하여 홈 화면 추가 및 오프라인 대응이 가능한 <span className="text-orange-600 font-semibold">PWA 구동 환경 마련</span></>,
+      <>크롬 개발자 도구의 Performance 탭 기반 컴포넌트별 정적 레이아웃 구조를 지정하여 전 페이지 <span className="font-bold text-slate-800">평균 CLS 0.001 및 FCP 1.1초, LCP 2.0초</span>라는 안정적인 성능 지표 확보</>,
+      <>뷰포트 메타데이터 설정을 통해 <span className="font-bold text-slate-900 underline decoration-orange-300 underline-offset-4"> 인풋창 강제 확대 버그를 일괄 해결</span>하여 모바일 크로스 브라우징 최적화</>
+    ]
+  },
 ]
