@@ -290,63 +290,11 @@ export default function MungpassModal() {
                         </div>
                     </div>
 
-                    <div className="bg-white/5 backdrop-blur-md rounded-4xl p-6 md:p-10 border border-white/10 shadow-2xl">
-                        <div className="flex flex-col md:flex-row md:items-center gap-4 mb-8">
-                            <span className="inline-flex items-center whitespace-nowrap shrink-0 bg-red-500 text-white text-[10px] px-3 py-1 rounded-full font-black tracking-widest">
-                                ISSUE 05
-                            </span>
-                            <h3 className="text-xl md:text-2xl font-bold text-white">
-                                Supabase Singleton 구조에서 발생한 인증 세션 및 연결 불안정 문제
-                            </h3>
-                        </div>
-
-                        <div className="grid gap-8 md:grid-cols-3 relative">
-                            <div className="hidden md:block absolute top-1/2 left-1/3 w-px h-12 bg-white/10 -translate-y-1/2" />
-                            <div className="hidden md:block absolute top-1/2 left-2/3 w-px h-12 bg-white/10 -translate-y-1/2" />
-
-                            <div className="space-y-3">
-                                <div className="flex items-center gap-2">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
-                                    <p className="text-xs font-black text-red-400 uppercase tracking-tighter">Problem</p>
-                                </div>
-
-                                <p className="text-[14px] text-slate-300 leading-relaxed">
-                                    특정 상황에서 인증 상태가 즉시 반영되지 않거나,
-                                    네트워크 요청이 무한 대기 상태에 빠지는 현상 발생
-                                </p>
-                            </div>
-
-                            <div className="space-y-3">
-                                <div className="flex items-center gap-2">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
-                                    <p className="text-xs font-black text-blue-400 uppercase tracking-tighter">Reason</p>
-                                </div>
-
-                                <p className="text-[14px] text-slate-300 leading-relaxed">
-                                    Supabase Client를 전역 변수(singleton)로 고정 생성하면서,
-                                    초기 인증 상태와 연결 정보를 지속적으로 재사용하게 되었고
-                                    세션 변경 및 연결 종료 상황에 유연하게 대응하지 못함
-                                </p>
-                            </div>
-
-                            <div className="space-y-3">
-                                <div className="flex items-center gap-2">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-green-400" />
-                                    <p className="text-xs font-black text-green-400 uppercase tracking-tighter">Solution</p>
-                                </div>
-
-                                <p className="text-[14px] text-emerald-100 font-medium">
-                                    Supabase Client를 함수형 팩토리 구조로 변경하여
-                                    요청 시점마다 최신 인증 상태를 반영하도록 개선하고,
-                                    <span className="text-white">SSR Hydration 및 연결 안정성 문제</span> 해결
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                   
 
                     <div className="bg-white/5 backdrop-blur-md rounded-4xl p-6 md:p-10 border border-white/10 shadow-2xl">
                         <div className="flex flex-col md:flex-row md:items-center gap-4 mb-8">
-                            <span className="inline-flex items-center whitespace-nowrap shrink-0 bg-red-500 text-white text-[10px] px-3 py-1 rounded-full font-black tracking-widest">ISSUE 06</span>
+                            <span className="inline-flex items-center whitespace-nowrap shrink-0 bg-red-500 text-white text-[10px] px-3 py-1 rounded-full font-black tracking-widest">ISSUE 05</span>
                             <h3 className="text-xl md:text-2xl font-bold text-white">모바일 브라우저의 인풋창 포커스 시 화면 강제 확대 현상</h3>
                         </div>
                         <div className="grid gap-8 md:grid-cols-3 relative">
